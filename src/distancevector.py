@@ -1,6 +1,7 @@
 import sys
 # Data to write
 data_to_write = "This is the data from distance-vector."
+INFINITY = float("inf")
 
 class Router:
     def __init__(self, id):
@@ -47,10 +48,16 @@ class Network:
                 self.add_link(int(router1), int(router2), int(cost))
 
     def initialize_routing_table(self):
-        # Everynode know their neighbors
         for router in self.routers.values():
+            # Initialize entry for self
+            router.update_routing_table(router, router, 0)
+            # Initialize cost for neighbours
             for neighbor in router.neighbors.keys():
                 router.update_routing_table(self.routers[neighbor], self.routers[neighbor], router.neighbors[neighbor])
+            # Initialize cost of infinity for all other routers
+            for other_router in self.routers.keys():
+                if other_router != router.id and other_router not in router.neighbors:
+                    router.routing_table[other_router] = (None, INFINITY)
     
     def print_network(self):
         for router in self.routers:
@@ -83,6 +90,7 @@ def main():
     network = Network(topology_file)
     network.initialize_routing_table()
     network.print_network()
+
     pass
 
 if __name__ == "__main__":
