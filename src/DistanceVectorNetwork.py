@@ -42,7 +42,7 @@ class DistanceVectorNetwork(Network):
                 self.notify_neighbors(router_1, router_2)
                 self.notify_neighbors(router_2, router_1)
 
-                self.invalidate_routes()
+                self.invalidate_expired_routes()
 
                 self.dv_algorithm()
                 self.topology_output()
@@ -82,6 +82,7 @@ class DistanceVectorNetwork(Network):
     def notify_neighbors(self, router, destination_router):
         """
         Notify the neighbors of a router about a change in the routing table.
+        Way to simulate the poison reverse.
 
         Args:
             router (Router): The router that has a change in its routing table.
@@ -99,9 +100,11 @@ class DistanceVectorNetwork(Network):
                     neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
                     self.notify_neighbors(neighbor_router, destination_router)
 
-    def invalidate_routes(self):
+    def invalidate_expired_routes(self):
         """
         Invalidate routes in the routing tables of all routers in the network.
+        Except for the neighbors of the routers. 
+        Way to simulate the timeout.
 
         Returns:
             None
