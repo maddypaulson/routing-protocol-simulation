@@ -91,17 +91,25 @@ class Network:
 
                 router1.update_routing_table(router2, None, INFINITY)
                 router2.update_routing_table(router1, None, INFINITY)
+
+                # Invalidate the routes that go through the routers that are being removed
+                for destination_id in router1.routing_table.keys():
+                    destination = self.get_router(destination_id)
+                    next_hop, cost = router1.routing_table[destination_id]
+                    if next_hop == router2.id:
+                        router1.update_routing_table(destination, None, INFINITY)
+
+                for destination_id in router2.routing_table.keys():
+                    destination = self.get_router(destination_id)
+                    next_hop, cost = router2.routing_table[destination_id]
+                    if next_hop == router1.id:
+                        router2.update_routing_table(destination, None, INFINITY)
         else:
             self.add_link(router_id1, router_id2, cost)
             pass
 
-# Open file and create if it doesn't exist
-# with open('output.txt', 'w') as file:
-#     file.write(data_to_write)
 
-
-
-def dv_algorithm(network):
+def dv_algorithm(network, priority_routers = []):
     # Make all routers send their routing table to their neighbors, except the one that is the destination or the one that is the next hop
     # Update the routing table of the neighbors
     # Repeat until no changes are made
@@ -112,9 +120,10 @@ def dv_algorithm(network):
     
     while changes_made:
         changes_made = False
-        
+        routers = priority_routers + [v for k, v in network.routers.items() if v not in priority_routers]
+
         # Iterate over each router in the network
-        for router in network.routers.values():
+        for router in routers:
             # Iterate over each neighbor of the router
             for neighbor in router.neighbors.keys():
                 # Get the neighbor router object
@@ -125,23 +134,27 @@ def dv_algorithm(network):
                     # Get the next hop and cost to reach the destination from the router
                     next_hop_id, cost = router.routing_table[destination]
                     destination_router = network.routers[destination]
-                    
-                    # Check if the neighbor is not the destination or the next hop
-                    if  should_update_routing_table(neighbor_router, router, destination_router, next_hop_id, cost):
-                        # Update the routing table of the neighbor
-                        neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
-                        changes_made = True
+                    if should_transmit_message(neighbor_router, destination_router, next_hop_id):
+                        if  should_accept_message(neighbor_router, router, destination_router, next_hop_id, cost):
+                            # Update the routing table of the neighbor
+                            neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
+                            changes_made = True
 
-def should_update_routing_table(router, advertiser, destination, next_hop_id, cost):
-    if router.id == destination.id:
+def should_transmit_message(neigbour_router, destination, next_hop_id):
+    if neigbour_router.id == destination.id:
         return False
-    if router.id == next_hop_id:
+    if neigbour_router.id == next_hop_id:
         return False
+    return True
+
+def should_accept_message(router, advertiser, destination, next_hop_id, cost):
     if destination.id not in router.routing_table.keys():
         return True
     if cost + advertiser.neighbors[router.id] < router.routing_table[destination.id][1]:
         return True
     if cost + advertiser.neighbors[router.id] == router.routing_table[destination.id][1] and router.routing_table[destination.id][0]  and advertiser.id < router.routing_table[destination.id][0]:
+        return True
+    if router.routing_table[destination.id][0] == advertiser.id and router.routing_table[destination.id][1] < cost + advertiser.neighbors[router.id]:
         return True
     return False
 
@@ -164,13 +177,13 @@ def main():
 
     network = Network(topology_file)
     dv_algorithm(network)
-    print(network.topology_output())
     with open(changes_file, 'r') as changes_file:
         for line in changes_file:
-            router_1, router_2, cost = line.split()
-            network.process_change(int(router_1), int(router_2), int(cost))
-
-            dv_algorithm(network)
+            router_id1, router_id2, cost = line.split()
+            network.process_change(int(router_id1), int(router_id2), int(cost))
+            router_1 = network.get_router(int(router_id1))
+            router_2 = network.get_router(int(router_id2))
+            dv_algorithm(network, [router_1, router_2])
             pass
     
     network.print_network()
