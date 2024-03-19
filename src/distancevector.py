@@ -73,11 +73,8 @@ def main():
     dv_algorithm(network)
     network.topology_output()
     network.print_network()
-    with open(message_file, 'r') as message_file_iterator:
-                for line in message_file_iterator:
-                    router_id_from, router_id_to, message = line.split(" ", 2)
-                    network.send_message(int(router_id_from), int(router_id_to),message)
-
+    send_messages(network, message_file)
+    
     with open(changes_file, 'r') as changes_file:
         for line in changes_file:
             router_id1, router_id2, cost = line.split()
