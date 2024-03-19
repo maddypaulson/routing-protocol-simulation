@@ -1,0 +1,249 @@
+\doxysection{Network.\+Network Class Reference}
+\hypertarget{class_network_1_1_network}{}\label{class_network_1_1_network}\index{Network.Network@{Network.Network}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a9478c4fd4498c0b752b03fd7a04ba042}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, topology\+\_\+file, output\+\_\+file)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_aaa211a07cc2f7930599643c3a5c8828c}{initialize\+\_\+topology}} (self, topology\+\_\+file)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6}{add\+\_\+router}} (self, router\+\_\+id)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a5cb9b371da3153d4a64e577d419ec98c}{get\+\_\+router}} (self, router\+\_\+id)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_ae3c78047b7a6a6d20a66e14a95b85bb8}{update\+\_\+routing\+\_\+table}} (self, router, destination, next\+\_\+hop, cost)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a1df8521ff14477f4dfe18d761a5074de}{add\+\_\+link}} (self, router\+\_\+id1, router\+\_\+id2, cost)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_ab830bee550b95f7673f42a3df8d029ad}{remove\+\_\+link}} (self, router1, router2)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a2757fd1c2cd14551539e874a134f06c9}{invalidate\+\_\+routes\+\_\+for\+\_\+removed\+\_\+link}} (self, router1, router2)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a9f2e744c6a61959237001a1569c5bc7f}{print\+\_\+network}} (self)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a7b0c090a145cc4edd0a822e764fcc121}{topology\+\_\+output}} (self)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a9718930526ed5a32f879426583518698}{send\+\_\+message}} (self, router\+\_\+id\+\_\+from, router\+\_\+id\+\_\+to, message)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a4b55b7d8e556ff257f4f7c3783ce6088}{get\+\_\+hops\+\_\+and\+\_\+cost}} (self, router\+\_\+from, router\+\_\+to)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}{check\+\_\+impossible\+\_\+to\+\_\+reach}} (self, router\+\_\+from, router\+\_\+to)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a1ce2c4b7ab3d690319503da83295bd04}{process\+\_\+change}} (self, router\+\_\+id1, router\+\_\+id2, cost)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}{\+\_\+\+\_\+del\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_network_1_1_network_a6ab2bd99a06cf4f04a11b58b4b28b40c}\label{class_network_1_1_network_a6ab2bd99a06cf4f04a11b58b4b28b40c} 
+{\bfseries routers}
+\item 
+\Hypertarget{class_network_1_1_network_a464433e9bb29d9eb73e7e20bede89562}\label{class_network_1_1_network_a464433e9bb29d9eb73e7e20bede89562} 
+{\bfseries output\+\_\+file}
+\item 
+\Hypertarget{class_network_1_1_network_a371d7c33357385b69ba553e31cf41e74}\label{class_network_1_1_network_a371d7c33357385b69ba553e31cf41e74} 
+{\bfseries output\+\_\+file\+\_\+iterator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represents a network of routers.
+
+Attributes:
+    routers (dict): A dictionary of routers in the network.
+    output_file (str): The path to the output file.
+    output_file_iterator (file): The file iterator for writing output.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_network_1_1_network_a9478c4fd4498c0b752b03fd7a04ba042}\label{class_network_1_1_network_a9478c4fd4498c0b752b03fd7a04ba042} 
+\index{Network.Network@{Network.Network}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily Network.\+Network.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{topology\+\_\+file,  }\item[{}]{output\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes a Network object.
+
+Args:
+    topology_file (str): The path to the topology file.
+    output_file (str): The path to the output file.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}\label{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b} 
+\index{Network.Network@{Network.Network}!\_\_del\_\_@{\_\_del\_\_}}
+\index{\_\_del\_\_@{\_\_del\_\_}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{\_\_del\_\_()}{\_\_del\_\_()}}
+{\footnotesize\ttfamily Network.\+Network.\+\_\+\+\_\+del\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Closes the output file when the Network object is deleted.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_1_1_network_a1df8521ff14477f4dfe18d761a5074de}\label{class_network_1_1_network_a1df8521ff14477f4dfe18d761a5074de} 
+\index{Network.Network@{Network.Network}!add\_link@{add\_link}}
+\index{add\_link@{add\_link}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{add\_link()}{add\_link()}}
+{\footnotesize\ttfamily Network.\+Network.\+add\+\_\+link (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id1,  }\item[{}]{router\+\_\+id2,  }\item[{}]{cost }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a link between two routers in the network.
+Add routers if they don't exist.
+
+Args:
+    router_id1 (int): The ID of the first router.
+    router_id2 (int): The ID of the second router.
+    cost (int): The cost of the link.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6}\label{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6} 
+\index{Network.Network@{Network.Network}!add\_router@{add\_router}}
+\index{add\_router@{add\_router}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{add\_router()}{add\_router()}}
+{\footnotesize\ttfamily Network.\+Network.\+add\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a router to the network.
+
+Args:
+    router_id (int): The ID of the router to add.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}\label{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683} 
+\index{Network.Network@{Network.Network}!check\_impossible\_to\_reach@{check\_impossible\_to\_reach}}
+\index{check\_impossible\_to\_reach@{check\_impossible\_to\_reach}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{check\_impossible\_to\_reach()}{check\_impossible\_to\_reach()}}
+{\footnotesize\ttfamily Network.\+Network.\+check\+\_\+impossible\+\_\+to\+\_\+reach (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+from,  }\item[{}]{router\+\_\+to }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks if it is impossible to reach a destination router from a source router.
+
+Args:
+    router_from (Router): The source router.
+    router_to (Router): The destination router.
+
+Returns:
+    bool: True if it is impossible to reach, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a4b55b7d8e556ff257f4f7c3783ce6088}\label{class_network_1_1_network_a4b55b7d8e556ff257f4f7c3783ce6088} 
+\index{Network.Network@{Network.Network}!get\_hops\_and\_cost@{get\_hops\_and\_cost}}
+\index{get\_hops\_and\_cost@{get\_hops\_and\_cost}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{get\_hops\_and\_cost()}{get\_hops\_and\_cost()}}
+{\footnotesize\ttfamily Network.\+Network.\+get\+\_\+hops\+\_\+and\+\_\+cost (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+from,  }\item[{}]{router\+\_\+to }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculates the hops and total cost to reach a destination router.
+
+Args:
+    router_from (Router): The source router.
+    router_to (Router): The destination router.
+
+Returns:
+    tuple: A tuple containing the list of hops and the total cost.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a5cb9b371da3153d4a64e577d419ec98c}\label{class_network_1_1_network_a5cb9b371da3153d4a64e577d419ec98c} 
+\index{Network.Network@{Network.Network}!get\_router@{get\_router}}
+\index{get\_router@{get\_router}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{get\_router()}{get\_router()}}
+{\footnotesize\ttfamily Network.\+Network.\+get\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves a router from the network.
+
+Args:
+    router_id (int): The ID of the router to retrieve.
+
+Returns:
+    Router: The router object, or None if not found.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_aaa211a07cc2f7930599643c3a5c8828c}\label{class_network_1_1_network_aaa211a07cc2f7930599643c3a5c8828c} 
+\index{Network.Network@{Network.Network}!initialize\_topology@{initialize\_topology}}
+\index{initialize\_topology@{initialize\_topology}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{initialize\_topology()}{initialize\_topology()}}
+{\footnotesize\ttfamily Network.\+Network.\+initialize\+\_\+topology (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{topology\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the network topology based on the given topology file.
+
+Args:
+    topology_file (str): The path to the topology file.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a2757fd1c2cd14551539e874a134f06c9}\label{class_network_1_1_network_a2757fd1c2cd14551539e874a134f06c9} 
+\index{Network.Network@{Network.Network}!invalidate\_routes\_for\_removed\_link@{invalidate\_routes\_for\_removed\_link}}
+\index{invalidate\_routes\_for\_removed\_link@{invalidate\_routes\_for\_removed\_link}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{invalidate\_routes\_for\_removed\_link()}{invalidate\_routes\_for\_removed\_link()}}
+{\footnotesize\ttfamily Network.\+Network.\+invalidate\+\_\+routes\+\_\+for\+\_\+removed\+\_\+link (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router1,  }\item[{}]{router2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invalidates routes in the routing tables that depend on a removed link.
+
+Args:
+    router1 (Router): The first router.
+    router2 (Router): The second router.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a9f2e744c6a61959237001a1569c5bc7f}\label{class_network_1_1_network_a9f2e744c6a61959237001a1569c5bc7f} 
+\index{Network.Network@{Network.Network}!print\_network@{print\_network}}
+\index{print\_network@{print\_network}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{print\_network()}{print\_network()}}
+{\footnotesize\ttfamily Network.\+Network.\+print\+\_\+network (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prints the network information.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a1ce2c4b7ab3d690319503da83295bd04}\label{class_network_1_1_network_a1ce2c4b7ab3d690319503da83295bd04} 
+\index{Network.Network@{Network.Network}!process\_change@{process\_change}}
+\index{process\_change@{process\_change}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{process\_change()}{process\_change()}}
+{\footnotesize\ttfamily Network.\+Network.\+process\+\_\+change (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id1,  }\item[{}]{router\+\_\+id2,  }\item[{}]{cost }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Processes a change in the network topology.
+
+Args:
+    router_id1 (int): The ID of the first router.
+    router_id2 (int): The ID of the second router.
+    cost (int): The new cost of the link, or -999 to remove the link.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_ab830bee550b95f7673f42a3df8d029ad}\label{class_network_1_1_network_ab830bee550b95f7673f42a3df8d029ad} 
+\index{Network.Network@{Network.Network}!remove\_link@{remove\_link}}
+\index{remove\_link@{remove\_link}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{remove\_link()}{remove\_link()}}
+{\footnotesize\ttfamily Network.\+Network.\+remove\+\_\+link (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router1,  }\item[{}]{router2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Removes a link between two routers in the network.
+
+Args:
+    router1 (Router): The first router.
+    router2 (Router): The second router.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a9718930526ed5a32f879426583518698}\label{class_network_1_1_network_a9718930526ed5a32f879426583518698} 
+\index{Network.Network@{Network.Network}!send\_message@{send\_message}}
+\index{send\_message@{send\_message}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{send\_message()}{send\_message()}}
+{\footnotesize\ttfamily Network.\+Network.\+send\+\_\+message (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id\+\_\+from,  }\item[{}]{router\+\_\+id\+\_\+to,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sends a message from one router to another in the network.
+Writes the message to the output file.
+
+Args:
+    router_id_from (int): The ID of the source router.
+    router_id_to (int): The ID of the destination router.
+    message (str): The message to send.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a7b0c090a145cc4edd0a822e764fcc121}\label{class_network_1_1_network_a7b0c090a145cc4edd0a822e764fcc121} 
+\index{Network.Network@{Network.Network}!topology\_output@{topology\_output}}
+\index{topology\_output@{topology\_output}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{topology\_output()}{topology\_output()}}
+{\footnotesize\ttfamily Network.\+Network.\+topology\+\_\+output (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Writes the routing tables to the output file.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_ae3c78047b7a6a6d20a66e14a95b85bb8}\label{class_network_1_1_network_ae3c78047b7a6a6d20a66e14a95b85bb8} 
+\index{Network.Network@{Network.Network}!update\_routing\_table@{update\_routing\_table}}
+\index{update\_routing\_table@{update\_routing\_table}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{update\_routing\_table()}{update\_routing\_table()}}
+{\footnotesize\ttfamily Network.\+Network.\+update\+\_\+routing\+\_\+table (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router,  }\item[{}]{destination,  }\item[{}]{next\+\_\+hop,  }\item[{}]{cost }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Updates the routing table of a router in the network.
+
+Args:
+    router (Router): The router to update.
+    destination (Router): The destination router.
+    next_hop (int): The ID of the next hop router.
+    cost (int): The cost to reach the destination.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Network.\+py\end{DoxyCompactItemize}

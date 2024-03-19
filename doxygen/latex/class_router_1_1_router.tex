@@ -1,0 +1,95 @@
+\doxysection{Router.\+Router Class Reference}
+\hypertarget{class_router_1_1_router}{}\label{class_router_1_1_router}\index{Router.Router@{Router.Router}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_router_1_1_router_a70717ff4caaf973fb3a9334f0b5677f8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, id)
+\item 
+\mbox{\hyperlink{class_router_1_1_router_aeeed50e0918d7b6eebd0ac3cb19c43bf}{add\+\_\+neighbor}} (self, neighbor, cost)
+\item 
+\mbox{\hyperlink{class_router_1_1_router_ac6182c3c399e1b498e1db2048ae3634d}{update\+\_\+routing\+\_\+table}} (self, destination, next\+\_\+hop, cost)
+\item 
+\mbox{\hyperlink{class_router_1_1_router_a4871b0315c99dc3618087ea1110dd350}{print\+\_\+routing\+\_\+table}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_router_1_1_router_a0ad2f60d46c6fb25d225f159c7ae57b7}\label{class_router_1_1_router_a0ad2f60d46c6fb25d225f159c7ae57b7} 
+{\bfseries id}
+\item 
+\Hypertarget{class_router_1_1_router_ac922cff619847546fc8f86fa4f0c5dcc}\label{class_router_1_1_router_ac922cff619847546fc8f86fa4f0c5dcc} 
+{\bfseries neighbors}
+\item 
+\Hypertarget{class_router_1_1_router_a6795e76e89e0486b210084f83b1b506b}\label{class_router_1_1_router_a6795e76e89e0486b210084f83b1b506b} 
+{\bfseries routing\+\_\+table}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_router_1_1_router_a70717ff4caaf973fb3a9334f0b5677f8}\label{class_router_1_1_router_a70717ff4caaf973fb3a9334f0b5677f8} 
+\index{Router.Router@{Router.Router}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Router.Router@{Router.Router}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily Router.\+Router.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes a Router object.
+
+Parameters:
+- id (int): The ID of the router.
+
+Returns:
+- None
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_router_1_1_router_aeeed50e0918d7b6eebd0ac3cb19c43bf}\label{class_router_1_1_router_aeeed50e0918d7b6eebd0ac3cb19c43bf} 
+\index{Router.Router@{Router.Router}!add\_neighbor@{add\_neighbor}}
+\index{add\_neighbor@{add\_neighbor}!Router.Router@{Router.Router}}
+\doxysubsubsection{\texorpdfstring{add\_neighbor()}{add\_neighbor()}}
+{\footnotesize\ttfamily Router.\+Router.\+add\+\_\+neighbor (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{neighbor,  }\item[{}]{cost }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a neighbor to the router.
+
+Parameters:
+- neighbor (Router): The neighbor router object.
+- cost (int): The cost to reach the neighbor.
+
+Returns:
+- None
+\end{DoxyVerb}
+ \Hypertarget{class_router_1_1_router_a4871b0315c99dc3618087ea1110dd350}\label{class_router_1_1_router_a4871b0315c99dc3618087ea1110dd350} 
+\index{Router.Router@{Router.Router}!print\_routing\_table@{print\_routing\_table}}
+\index{print\_routing\_table@{print\_routing\_table}!Router.Router@{Router.Router}}
+\doxysubsubsection{\texorpdfstring{print\_routing\_table()}{print\_routing\_table()}}
+{\footnotesize\ttfamily Router.\+Router.\+print\+\_\+routing\+\_\+table (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Prints the routing table of the router.
+
+Parameters:
+- None
+
+Returns:
+- str: The routing table as a string.
+\end{DoxyVerb}
+ \Hypertarget{class_router_1_1_router_ac6182c3c399e1b498e1db2048ae3634d}\label{class_router_1_1_router_ac6182c3c399e1b498e1db2048ae3634d} 
+\index{Router.Router@{Router.Router}!update\_routing\_table@{update\_routing\_table}}
+\index{update\_routing\_table@{update\_routing\_table}!Router.Router@{Router.Router}}
+\doxysubsubsection{\texorpdfstring{update\_routing\_table()}{update\_routing\_table()}}
+{\footnotesize\ttfamily Router.\+Router.\+update\+\_\+routing\+\_\+table (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{destination,  }\item[{}]{next\+\_\+hop,  }\item[{}]{cost }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Updates the routing table of the router.
+
+Parameters:
+- destination (Router): The destination router object.
+- next_hop (Router): The next hop router object.
+- cost (int): The cost to reach the destination.
+
+Returns:
+- None
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Router.\+py\end{DoxyCompactItemize}
