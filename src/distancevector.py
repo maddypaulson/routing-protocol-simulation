@@ -40,7 +40,12 @@ def notify_neighbors(router, destination_router, network):
                 neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
                 notify_neighbors(neighbor_router, destination_router, network)
 
-    
+def invalidate_routes(network):
+    for router in network.routers.values():
+        for destination_id in router.routing_table.keys():
+            if destination_id not in router.neighbors.keys() and router.id != destination_id:
+                router.routing_table[destination_id] = (None, float('inf'))
+
 def should_transmit_message(neigbour_router, destination, next_hop_id):
     if neigbour_router.id == destination.id:
         return False
@@ -83,12 +88,10 @@ def main():
             router_2 = network.get_router(int(router_id2))
             notify_neighbors(router_1, router_2, network)
             notify_neighbors(router_2, router_1, network)
+            invalidate_routes(network)
             dv_algorithm(network)
             network.topology_output()
             send_messages(network, message_file)
-
-
-            pass
     
 
     pass
