@@ -1,4 +1,4 @@
-from DistanceVectorNework import DistanceVectorNetwork
+from DistanceVectorNetwork import DistanceVectorNetwork
 from utilities import parseArgs
 
 def main():

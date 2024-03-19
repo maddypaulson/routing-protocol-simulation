@@ -1,6 +1,24 @@
-# Data to write
-data_to_write = "This is the data from link-state."
+from LinkStateNetwork import LinkStateNetwork
+from utilities import parseArgs
 
-# Open file and create if it doesn't exist
-with open('output.txt', 'w') as file:
-    file.write(data_to_write)
+def main():
+    """
+    Main function to run the Distance Vector Algorithm.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    args = parseArgs()
+    topology_file, message_file, changes_file, output_file  = args
+
+    network = LinkStateNetwork(topology_file, output_file)
+    
+    network.distribute_lsp()
+    network.apply_ls_all_routers()
+    # network.print_network()
+
+if __name__ == "__main__":
+    main()
