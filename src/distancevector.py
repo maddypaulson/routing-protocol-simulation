@@ -1,4 +1,5 @@
-from network import Network, parseArgs
+from Network import Network
+from utilities import INFINITY, parseArgs
 
 def dv_algorithm(network, priority_routers = []):
     # Make all routers send their routing table to their neighbors, except the one that is the destination or the one that is the next hop
@@ -77,24 +78,27 @@ def main():
     network = Network(topology_file, output_file)
     dv_algorithm(network)
     network.topology_output()
-    network.print_network()
     send_messages(network, message_file)
     
     with open(changes_file, 'r') as changes_file:
         for line in changes_file:
             router_id1, router_id2, cost = line.split()
             network.process_change(int(router_id1), int(router_id2), int(cost))
+
             router_1 = network.get_router(int(router_id1))
             router_2 = network.get_router(int(router_id2))
+
             notify_neighbors(router_1, router_2, network)
             notify_neighbors(router_2, router_1, network)
+
             invalidate_routes(network)
+            
             dv_algorithm(network)
+
             network.topology_output()
             send_messages(network, message_file)
-    
+    network.print_network()
 
-    pass
 
 if __name__ == "__main__":
     main()
