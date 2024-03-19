@@ -24,7 +24,8 @@ class Router:
         routing_table_str = ""
         for destination in sorted(self.routing_table):
             next_hop, cost = self.routing_table[destination]
-            routing_table_str += f"{destination} {next_hop} {cost}\n"
+            if cost != INFINITY:
+                routing_table_str += f"{destination} {next_hop} {cost}\n"
         return routing_table_str
         
 class Network:
