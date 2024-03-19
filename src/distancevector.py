@@ -11,10 +11,9 @@ def dv_algorithm(network, priority_routers = []):
     
     while changes_made:
         changes_made = False
-        routers = priority_routers + [v for k, v in network.routers.items() if v not in priority_routers]
 
         # Iterate over each router in the network
-        for router in routers:
+        for router in network.routers.values():
             # Iterate over each neighbor of the router
             for neighbor in router.neighbors.keys():
                 # Get the neighbor router object
@@ -26,11 +25,22 @@ def dv_algorithm(network, priority_routers = []):
                     next_hop_id, cost = router.routing_table[destination]
                     destination_router = network.routers[destination]
                     if should_transmit_message(neighbor_router, destination_router, next_hop_id):
-                        if  should_accept_message(neighbor_router, router, destination_router, next_hop_id, cost):
+                        if  should_accept_message(neighbor_router, router, destination_router, cost):
                             # Update the routing table of the neighbor
                             neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
                             changes_made = True
 
+def notify_neighbors(router, destination_router, network):
+    for neighbor in router.neighbors.keys():
+        neighbor_router = network.routers[neighbor]
+        next_hop_id, cost = router.routing_table[destination_router.id]
+        if should_transmit_message(neighbor_router, destination_router, next_hop_id):
+            if  should_accept_message(neighbor_router, router, destination_router, cost):
+                # Update the routing table of the neighbor
+                neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
+                notify_neighbors(neighbor_router, destination_router, network)
+
+    
 def should_transmit_message(neigbour_router, destination, next_hop_id):
     if neigbour_router.id == destination.id:
         return False
@@ -38,37 +48,50 @@ def should_transmit_message(neigbour_router, destination, next_hop_id):
         return False
     return True
 
-def should_accept_message(router, advertiser, destination, next_hop_id, cost):
+def should_accept_message(router, advertiser, destination, cost):
     if destination.id not in router.routing_table.keys():
         return True
     if cost + advertiser.neighbors[router.id] < router.routing_table[destination.id][1]:
         return True
-    if cost + advertiser.neighbors[router.id] == router.routing_table[destination.id][1] and router.routing_table[destination.id][0]  and advertiser.id < router.routing_table[destination.id][0]:
+    elif cost + advertiser.neighbors[router.id] == router.routing_table[destination.id][1] and router.routing_table[destination.id][0]  and advertiser.id < router.routing_table[destination.id][0]:
         return True
-    if router.routing_table[destination.id][0] == advertiser.id and router.routing_table[destination.id][1] < cost + advertiser.neighbors[router.id]:
+    elif router.routing_table[destination.id][0] == advertiser.id and router.routing_table[destination.id][1] < cost + advertiser.neighbors[router.id]:
         return True
     return False
+
+def send_messages(network, message_file):
+    with open(message_file, 'r') as message_file_iterator:
+        for line in message_file_iterator:
+            router_id_from, router_id_to, message = line.split(" ", 2)
+            network.send_message(int(router_id_from), int(router_id_to),message)
 
 def main():
     args = parseArgs()
     topology_file, message_file, changes_file, output_file  = args
 
-    network = Network(topology_file)
+    network = Network(topology_file, output_file)
     dv_algorithm(network)
-    network.topology_output(output_file)
+    network.topology_output()
     network.print_network()
     with open(message_file, 'r') as message_file_iterator:
                 for line in message_file_iterator:
                     router_id_from, router_id_to, message = line.split(" ", 2)
-                    network.send_message(int(router_id_from), int(router_id_to),message, output_file)
-    # with open(changes_file, 'r') as changes_file:
-    #     for line in changes_file:
-    #         router_id1, router_id2, cost = line.split()
-    #         network.process_change(int(router_id1), int(router_id2), int(cost))
-    #         router_1 = network.get_router(int(router_id1))
-    #         router_2 = network.get_router(int(router_id2))
-    #         dv_algorithm(network, [router_1, router_2])
-    #         pass
+                    network.send_message(int(router_id_from), int(router_id_to),message)
+
+    with open(changes_file, 'r') as changes_file:
+        for line in changes_file:
+            router_id1, router_id2, cost = line.split()
+            network.process_change(int(router_id1), int(router_id2), int(cost))
+            router_1 = network.get_router(int(router_id1))
+            router_2 = network.get_router(int(router_id2))
+            notify_neighbors(router_1, router_2, network)
+            notify_neighbors(router_2, router_1, network)
+            dv_algorithm(network)
+            network.topology_output()
+            send_messages(network, message_file)
+
+
+            pass
     
 
     pass

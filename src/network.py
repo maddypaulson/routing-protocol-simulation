@@ -27,9 +27,13 @@ class Router:
         return routing_table_str
         
 class Network:
-    def __init__(self, topology_file):
+    def __init__(self, topology_file, output_file):
         self.routers = {}
         self.initialize_topology(topology_file)
+        self.output_file = output_file
+        self.output_file_iterator = open(output_file, 'w')  # Open output file
+        
+       
     
     def add_router(self, router_id):
         router = Router(router_id)
@@ -65,21 +69,19 @@ class Network:
             print(f"Neighbors: {self.routers[router].neighbors}")
             print(f"Routing Table: {self.routers[router].routing_table}")
     
-    def topology_output(self, output_file):
-        print(output_file)
-        with open(output_file, 'w') as file:
-            for router in sorted(self.routers.values(), key=lambda x: x.id):
-                routing_table_str = router.print_routing_table()
-                file.write(routing_table_str)
-                file.write("\n")
-            
+    def topology_output(self):
+        for router in sorted(self.routers.values(), key=lambda x: x.id):
+            routing_table_str = router.print_routing_table()
+            self.output_file_iterator.write(routing_table_str)
+            self.output_file_iterator.write("\n")
+
     def send_message(self, router_id_from, router_id_to, message):
         router_from = self.get_router(router_id_from)
         router_to = self.get_router(router_id_to)
 
         if router_id_to not in router_from.routing_table.keys() or router_from.routing_table[router_id_to][1] == INFINITY:
             #impossible to reach
-            print(f"from {router_id_from} to {router_id_to} cost infinite hops unreachable message message {message}")
+            self.output_file_iterator.write(f"from {router_id_from} to {router_id_to} cost infinite hops unreachable message message {message}")
             return
         
         next_hop, cost = router_from.routing_table[router_to.id]
@@ -90,10 +92,9 @@ class Network:
             hops.append(str(next_hop))
             next_router = self.get_router(next_hop)
             next_hop, cost = next_router.routing_table[router_to.id]
-            total_cost += cost
             
         hops_str = ' '.join(map(str, hops))
-        print(f"from {router_id_from} to {router_id_to} cost {total_cost} hops {hops_str} message {message}")
+        self.output_file_iterator.write(f"from {router_id_from} to {router_id_to} cost {total_cost} hops {hops_str} message {message}")
                 
     def process_change(self, router_id1, router_id2, cost):
         if (cost == -999):
