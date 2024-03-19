@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['update_5frouting_5ftable_0',['update_routing_table',['../class_network_1_1_network.html#ae3c78047b7a6a6d20a66e14a95b85bb8',1,'Network.Network.update_routing_table()'],['../class_router_1_1_router.html#ac6182c3c399e1b498e1db2048ae3634d',1,'Router.Router.update_routing_table()']]]
+  ['send_5fmessage_0',['send_message',['../class_network_1_1_network.html#a9718930526ed5a32f879426583518698',1,'Network::Network']]],
+  ['send_5fmessages_1',['send_messages',['../class_network_1_1_network.html#a0b43a563348499988cde6b418d5d3243',1,'Network::Network']]],
+  ['should_5faccept_5fmessage_2',['should_accept_message',['../class_distance_vector_router_1_1_distance_vector_router.html#af9233a362110d05b8ce67000a8f0a20b',1,'DistanceVectorRouter::DistanceVectorRouter']]],
+  ['should_5ftransmit_5fmessage_3',['should_transmit_message',['../class_distance_vector_router_1_1_distance_vector_router.html#a5fb0a0fcab6f9463a535ccda036aee6e',1,'DistanceVectorRouter::DistanceVectorRouter']]]
 ];

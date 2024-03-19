@@ -148,6 +148,22 @@ class Network:
             routing_table_str = router.print_routing_table()
             self.output_file_iterator.write(routing_table_str)
             self.output_file_iterator.write("\n")
+    
+    def send_messages(self, message_file):
+        """
+        Send messages between routers in the network.
+
+        Args:
+            network (Network): The network object representing the routers and their connections.
+            message_file (str): The path to the file containing the messages to be sent.
+
+        Returns:
+            None
+        """
+        with open(message_file, 'r') as message_file_iterator:
+            for line in message_file_iterator:
+                router_id_from, router_id_to, message = line.split(" ", 2)
+                self.send_message(int(router_id_from), int(router_id_to),message)
 
     def send_message(self, router_id_from, router_id_to, message):
         """
@@ -168,12 +184,12 @@ class Network:
                 f"from {router_id_from} to {router_id_to} cost infinite hops unreachable message {message}")
             return
         else:
-            hops, total_cost = self.get_hops_and_cost(router_from, router_to)
+            hops, total_cost = self.get_hops_and_cost_from_to(router_from, router_to)
             hops_str = ' '.join(map(str, hops))
             self.output_file_iterator.write(
                 f"from {router_id_from} to {router_id_to} cost {total_cost} hops {hops_str} message {message}")
 
-    def get_hops_and_cost(self, router_from, router_to):
+    def get_hops_and_cost_from_to(self, router_from, router_to):
         """
         Calculates the hops and total cost to reach a destination router.
 
@@ -233,7 +249,7 @@ class Network:
 
         else:
             self.add_link(router_id1, router_id2, cost)
-
+    
     def __del__(self):
         """
         Closes the output file when the Network object is deleted.

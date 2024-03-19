@@ -1,5 +1,11 @@
 \doxysection{Router.\+Router Class Reference}
 \hypertarget{class_router_1_1_router}{}\label{class_router_1_1_router}\index{Router.Router@{Router.Router}}
+Inheritance diagram for Router.\+Router\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_router_1_1_router}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,6 +14,8 @@
 \mbox{\hyperlink{class_router_1_1_router_aeeed50e0918d7b6eebd0ac3cb19c43bf}{add\+\_\+neighbor}} (self, neighbor, cost)
 \item 
 \mbox{\hyperlink{class_router_1_1_router_ac6182c3c399e1b498e1db2048ae3634d}{update\+\_\+routing\+\_\+table}} (self, destination, next\+\_\+hop, cost)
+\item 
+\mbox{\hyperlink{class_router_1_1_router_af77bcb03001f08bfe2211f1354f1eeb8}{get\+\_\+next\+\_\+hop\+\_\+cost}} (self, destination\+\_\+id)
 \item 
 \mbox{\hyperlink{class_router_1_1_router_a4871b0315c99dc3618087ea1110dd350}{print\+\_\+routing\+\_\+table}} (self)
 \end{DoxyCompactItemize}
@@ -42,6 +50,10 @@ Returns:
 \end{DoxyVerb}
  
 
+Reimplemented in \mbox{\hyperlink{class_distance_vector_router_1_1_distance_vector_router_a1f6d0b4a9453aa0232abee1c70ecfd72}{Distance\+Vector\+Router.\+Distance\+Vector\+Router}}.
+
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_router_1_1_router_aeeed50e0918d7b6eebd0ac3cb19c43bf}\label{class_router_1_1_router_aeeed50e0918d7b6eebd0ac3cb19c43bf} 
 \index{Router.Router@{Router.Router}!add\_neighbor@{add\_neighbor}}
@@ -57,6 +69,20 @@ Parameters:
 
 Returns:
 - None
+\end{DoxyVerb}
+ \Hypertarget{class_router_1_1_router_af77bcb03001f08bfe2211f1354f1eeb8}\label{class_router_1_1_router_af77bcb03001f08bfe2211f1354f1eeb8} 
+\index{Router.Router@{Router.Router}!get\_next\_hop\_cost@{get\_next\_hop\_cost}}
+\index{get\_next\_hop\_cost@{get\_next\_hop\_cost}!Router.Router@{Router.Router}}
+\doxysubsubsection{\texorpdfstring{get\_next\_hop\_cost()}{get\_next\_hop\_cost()}}
+{\footnotesize\ttfamily Router.\+Router.\+get\+\_\+next\+\_\+hop\+\_\+cost (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{destination\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the next hop and cost to reach a destination.
+
+Parameters:
+- destination_id (int): The destination router object.
+
+Returns:
+- tuple: A tuple containing the next hop and cost.
 \end{DoxyVerb}
  \Hypertarget{class_router_1_1_router_a4871b0315c99dc3618087ea1110dd350}\label{class_router_1_1_router_a4871b0315c99dc3618087ea1110dd350} 
 \index{Router.Router@{Router.Router}!print\_routing\_table@{print\_routing\_table}}

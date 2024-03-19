@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['readme_0',['README',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['remove_5flink_1',['remove_link',['../class_network_1_1_network.html#ab830bee550b95f7673f42a3df8d029ad',1,'Network::Network']]],
-  ['router_2',['Router',['../class_router_1_1_router.html',1,'Router']]]
+  ['print_5fnetwork_0',['print_network',['../class_network_1_1_network.html#a9f2e744c6a61959237001a1569c5bc7f',1,'Network::Network']]],
+  ['print_5frouting_5ftable_1',['print_routing_table',['../class_router_1_1_router.html#a4871b0315c99dc3618087ea1110dd350',1,'Router::Router']]],
+  ['process_5fchange_2',['process_change',['../class_network_1_1_network.html#a1ce2c4b7ab3d690319503da83295bd04',1,'Network::Network']]]
 ];

@@ -1,0 +1,166 @@
+\doxysection{Distance\+Vector\+Nework.\+Distance\+Vector\+Network Class Reference}
+\hypertarget{class_distance_vector_nework_1_1_distance_vector_network}{}\label{class_distance_vector_nework_1_1_distance_vector_network}\index{DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}}
+Inheritance diagram for Distance\+Vector\+Nework.\+Distance\+Vector\+Network\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_distance_vector_nework_1_1_distance_vector_network}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_a9ca058fdf2e120a0c77f4e806d2c6992}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, topology\+\_\+file, output\+\_\+file)
+\item 
+\mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_a1f65842804ed659812a3433ae7fee7e5}{add\+\_\+router}} (self, router\+\_\+id)
+\item 
+\mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_aaa7f89ee1e9bd6f8f3330419642b22b2}{apply\+\_\+changes\+\_\+and\+\_\+output}} (self, changes\+\_\+file, message\+\_\+file)
+\item 
+\mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_a764008b6a947ddc98f8fefd69fa05b98}{dv\+\_\+algorithm}} (self)
+\item 
+\mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_aee392b1f769eaaac5a3500a224ea2ef9}{notify\+\_\+neighbors}} (self, router, destination\+\_\+router)
+\item 
+\mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_a82aac0d8dc1ce0fd5242ddbdf658f86f}{invalidate\+\_\+routes}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_1_1_network_aaa211a07cc2f7930599643c3a5c8828c}{initialize\+\_\+topology}} (self, topology\+\_\+file)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a5cb9b371da3153d4a64e577d419ec98c}{get\+\_\+router}} (self, router\+\_\+id)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_ae3c78047b7a6a6d20a66e14a95b85bb8}{update\+\_\+routing\+\_\+table}} (self, router, destination, next\+\_\+hop, cost)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a1df8521ff14477f4dfe18d761a5074de}{add\+\_\+link}} (self, router\+\_\+id1, router\+\_\+id2, cost)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_ab830bee550b95f7673f42a3df8d029ad}{remove\+\_\+link}} (self, router1, router2)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a2757fd1c2cd14551539e874a134f06c9}{invalidate\+\_\+routes\+\_\+for\+\_\+removed\+\_\+link}} (self, router1, router2)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a9f2e744c6a61959237001a1569c5bc7f}{print\+\_\+network}} (self)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a7b0c090a145cc4edd0a822e764fcc121}{topology\+\_\+output}} (self)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a0b43a563348499988cde6b418d5d3243}{send\+\_\+messages}} (self, message\+\_\+file)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a9718930526ed5a32f879426583518698}{send\+\_\+message}} (self, router\+\_\+id\+\_\+from, router\+\_\+id\+\_\+to, message)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a76a501317547e9f4049fdb16ce820cba}{get\+\_\+hops\+\_\+and\+\_\+cost\+\_\+from\+\_\+to}} (self, router\+\_\+from, router\+\_\+to)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}{check\+\_\+impossible\+\_\+to\+\_\+reach}} (self, router\+\_\+from, router\+\_\+to)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_a1ce2c4b7ab3d690319503da83295bd04}{process\+\_\+change}} (self, router\+\_\+id1, router\+\_\+id2, cost)
+\item 
+\mbox{\hyperlink{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}{\+\_\+\+\_\+del\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries routers}
+\item 
+{\bfseries output\+\_\+file}
+\item 
+{\bfseries output\+\_\+file\+\_\+iterator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_distance_vector_nework_1_1_distance_vector_network_a9ca058fdf2e120a0c77f4e806d2c6992}\label{class_distance_vector_nework_1_1_distance_vector_network_a9ca058fdf2e120a0c77f4e806d2c6992} 
+\index{DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily Distance\+Vector\+Nework.\+Distance\+Vector\+Network.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{topology\+\_\+file,  }\item[{}]{output\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes a Network object.
+
+Args:
+    topology_file (str): The path to the topology file.
+    output_file (str): The path to the output file.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{class_network_1_1_network_a9478c4fd4498c0b752b03fd7a04ba042}{Network.\+Network}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_distance_vector_nework_1_1_distance_vector_network_a1f65842804ed659812a3433ae7fee7e5}\label{class_distance_vector_nework_1_1_distance_vector_network_a1f65842804ed659812a3433ae7fee7e5} 
+\index{DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}!add\_router@{add\_router}}
+\index{add\_router@{add\_router}!DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{add\_router()}{add\_router()}}
+{\footnotesize\ttfamily Distance\+Vector\+Nework.\+Distance\+Vector\+Network.\+add\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a router to the network.
+
+Args:
+    router_id (int): The ID of the router to add.
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6}{Network.\+Network}}.
+
+\Hypertarget{class_distance_vector_nework_1_1_distance_vector_network_aaa7f89ee1e9bd6f8f3330419642b22b2}\label{class_distance_vector_nework_1_1_distance_vector_network_aaa7f89ee1e9bd6f8f3330419642b22b2} 
+\index{DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}!apply\_changes\_and\_output@{apply\_changes\_and\_output}}
+\index{apply\_changes\_and\_output@{apply\_changes\_and\_output}!DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{apply\_changes\_and\_output()}{apply\_changes\_and\_output()}}
+{\footnotesize\ttfamily Distance\+Vector\+Nework.\+Distance\+Vector\+Network.\+apply\+\_\+changes\+\_\+and\+\_\+output (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{changes\+\_\+file,  }\item[{}]{message\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply changes to the network and output the network state.
+
+Args:
+    changes_file (str): The path to the file containing the changes to be applied.
+    message_file (str): The path to the file containing the messages to be sent.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \Hypertarget{class_distance_vector_nework_1_1_distance_vector_network_a764008b6a947ddc98f8fefd69fa05b98}\label{class_distance_vector_nework_1_1_distance_vector_network_a764008b6a947ddc98f8fefd69fa05b98} 
+\index{DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}!dv\_algorithm@{dv\_algorithm}}
+\index{dv\_algorithm@{dv\_algorithm}!DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{dv\_algorithm()}{dv\_algorithm()}}
+{\footnotesize\ttfamily Distance\+Vector\+Nework.\+Distance\+Vector\+Network.\+dv\+\_\+algorithm (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Distance Vector Algorithm implementation.
+
+Args:
+    network (Network): The network object representing the routers and their connections.
+    priority_routers (list): List of priority routers. Default is an empty list.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \Hypertarget{class_distance_vector_nework_1_1_distance_vector_network_a82aac0d8dc1ce0fd5242ddbdf658f86f}\label{class_distance_vector_nework_1_1_distance_vector_network_a82aac0d8dc1ce0fd5242ddbdf658f86f} 
+\index{DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}!invalidate\_routes@{invalidate\_routes}}
+\index{invalidate\_routes@{invalidate\_routes}!DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{invalidate\_routes()}{invalidate\_routes()}}
+{\footnotesize\ttfamily Distance\+Vector\+Nework.\+Distance\+Vector\+Network.\+invalidate\+\_\+routes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Invalidate routes in the routing tables of all routers in the network.
+
+Args:
+    network (Network): The network object representing the routers and their connections.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \Hypertarget{class_distance_vector_nework_1_1_distance_vector_network_aee392b1f769eaaac5a3500a224ea2ef9}\label{class_distance_vector_nework_1_1_distance_vector_network_aee392b1f769eaaac5a3500a224ea2ef9} 
+\index{DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}!notify\_neighbors@{notify\_neighbors}}
+\index{notify\_neighbors@{notify\_neighbors}!DistanceVectorNework.DistanceVectorNetwork@{DistanceVectorNework.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{notify\_neighbors()}{notify\_neighbors()}}
+{\footnotesize\ttfamily Distance\+Vector\+Nework.\+Distance\+Vector\+Network.\+notify\+\_\+neighbors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router,  }\item[{}]{destination\+\_\+router }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Notify the neighbors of a router about a change in the routing table.
+
+Args:
+    router (Router): The router that has a change in its routing table.
+    destination_router (Router): The router that is the destination of the change.
+    network (Network): The network object representing the routers and their connections.
+
+Returns:
+    None
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Distance\+Vector\+Nework.\+py\end{DoxyCompactItemize}

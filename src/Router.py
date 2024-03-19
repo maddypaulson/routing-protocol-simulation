@@ -46,8 +46,22 @@ class Router:
         if cost == INFINITY: 
             self.routing_table[destination.id] = (None, INFINITY)
         else:
-            self.routing_table[destination.id] = (next_hop.id, cost)
-    
+            self.routing_table[destination.id] = (next_hop.id, cost)   
+     
+    def get_next_hop_cost(self, destination_id):
+        """
+        Retrieves the next hop and cost to reach a destination.
+
+        Parameters:
+        - destination_id (int): The destination router object.
+
+        Returns:
+        - tuple: A tuple containing the next hop and cost.
+        """
+        if(destination_id not in self.routing_table.keys()):
+            return (None, INFINITY)
+        return self.routing_table[destination_id]
+
     def print_routing_table(self):
         """
         Prints the routing table of the router.

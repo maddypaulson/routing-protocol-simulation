@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove_5flink_0',['remove_link',['../class_network_1_1_network.html#ab830bee550b95f7673f42a3df8d029ad',1,'Network::Network']]]
+  ['notify_5fneighbors_0',['notify_neighbors',['../class_distance_vector_nework_1_1_distance_vector_network.html#aee392b1f769eaaac5a3500a224ea2ef9',1,'DistanceVectorNework::DistanceVectorNetwork']]]
 ];

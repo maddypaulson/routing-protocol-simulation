@@ -73,20 +73,28 @@ $(function() {
 <div class="contents">
 <div class="textblock">Here is a list of all documented functions with links to the class documentation for each member:</div><ul>
 <li>__del__()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#aaf06c376f4d7363a7fddae40dd5d145b">Network.Network</a></li>
-<li>__init__()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a9478c4fd4498c0b752b03fd7a04ba042">Network.Network</a>, <a class="el" href="class_router_1_1_router.html#a70717ff4caaf973fb3a9334f0b5677f8">Router.Router</a></li>
+<li>__init__()&#160;:&#160;<a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#a9ca058fdf2e120a0c77f4e806d2c6992">DistanceVectorNework.DistanceVectorNetwork</a>, <a class="el" href="class_distance_vector_router_1_1_distance_vector_router.html#a1f6d0b4a9453aa0232abee1c70ecfd72">DistanceVectorRouter.DistanceVectorRouter</a>, <a class="el" href="class_network_1_1_network.html#a9478c4fd4498c0b752b03fd7a04ba042">Network.Network</a>, <a class="el" href="class_router_1_1_router.html#a70717ff4caaf973fb3a9334f0b5677f8">Router.Router</a></li>
 <li>add_link()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a1df8521ff14477f4dfe18d761a5074de">Network.Network</a></li>
 <li>add_neighbor()&#160;:&#160;<a class="el" href="class_router_1_1_router.html#aeeed50e0918d7b6eebd0ac3cb19c43bf">Router.Router</a></li>
-<li>add_router()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a9bda4e9cbfe06b485b9b9df3c54c00b6">Network.Network</a></li>
+<li>add_router()&#160;:&#160;<a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#a1f65842804ed659812a3433ae7fee7e5">DistanceVectorNework.DistanceVectorNetwork</a>, <a class="el" href="class_network_1_1_network.html#a9bda4e9cbfe06b485b9b9df3c54c00b6">Network.Network</a></li>
+<li>apply_changes_and_output()&#160;:&#160;<a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#aaa7f89ee1e9bd6f8f3330419642b22b2">DistanceVectorNework.DistanceVectorNetwork</a></li>
 <li>check_impossible_to_reach()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a32cc252da937bca2999f400d0f9eb683">Network.Network</a></li>
-<li>get_hops_and_cost()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a4b55b7d8e556ff257f4f7c3783ce6088">Network.Network</a></li>
+<li>dv_algorithm()&#160;:&#160;<a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#a764008b6a947ddc98f8fefd69fa05b98">DistanceVectorNework.DistanceVectorNetwork</a></li>
+<li>get_hops_and_cost_from_to()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a76a501317547e9f4049fdb16ce820cba">Network.Network</a></li>
+<li>get_next_hop_cost()&#160;:&#160;<a class="el" href="class_router_1_1_router.html#af77bcb03001f08bfe2211f1354f1eeb8">Router.Router</a></li>
 <li>get_router()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a5cb9b371da3153d4a64e577d419ec98c">Network.Network</a></li>
 <li>initialize_topology()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#aaa211a07cc2f7930599643c3a5c8828c">Network.Network</a></li>
+<li>invalidate_routes()&#160;:&#160;<a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#a82aac0d8dc1ce0fd5242ddbdf658f86f">DistanceVectorNework.DistanceVectorNetwork</a></li>
 <li>invalidate_routes_for_removed_link()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a2757fd1c2cd14551539e874a134f06c9">Network.Network</a></li>
+<li>notify_neighbors()&#160;:&#160;<a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#aee392b1f769eaaac5a3500a224ea2ef9">DistanceVectorNework.DistanceVectorNetwork</a></li>
 <li>print_network()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a9f2e744c6a61959237001a1569c5bc7f">Network.Network</a></li>
 <li>print_routing_table()&#160;:&#160;<a class="el" href="class_router_1_1_router.html#a4871b0315c99dc3618087ea1110dd350">Router.Router</a></li>
 <li>process_change()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a1ce2c4b7ab3d690319503da83295bd04">Network.Network</a></li>
 <li>remove_link()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#ab830bee550b95f7673f42a3df8d029ad">Network.Network</a></li>
 <li>send_message()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a9718930526ed5a32f879426583518698">Network.Network</a></li>
+<li>send_messages()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a0b43a563348499988cde6b418d5d3243">Network.Network</a></li>
+<li>should_accept_message()&#160;:&#160;<a class="el" href="class_distance_vector_router_1_1_distance_vector_router.html#af9233a362110d05b8ce67000a8f0a20b">DistanceVectorRouter.DistanceVectorRouter</a></li>
+<li>should_transmit_message()&#160;:&#160;<a class="el" href="class_distance_vector_router_1_1_distance_vector_router.html#a5fb0a0fcab6f9463a535ccda036aee6e">DistanceVectorRouter.DistanceVectorRouter</a></li>
 <li>topology_output()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#a7b0c090a145cc4edd0a822e764fcc121">Network.Network</a></li>
 <li>update_routing_table()&#160;:&#160;<a class="el" href="class_network_1_1_network.html#ae3c78047b7a6a6d20a66e14a95b85bb8">Network.Network</a>, <a class="el" href="class_router_1_1_router.html#ac6182c3c399e1b498e1db2048ae3634d">Router.Router</a></li>
 </ul>

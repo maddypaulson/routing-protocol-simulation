@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['print_5fnetwork_0',['print_network',['../class_network_1_1_network.html#a9f2e744c6a61959237001a1569c5bc7f',1,'Network::Network']]],
-  ['print_5frouting_5ftable_1',['print_routing_table',['../class_router_1_1_router.html#a4871b0315c99dc3618087ea1110dd350',1,'Router::Router']]],
-  ['process_5fchange_2',['process_change',['../class_network_1_1_network.html#a1ce2c4b7ab3d690319503da83295bd04',1,'Network::Network']]]
+  ['network_0',['Network',['../class_network_1_1_network.html',1,'Network']]],
+  ['notify_5fneighbors_1',['notify_neighbors',['../class_distance_vector_nework_1_1_distance_vector_network.html#aee392b1f769eaaac5a3500a224ea2ef9',1,'DistanceVectorNework::DistanceVectorNetwork']]]
 ];

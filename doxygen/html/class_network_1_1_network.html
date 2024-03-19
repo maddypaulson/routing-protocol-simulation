@@ -82,6 +82,15 @@ $(function() {
   <div class="headertitle"><div class="title">Network.Network Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for Network.Network:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_network_1_1_network.png" usemap="#Network.Network_map" alt=""/>
+  <map id="Network.Network_map" name="Network.Network_map">
+<area href="class_distance_vector_nework_1_1_distance_vector_network.html" alt="DistanceVectorNework.DistanceVectorNetwork" shape="rect" coords="0,56,279,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,10 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9f2e744c6a61959237001a1569c5bc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b0c090a145cc4edd0a822e764fcc121" id="r_a7b0c090a145cc4edd0a822e764fcc121"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b0c090a145cc4edd0a822e764fcc121">topology_output</a> (self)</td></tr>
 <tr class="separator:a7b0c090a145cc4edd0a822e764fcc121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b43a563348499988cde6b418d5d3243" id="r_a0b43a563348499988cde6b418d5d3243"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b43a563348499988cde6b418d5d3243">send_messages</a> (self, message_file)</td></tr>
+<tr class="separator:a0b43a563348499988cde6b418d5d3243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9718930526ed5a32f879426583518698" id="r_a9718930526ed5a32f879426583518698"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9718930526ed5a32f879426583518698">send_message</a> (self, router_id_from, router_id_to, message)</td></tr>
 <tr class="separator:a9718930526ed5a32f879426583518698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b55b7d8e556ff257f4f7c3783ce6088" id="r_a4b55b7d8e556ff257f4f7c3783ce6088"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b55b7d8e556ff257f4f7c3783ce6088">get_hops_and_cost</a> (self, router_from, router_to)</td></tr>
-<tr class="separator:a4b55b7d8e556ff257f4f7c3783ce6088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a501317547e9f4049fdb16ce820cba" id="r_a76a501317547e9f4049fdb16ce820cba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76a501317547e9f4049fdb16ce820cba">get_hops_and_cost_from_to</a> (self, router_from, router_to)</td></tr>
+<tr class="separator:a76a501317547e9f4049fdb16ce820cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32cc252da937bca2999f400d0f9eb683" id="r_a32cc252da937bca2999f400d0f9eb683"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32cc252da937bca2999f400d0f9eb683">check_impossible_to_reach</a> (self, router_from, router_to)</td></tr>
 <tr class="separator:a32cc252da937bca2999f400d0f9eb683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ce2c4b7ab3d690319503da83295bd04" id="r_a1ce2c4b7ab3d690319503da83295bd04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ce2c4b7ab3d690319503da83295bd04">process_change</a> (self, router_id1, router_id2, cost)</td></tr>
@@ -165,6 +176,8 @@ Args:
     topology_file (str): The path to the topology file.
     output_file (str): The path to the output file.
 </pre> 
+<p>Reimplemented in <a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#a9ca058fdf2e120a0c77f4e806d2c6992">DistanceVectorNework.DistanceVectorNetwork</a>.</p>
+
 </div>
 </div>
 <a id="aaf06c376f4d7363a7fddae40dd5d145b" name="aaf06c376f4d7363a7fddae40dd5d145b"></a>
@@ -247,6 +260,8 @@ Args:
 Args:
     router_id (int): The ID of the router to add.
 </pre> 
+<p>Reimplemented in <a class="el" href="class_distance_vector_nework_1_1_distance_vector_network.html#a1f65842804ed659812a3433ae7fee7e5">DistanceVectorNework.DistanceVectorNetwork</a>.</p>
+
 </div>
 </div>
 <a id="a32cc252da937bca2999f400d0f9eb683" name="a32cc252da937bca2999f400d0f9eb683"></a>
@@ -283,14 +298,14 @@ Returns:
 </pre> 
 </div>
 </div>
-<a id="a4b55b7d8e556ff257f4f7c3783ce6088" name="a4b55b7d8e556ff257f4f7c3783ce6088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b55b7d8e556ff257f4f7c3783ce6088">&#9670;&#160;</a></span>get_hops_and_cost()</h2>
+<a id="a76a501317547e9f4049fdb16ce820cba" name="a76a501317547e9f4049fdb16ce820cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a501317547e9f4049fdb16ce820cba">&#9670;&#160;</a></span>get_hops_and_cost_from_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Network.Network.get_hops_and_cost </td>
+          <td class="memname">Network.Network.get_hops_and_cost_from_to </td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
         </tr>
@@ -522,6 +537,35 @@ Args:
     router_id_from (int): The ID of the source router.
     router_id_to (int): The ID of the destination router.
     message (str): The message to send.
+</pre> 
+</div>
+</div>
+<a id="a0b43a563348499988cde6b418d5d3243" name="a0b43a563348499988cde6b418d5d3243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b43a563348499988cde6b418d5d3243">&#9670;&#160;</a></span>send_messages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Network.Network.send_messages </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>message_file</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Send messages between routers in the network.
+
+Args:
+    network (Network): The network object representing the routers and their connections.
+    message_file (str): The path to the file containing the messages to be sent.
+
+Returns:
+    None
 </pre> 
 </div>
 </div>

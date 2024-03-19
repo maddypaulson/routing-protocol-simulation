@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "_acginprstu",
-  1: "nr",
-  2: "_acgiprstu",
+  0: "_acdginprstu",
+  1: "dnr",
+  2: "_acdginprstu",
   3: "r"
 };
 

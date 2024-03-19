@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['print_5fnetwork_0',['print_network',['../class_network_1_1_network.html#a9f2e744c6a61959237001a1569c5bc7f',1,'Network::Network']]],
-  ['print_5frouting_5ftable_1',['print_routing_table',['../class_router_1_1_router.html#a4871b0315c99dc3618087ea1110dd350',1,'Router::Router']]],
-  ['process_5fchange_2',['process_change',['../class_network_1_1_network.html#a1ce2c4b7ab3d690319503da83295bd04',1,'Network::Network']]]
+  ['initialize_5ftopology_0',['initialize_topology',['../class_network_1_1_network.html#aaa211a07cc2f7930599643c3a5c8828c',1,'Network::Network']]],
+  ['invalidate_5froutes_1',['invalidate_routes',['../class_distance_vector_nework_1_1_distance_vector_network.html#a82aac0d8dc1ce0fd5242ddbdf658f86f',1,'DistanceVectorNework::DistanceVectorNetwork']]],
+  ['invalidate_5froutes_5ffor_5fremoved_5flink_2',['invalidate_routes_for_removed_link',['../class_network_1_1_network.html#a2757fd1c2cd14551539e874a134f06c9',1,'Network::Network']]]
 ];

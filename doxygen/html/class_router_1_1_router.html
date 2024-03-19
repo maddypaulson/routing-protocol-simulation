@@ -82,6 +82,15 @@ $(function() {
   <div class="headertitle"><div class="title">Router.Router Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for Router.Router:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_router_1_1_router.png" usemap="#Router.Router_map" alt=""/>
+  <map id="Router.Router_map" name="Router.Router_map">
+<area href="class_distance_vector_router_1_1_distance_vector_router.html" alt="DistanceVectorRouter.DistanceVectorRouter" shape="rect" coords="0,56,264,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -91,6 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeeed50e0918d7b6eebd0ac3cb19c43bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6182c3c399e1b498e1db2048ae3634d" id="r_ac6182c3c399e1b498e1db2048ae3634d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6182c3c399e1b498e1db2048ae3634d">update_routing_table</a> (self, destination, next_hop, cost)</td></tr>
 <tr class="separator:ac6182c3c399e1b498e1db2048ae3634d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77bcb03001f08bfe2211f1354f1eeb8" id="r_af77bcb03001f08bfe2211f1354f1eeb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af77bcb03001f08bfe2211f1354f1eeb8">get_next_hop_cost</a> (self, destination_id)</td></tr>
+<tr class="separator:af77bcb03001f08bfe2211f1354f1eeb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4871b0315c99dc3618087ea1110dd350" id="r_a4871b0315c99dc3618087ea1110dd350"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4871b0315c99dc3618087ea1110dd350">print_routing_table</a> (self)</td></tr>
 <tr class="separator:a4871b0315c99dc3618087ea1110dd350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -133,6 +144,8 @@ Parameters:
 Returns:
 - None
 </pre> 
+<p>Reimplemented in <a class="el" href="class_distance_vector_router_1_1_distance_vector_router.html#a1f6d0b4a9453aa0232abee1c70ecfd72">DistanceVectorRouter.DistanceVectorRouter</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -167,6 +180,34 @@ Parameters:
 
 Returns:
 - None
+</pre> 
+</div>
+</div>
+<a id="af77bcb03001f08bfe2211f1354f1eeb8" name="af77bcb03001f08bfe2211f1354f1eeb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77bcb03001f08bfe2211f1354f1eeb8">&#9670;&#160;</a></span>get_next_hop_cost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Router.Router.get_next_hop_cost </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>destination_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Retrieves the next hop and cost to reach a destination.
+
+Parameters:
+- destination_id (int): The destination router object.
+
+Returns:
+- tuple: A tuple containing the next hop and cost.
 </pre> 
 </div>
 </div>

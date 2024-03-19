@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['router_0',['Router',['../class_router_1_1_router.html',1,'Router']]]
+  ['network_0',['Network',['../class_network_1_1_network.html',1,'Network']]]
 ];

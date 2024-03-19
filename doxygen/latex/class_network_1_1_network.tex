@@ -1,5 +1,11 @@
 \doxysection{Network.\+Network Class Reference}
 \hypertarget{class_network_1_1_network}{}\label{class_network_1_1_network}\index{Network.Network@{Network.Network}}
+Inheritance diagram for Network.\+Network\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_network_1_1_network}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,9 +29,11 @@
 \item 
 \mbox{\hyperlink{class_network_1_1_network_a7b0c090a145cc4edd0a822e764fcc121}{topology\+\_\+output}} (self)
 \item 
+\mbox{\hyperlink{class_network_1_1_network_a0b43a563348499988cde6b418d5d3243}{send\+\_\+messages}} (self, message\+\_\+file)
+\item 
 \mbox{\hyperlink{class_network_1_1_network_a9718930526ed5a32f879426583518698}{send\+\_\+message}} (self, router\+\_\+id\+\_\+from, router\+\_\+id\+\_\+to, message)
 \item 
-\mbox{\hyperlink{class_network_1_1_network_a4b55b7d8e556ff257f4f7c3783ce6088}{get\+\_\+hops\+\_\+and\+\_\+cost}} (self, router\+\_\+from, router\+\_\+to)
+\mbox{\hyperlink{class_network_1_1_network_a76a501317547e9f4049fdb16ce820cba}{get\+\_\+hops\+\_\+and\+\_\+cost\+\_\+from\+\_\+to}} (self, router\+\_\+from, router\+\_\+to)
 \item 
 \mbox{\hyperlink{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}{check\+\_\+impossible\+\_\+to\+\_\+reach}} (self, router\+\_\+from, router\+\_\+to)
 \item 
@@ -70,7 +78,11 @@ Args:
     topology_file (str): The path to the topology file.
     output_file (str): The path to the output file.
 \end{DoxyVerb}
- \Hypertarget{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}\label{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b} 
+ 
+
+Reimplemented in \mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_a9ca058fdf2e120a0c77f4e806d2c6992}{Distance\+Vector\+Nework.\+Distance\+Vector\+Network}}.
+
+\Hypertarget{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}\label{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b} 
 \index{Network.Network@{Network.Network}!\_\_del\_\_@{\_\_del\_\_}}
 \index{\_\_del\_\_@{\_\_del\_\_}!Network.Network@{Network.Network}}
 \doxysubsubsection{\texorpdfstring{\_\_del\_\_()}{\_\_del\_\_()}}
@@ -106,7 +118,11 @@ Args:
 Args:
     router_id (int): The ID of the router to add.
 \end{DoxyVerb}
- \Hypertarget{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}\label{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683} 
+ 
+
+Reimplemented in \mbox{\hyperlink{class_distance_vector_nework_1_1_distance_vector_network_a1f65842804ed659812a3433ae7fee7e5}{Distance\+Vector\+Nework.\+Distance\+Vector\+Network}}.
+
+\Hypertarget{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}\label{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683} 
 \index{Network.Network@{Network.Network}!check\_impossible\_to\_reach@{check\_impossible\_to\_reach}}
 \index{check\_impossible\_to\_reach@{check\_impossible\_to\_reach}!Network.Network@{Network.Network}}
 \doxysubsubsection{\texorpdfstring{check\_impossible\_to\_reach()}{check\_impossible\_to\_reach()}}
@@ -121,11 +137,11 @@ Args:
 Returns:
     bool: True if it is impossible to reach, False otherwise.
 \end{DoxyVerb}
- \Hypertarget{class_network_1_1_network_a4b55b7d8e556ff257f4f7c3783ce6088}\label{class_network_1_1_network_a4b55b7d8e556ff257f4f7c3783ce6088} 
-\index{Network.Network@{Network.Network}!get\_hops\_and\_cost@{get\_hops\_and\_cost}}
-\index{get\_hops\_and\_cost@{get\_hops\_and\_cost}!Network.Network@{Network.Network}}
-\doxysubsubsection{\texorpdfstring{get\_hops\_and\_cost()}{get\_hops\_and\_cost()}}
-{\footnotesize\ttfamily Network.\+Network.\+get\+\_\+hops\+\_\+and\+\_\+cost (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+from,  }\item[{}]{router\+\_\+to }\end{DoxyParamCaption})}
+ \Hypertarget{class_network_1_1_network_a76a501317547e9f4049fdb16ce820cba}\label{class_network_1_1_network_a76a501317547e9f4049fdb16ce820cba} 
+\index{Network.Network@{Network.Network}!get\_hops\_and\_cost\_from\_to@{get\_hops\_and\_cost\_from\_to}}
+\index{get\_hops\_and\_cost\_from\_to@{get\_hops\_and\_cost\_from\_to}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{get\_hops\_and\_cost\_from\_to()}{get\_hops\_and\_cost\_from\_to()}}
+{\footnotesize\ttfamily Network.\+Network.\+get\+\_\+hops\+\_\+and\+\_\+cost\+\_\+from\+\_\+to (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+from,  }\item[{}]{router\+\_\+to }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Calculates the hops and total cost to reach a destination router.
 
@@ -219,6 +235,21 @@ Args:
     router_id_from (int): The ID of the source router.
     router_id_to (int): The ID of the destination router.
     message (str): The message to send.
+\end{DoxyVerb}
+ \Hypertarget{class_network_1_1_network_a0b43a563348499988cde6b418d5d3243}\label{class_network_1_1_network_a0b43a563348499988cde6b418d5d3243} 
+\index{Network.Network@{Network.Network}!send\_messages@{send\_messages}}
+\index{send\_messages@{send\_messages}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{send\_messages()}{send\_messages()}}
+{\footnotesize\ttfamily Network.\+Network.\+send\+\_\+messages (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{message\+\_\+file }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Send messages between routers in the network.
+
+Args:
+    network (Network): The network object representing the routers and their connections.
+    message_file (str): The path to the file containing the messages to be sent.
+
+Returns:
+    None
 \end{DoxyVerb}
  \Hypertarget{class_network_1_1_network_a7b0c090a145cc4edd0a822e764fcc121}\label{class_network_1_1_network_a7b0c090a145cc4edd0a822e764fcc121} 
 \index{Network.Network@{Network.Network}!topology\_output@{topology\_output}}
