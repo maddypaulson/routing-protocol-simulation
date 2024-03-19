@@ -11,7 +11,6 @@ class DistanceVectorRouter(Router):
         Parameters:
         - neigbour_router (Router): The neighbor router.
         - destination (Router): The destination router.
-        - next_hop_id (int): The ID of the next hop router.
 
         Returns:
         - bool: True if the message should be transmitted, False otherwise.

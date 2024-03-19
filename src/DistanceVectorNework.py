@@ -52,10 +52,6 @@ class DistanceVectorNetwork(Network):
         """
         Distance Vector Algorithm implementation.
 
-        Args:
-            network (Network): The network object representing the routers and their connections.
-            priority_routers (list): List of priority routers. Default is an empty list.
-
         Returns:
             None
         """
@@ -90,7 +86,6 @@ class DistanceVectorNetwork(Network):
         Args:
             router (Router): The router that has a change in its routing table.
             destination_router (Router): The router that is the destination of the change.
-            network (Network): The network object representing the routers and their connections.
 
         Returns:
             None
@@ -107,9 +102,6 @@ class DistanceVectorNetwork(Network):
     def invalidate_routes(self):
         """
         Invalidate routes in the routing tables of all routers in the network.
-
-        Args:
-            network (Network): The network object representing the routers and their connections.
 
         Returns:
             None
