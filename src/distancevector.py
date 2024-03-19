@@ -67,11 +67,11 @@ class Network:
             print(f"Neighbors: {self.routers[router].neighbors}")
             print(f"Routing Table: {self.routers[router].routing_table}")
     
-    def topology_output(self):
-        with open('output.txt', 'w') as file:
-            for router in self.routers.values():
+    def topology_output(self, output_file):
+        print(output_file)
+        with open(output_file, 'w') as file:
+            for router in sorted(self.routers.values(), key=lambda x: x.id):
                 routing_table_str = router.print_routing_table()
-                file.write(f"Router {router.id} Routing Table:\n")
                 file.write(routing_table_str)
                 file.write("\n")
             
@@ -164,7 +164,8 @@ def main():
 
     network = Network(topology_file)
     dv_algorithm(network)
-    print(network.topology_output())
+    network.topology_output(output_file)
+    network.print_network()
     with open(changes_file, 'r') as changes_file:
         for line in changes_file:
             router_1, router_2, cost = line.split()
@@ -173,7 +174,7 @@ def main():
             dv_algorithm(network)
             pass
     
-    network.print_network()
+    # network.print_network()
 
     pass
 
