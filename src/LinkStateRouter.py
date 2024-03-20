@@ -76,45 +76,43 @@ class LinkStateRouter(Router):
 
         Returns:
             tuple: A tuple containing two dictionaries - shortest_paths and next_hops.
-                shortest_paths: A dictionary mapping each node to its shortest path cost from the current router.
+                shortest_distances: A dictionary mapping each node to its shortest path cost from the current router.
                 next_hops: A dictionary mapping each node to its next hop router ID.
         """
-        shortest_paths = {node: INFINITY for node in self.network_topology}
-        previous_nodes = {node: None for node in self.network_topology}
+        shortest_distances = {node: INFINITY for node in self.network_topology}
+        paths = {self.id: [self.id]}   
         next_hops = {node: None for node in self.network_topology}
-        shortest_paths[self.id] = 0
-        pq = [(0, self.id)]
+        shortest_distances[self.id] = 0
+        pq = [(0, self.id, [self.id])]
         
         while pq:
-            current_distance, current_node = heapq.heappop(pq)
+            current_distance, current_node, current_path = heapq.heappop(pq)
             
-            if current_distance > shortest_paths[current_node]:
+            if current_distance > shortest_distances[current_node]:
                 continue
             
             for neighbor, weight in self.network_topology[current_node].items():
                 distance = current_distance + weight
-                
-                if distance < shortest_paths[neighbor] or (distance == shortest_paths[neighbor] and neighbor < previous_nodes.get(neighbor, None)):
-                    shortest_paths[neighbor] = distance
-                    previous_nodes[neighbor] = current_node
-                    heapq.heappush(pq, (distance, neighbor,))
+                new_path = current_path + [neighbor]
+                    
+                if distance < shortest_distances.get(neighbor, INFINITY):
+                    shortest_distances[neighbor] = distance
+                    paths[neighbor] = new_path
+                    heapq.heappush(pq, (distance, neighbor, new_path))
+                elif distance == shortest_distances[neighbor] and  new_path[-2] < paths[neighbor][-2]:
+                    paths[neighbor] = new_path
         # reconstruct shortest path in order to find the next hop
         for node in self.network_topology:
             if node == self.id:
                 next_hops[node] = self.id
             else:
-                current = node
-                path = []
-                while current in previous_nodes:
-                    path.insert(0, current)
-                    current = previous_nodes[current]
-                    
+                path = paths[node]
                 if len(path) > 1:
                     next_hops[node] = path[1]
                 else:
                     next_hops[node] = INFINITY
                         
-        return shortest_paths, next_hops
+        return shortest_distances, next_hops
         
     def update_routing_table_dijkstra(self):
         """

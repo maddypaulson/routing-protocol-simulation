@@ -50,8 +50,10 @@ class LinkStateNetwork(Network):
         self.send_messages(message_file)
 
         with open(changes_file, 'r') as changes_file:
+            print("Processing changes...")
             for line in changes_file:
                 router_id1, router_id2, cost = line.split()
+               
                 self.process_change(int(router_id1), int(router_id2), int(cost))
 
                 router_1 = self.get_router(int(router_id1))
@@ -64,3 +66,22 @@ class LinkStateNetwork(Network):
 
                 self.topology_output()
                 self.send_messages(message_file)
+
+    def process_change(self, router_id1, router_id2, cost):
+        """
+        Processes a change in the network.
+
+        Args:
+            router_id1 (int): The ID of the first router.
+            router_id2 (int): The ID of the second router.
+            cost (int): The cost of the link between the routers.
+        """
+        should_distribute_all_lsp = False
+
+        if (router_id1 not in self.routers or router_id2  not in self.routers) and cost > 0:
+            should_distribute_all_lsp = True
+            
+        super().process_change(router_id1, router_id2, cost)
+
+        if should_distribute_all_lsp:
+            self.distribute_all_lsp()
