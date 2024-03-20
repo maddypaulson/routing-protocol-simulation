@@ -81,7 +81,6 @@ class LinkStateRouter(Router):
         """
         shortest_distances = {node: INFINITY for node in self.network_topology}
         paths = {self.id: [self.id]}   
-        next_hops = {node: None for node in self.network_topology}
         shortest_distances[self.id] = 0
         pq = [(0, self.id, [self.id])]
         
@@ -101,7 +100,10 @@ class LinkStateRouter(Router):
                     heapq.heappush(pq, (distance, neighbor, new_path))
                 elif distance == shortest_distances[neighbor] and  new_path[-2] < paths[neighbor][-2]:
                     paths[neighbor] = new_path
+
         # reconstruct shortest path in order to find the next hop
+        next_hops = {node: None for node in self.network_topology}
+
         for node in self.network_topology:
             if node == self.id:
                 next_hops[node] = self.id
