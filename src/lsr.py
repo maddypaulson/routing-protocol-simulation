@@ -15,9 +15,10 @@ def main():
     topology_file, message_file, changes_file, output_file  = args
 
     network = LinkStateNetwork(topology_file, output_file)
+    network.apply_changes_and_output(changes_file, message_file)
     
-    network.distribute_lsp()
-    network.apply_ls_all_routers()
+    # network.distribute_all_lsp()
+    # network.apply_ls_all_routers()
     network.print_network()
 
 if __name__ == "__main__":
