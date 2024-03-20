@@ -5,7 +5,7 @@ class DistanceVectorNetwork(Network):
     def __init__(self, topology_file, output_file):
         super().__init__(topology_file, output_file)
 
-    def add_router(self, router_id):
+    def _add_router(self, router_id):
         """
         Adds a router to the network.
 
@@ -27,7 +27,7 @@ class DistanceVectorNetwork(Network):
         Returns:
             None
         """
-        self.dv_algorithm()
+        self._dv_algorithm()
         self.topology_output()
         self.send_messages(message_file)
         with open(changes_file, 'r') as changes_file:
@@ -39,16 +39,16 @@ class DistanceVectorNetwork(Network):
                 router_1 = self.get_router(int(router_id1))
                 router_2 = self.get_router(int(router_id2))
 
-                self.notify_neighbors(router_1, router_2)
-                self.notify_neighbors(router_2, router_1)
+                self._notify_neighbors(router_1, router_2)
+                self._notify_neighbors(router_2, router_1)
 
-                self.invalidate_expired_routes()
+                self._invalidate_expired_routes()
 
-                self.dv_algorithm()
+                self._dv_algorithm()
                 self.topology_output()
                 self.send_messages(message_file)
 
-    def dv_algorithm(self):
+    def _dv_algorithm(self):
         """
         Distance Vector Algorithm implementation.
 
@@ -79,7 +79,7 @@ class DistanceVectorNetwork(Network):
                                 neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
                                 changes_made = True
 
-    def notify_neighbors(self, router, destination_router):
+    def _notify_neighbors(self, router, destination_router):
         """
         Notify the neighbors of a router about a change in the routing table.
         Way to simulate the poison reverse.
@@ -98,9 +98,9 @@ class DistanceVectorNetwork(Network):
                 if  neighbor_router.should_accept_message( router, destination_router, cost):
                     # Update the routing table of the neighbor
                     neighbor_router.update_routing_table(destination_router, router, cost + router.neighbors[neighbor])
-                    self.notify_neighbors(neighbor_router, destination_router)
+                    self._notify_neighbors(neighbor_router, destination_router)
 
-    def invalidate_expired_routes(self):
+    def _invalidate_expired_routes(self):
         """
         Invalidate routes in the routing tables of all routers in the network.
         Except for the neighbors of the routers. 

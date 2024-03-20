@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['network_0',['Network',['../class_network_1_1_network.html',1,'Network']]],
-  ['notify_5fneighbors_1',['notify_neighbors',['../class_distance_vector_nework_1_1_distance_vector_network.html#aee392b1f769eaaac5a3500a224ea2ef9',1,'DistanceVectorNework::DistanceVectorNetwork']]]
+  ['linkstatenetwork_0',['LinkStateNetwork',['../class_link_state_network_1_1_link_state_network.html',1,'LinkStateNetwork']]],
+  ['linkstaterouter_1',['LinkStateRouter',['../class_link_state_router_1_1_link_state_router.html',1,'LinkStateRouter']]]
 ];
