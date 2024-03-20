@@ -42,10 +42,8 @@ def print_messages_from_file(filename, graph, output_iterator):
                 path = paths[to_node]
                 path_cost = lengths[to_node]
                 hops = ' '.join(path[0:-1])
-                print(f"from {from_node} to {to_node} cost {path_cost} hops {hops} message {message}")
                 output_iterator.write(f"from {from_node} to {to_node} cost {path_cost} hops {hops} message {message}")
             else:
-                print(f"from {from_node} to {to_node} cost infinite hops unreachable message {message}")
                 output_iterator.write(f"from {from_node} to {to_node} cost infinite hops unreachable message {message}")
         output_iterator.write(f"\n\n")
             
@@ -62,11 +60,11 @@ def apply_changes_from_file(graph, changes_filename, message_filename, output_it
             node1, node2, cost = line.split()
             cost = int(cost)
             if cost == -999:
+                
                 if graph.has_edge(node1, node2):
                     graph.remove_edge(node1, node2)
             else:
                 graph.add_edge(node1, node2, weight=cost)
-            print("Change applied \n")
 
             print_routing_tables(graph, output_iterator)
             print_messages_from_file(message_filename, graph, output_iterator)
@@ -110,8 +108,7 @@ def print_routing_tables(graph, output_iterator):
                 next_hop = paths[target][1] if len(paths[target]) > 1 else target
                 cost = lengths[target]
             else:
-                pass
-            print(f"{target} {next_hop} {cost}")
+                continue
             output_iterator.write(f"{target} {next_hop} {cost}\n")
         output_iterator.write("\n")
 
