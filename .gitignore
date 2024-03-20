@@ -56,3 +56,5 @@ Dockerfile
 
 # Output folder
 dist/*
+
+src/__pycache__/*
