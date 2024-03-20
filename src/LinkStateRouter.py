@@ -73,8 +73,6 @@ class LinkStateRouter(Router):
         
         shortest_paths, next_hops = self.ls_algorithm()
         self.routing_table = {}
-        print(f"Shortest paths: ", shortest_paths)
-        print(f"Next hops: ", next_hops)
         
         for destination_id, cost in shortest_paths.items():
             destination_router = self.network.routers[destination_id]
