@@ -1,0 +1,26 @@
+# Dockerfile.template
+# Placeholder for the base image, which will be replaced based on the architecture
+FROM python:3.8-slim
+
+# The rest of the Dockerfile follows the setup needed for your application
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    make \
+    libfreetype6-dev \
+    libpng-dev \
+    libx11-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install the required packages
+RUN pip install pyinstaller
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the scripts into the container
+COPY src/dvr.py src/lsr.py ./
+
+# Note: The actual command to compile the scripts into binaries using PyInstaller
+# will be triggered by the Makefile, so it's not included here.
