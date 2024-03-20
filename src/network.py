@@ -164,6 +164,7 @@ class Network:
             for line in message_file_iterator:
                 router_id_from, router_id_to, message = line.split(" ", 2)
                 self.send_message(int(router_id_from), int(router_id_to),message)
+            self.output_file_iterator.write("\n\n")
 
     def send_message(self, router_id_from, router_id_to, message):
         """
