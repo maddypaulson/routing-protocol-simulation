@@ -16,7 +16,7 @@ class LinkStateNetwork(Network):
         """
         super().__init__(topology_file, output_file)
 
-    def add_router(self, router_id):
+    def _add_router(self, router_id):
         """
         Adds a router to the network.
 

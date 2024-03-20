@@ -13,12 +13,6 @@ Inheritance diagram for Link\+State\+Router.\+Link\+State\+Router\+:\begin{figur
 \item 
 \mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a1c1486ca351f45c35b091a6bcdfc8a93}{generate\+\_\+lsp}} (self, network)
 \item 
-\mbox{\hyperlink{class_link_state_router_1_1_link_state_router_af77e49f23956887f9168db0011ae18fd}{process\+\_\+lsp}} (self, lsp, network)
-\item 
-\mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a7b39235cab10cbf3804d544c79ecd0f4}{distribute\+\_\+lsp}} (self, lsp, network)
-\item 
-\mbox{\hyperlink{class_link_state_router_1_1_link_state_router_afb07a96c69bf23ba64371bb70ae54980}{ls\+\_\+algorithm}} (self)
-\item 
 \mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a77602edd6fa2f331c6021f2ed23970b5}{update\+\_\+routing\+\_\+table\+\_\+dijkstra}} (self)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_router_1_1_router}{Router.\+Router}}}
@@ -59,6 +53,15 @@ Inheritance diagram for Link\+State\+Router.\+Link\+State\+Router\+:\begin{figur
 \item 
 {\bfseries routing\+\_\+table}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a16f03e49bc776e5c40e0bd4e7de9bb58}{\+\_\+process\+\_\+lsp}} (self, lsp, network)
+\item 
+\mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a6490ba0caa4955665501e39ff5fe7c31}{\+\_\+distribute\+\_\+lsp}} (self, lsp, network)
+\item 
+\mbox{\hyperlink{class_link_state_router_1_1_link_state_router_aae1c1b1e5efba4a46e1e4a55b5c2c60a}{\+\_\+ls\+\_\+algorithm}} (self)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -88,16 +91,41 @@ Reimplemented from \mbox{\hyperlink{class_router_1_1_router_a70717ff4caaf973fb3a
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_link_state_router_1_1_link_state_router_a7b39235cab10cbf3804d544c79ecd0f4}\label{class_link_state_router_1_1_link_state_router_a7b39235cab10cbf3804d544c79ecd0f4} 
-\index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!distribute\_lsp@{distribute\_lsp}}
-\index{distribute\_lsp@{distribute\_lsp}!LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}}
-\doxysubsubsection{\texorpdfstring{distribute\_lsp()}{distribute\_lsp()}}
-{\footnotesize\ttfamily Link\+State\+Router.\+Link\+State\+Router.\+distribute\+\_\+lsp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lsp,  }\item[{}]{network }\end{DoxyParamCaption})}
+\Hypertarget{class_link_state_router_1_1_link_state_router_a6490ba0caa4955665501e39ff5fe7c31}\label{class_link_state_router_1_1_link_state_router_a6490ba0caa4955665501e39ff5fe7c31} 
+\index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!\_distribute\_lsp@{\_distribute\_lsp}}
+\index{\_distribute\_lsp@{\_distribute\_lsp}!LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}}
+\doxysubsubsection{\texorpdfstring{\_distribute\_lsp()}{\_distribute\_lsp()}}
+{\footnotesize\ttfamily Link\+State\+Router.\+Link\+State\+Router.\+\_\+distribute\+\_\+lsp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lsp,  }\item[{}]{network }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 \begin{DoxyVerb}Distributes a Link State Packet (LSP) to all other routers in the network.
 
 Args:
     lsp (dict): The LSP to be distributed.
+    network (Network): The network object representing the network topology.
+\end{DoxyVerb}
+ \Hypertarget{class_link_state_router_1_1_link_state_router_aae1c1b1e5efba4a46e1e4a55b5c2c60a}\label{class_link_state_router_1_1_link_state_router_aae1c1b1e5efba4a46e1e4a55b5c2c60a} 
+\index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!\_ls\_algorithm@{\_ls\_algorithm}}
+\index{\_ls\_algorithm@{\_ls\_algorithm}!LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}}
+\doxysubsubsection{\texorpdfstring{\_ls\_algorithm()}{\_ls\_algorithm()}}
+{\footnotesize\ttfamily Link\+State\+Router.\+Link\+State\+Router.\+\_\+ls\+\_\+algorithm (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Implements the Link State algorithm to calculate the shortest paths and next hops.
+
+Returns:
+    tuple: A tuple containing two dictionaries - shortest_paths and next_hops.
+        shortest_paths: A dictionary mapping each node to its shortest path cost from the current router.
+        next_hops: A dictionary mapping each node to its next hop router ID.
+\end{DoxyVerb}
+ \Hypertarget{class_link_state_router_1_1_link_state_router_a16f03e49bc776e5c40e0bd4e7de9bb58}\label{class_link_state_router_1_1_link_state_router_a16f03e49bc776e5c40e0bd4e7de9bb58} 
+\index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!\_process\_lsp@{\_process\_lsp}}
+\index{\_process\_lsp@{\_process\_lsp}!LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}}
+\doxysubsubsection{\texorpdfstring{\_process\_lsp()}{\_process\_lsp()}}
+{\footnotesize\ttfamily Link\+State\+Router.\+Link\+State\+Router.\+\_\+process\+\_\+lsp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lsp,  }\item[{}]{network }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Processes a received Link State Packet (LSP) and updates the network topology if necessary.
+
+Args:
+    lsp (dict): The received LSP.
     network (Network): The network object representing the network topology.
 \end{DoxyVerb}
  \Hypertarget{class_link_state_router_1_1_link_state_router_a1c1486ca351f45c35b091a6bcdfc8a93}\label{class_link_state_router_1_1_link_state_router_a1c1486ca351f45c35b091a6bcdfc8a93} 
@@ -109,31 +137,6 @@ Args:
 \begin{DoxyVerb}Generates a Link State Packet (LSP) and distributes it to all other routers in the network.
 
 Args:
-    network (Network): The network object representing the network topology.
-\end{DoxyVerb}
- \Hypertarget{class_link_state_router_1_1_link_state_router_afb07a96c69bf23ba64371bb70ae54980}\label{class_link_state_router_1_1_link_state_router_afb07a96c69bf23ba64371bb70ae54980} 
-\index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!ls\_algorithm@{ls\_algorithm}}
-\index{ls\_algorithm@{ls\_algorithm}!LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}}
-\doxysubsubsection{\texorpdfstring{ls\_algorithm()}{ls\_algorithm()}}
-{\footnotesize\ttfamily Link\+State\+Router.\+Link\+State\+Router.\+ls\+\_\+algorithm (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Implements the Link State algorithm to calculate the shortest paths and next hops.
-
-Returns:
-    tuple: A tuple containing two dictionaries - shortest_paths and next_hops.
-        shortest_paths: A dictionary mapping each node to its shortest path cost from the current router.
-        next_hops: A dictionary mapping each node to its next hop router ID.
-\end{DoxyVerb}
- \Hypertarget{class_link_state_router_1_1_link_state_router_af77e49f23956887f9168db0011ae18fd}\label{class_link_state_router_1_1_link_state_router_af77e49f23956887f9168db0011ae18fd} 
-\index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!process\_lsp@{process\_lsp}}
-\index{process\_lsp@{process\_lsp}!LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}}
-\doxysubsubsection{\texorpdfstring{process\_lsp()}{process\_lsp()}}
-{\footnotesize\ttfamily Link\+State\+Router.\+Link\+State\+Router.\+process\+\_\+lsp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lsp,  }\item[{}]{network }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Processes a received Link State Packet (LSP) and updates the network topology if necessary.
-
-Args:
-    lsp (dict): The received LSP.
     network (Network): The network object representing the network topology.
 \end{DoxyVerb}
  \Hypertarget{class_link_state_router_1_1_link_state_router_a77602edd6fa2f331c6021f2ed23970b5}\label{class_link_state_router_1_1_link_state_router_a77602edd6fa2f331c6021f2ed23970b5} 

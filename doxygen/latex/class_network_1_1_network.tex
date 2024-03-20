@@ -13,8 +13,6 @@ Inheritance diagram for Network.\+Network\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_network_1_1_network_aaa211a07cc2f7930599643c3a5c8828c}{initialize\+\_\+topology}} (self, topology\+\_\+file)
 \item 
-\mbox{\hyperlink{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6}{add\+\_\+router}} (self, router\+\_\+id)
-\item 
 \mbox{\hyperlink{class_network_1_1_network_a5cb9b371da3153d4a64e577d419ec98c}{get\+\_\+router}} (self, router\+\_\+id)
 \item 
 \mbox{\hyperlink{class_network_1_1_network_ae3c78047b7a6a6d20a66e14a95b85bb8}{update\+\_\+routing\+\_\+table}} (self, router, destination, next\+\_\+hop, cost)
@@ -52,6 +50,11 @@ Inheritance diagram for Network.\+Network\+:\begin{figure}[H]
 \item 
 \Hypertarget{class_network_1_1_network_a371d7c33357385b69ba553e31cf41e74}\label{class_network_1_1_network_a371d7c33357385b69ba553e31cf41e74} 
 {\bfseries output\+\_\+file\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_1_1_network_ac3e466ec277567240d10727d2fd6ed36}{\+\_\+add\+\_\+router}} (self, router\+\_\+id)
 \end{DoxyCompactItemize}
 
 
@@ -93,6 +96,21 @@ Reimplemented in \mbox{\hyperlink{class_distance_vector_network_1_1_distance_vec
  
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_1_1_network_ac3e466ec277567240d10727d2fd6ed36}\label{class_network_1_1_network_ac3e466ec277567240d10727d2fd6ed36} 
+\index{Network.Network@{Network.Network}!\_add\_router@{\_add\_router}}
+\index{\_add\_router@{\_add\_router}!Network.Network@{Network.Network}}
+\doxysubsubsection{\texorpdfstring{\_add\_router()}{\_add\_router()}}
+{\footnotesize\ttfamily Network.\+Network.\+\_\+add\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Adds a router to the network.
+
+Args:
+    router_id (int): The ID of the router to add.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_ac4c480f8dab2d6df22418d834ff912ed}{Distance\+Vector\+Network.\+Distance\+Vector\+Network}}, and \mbox{\hyperlink{class_link_state_network_1_1_link_state_network_a79742674b73e30634b15e25f100f6f1a}{Link\+State\+Network.\+Link\+State\+Network}}.
+
 \Hypertarget{class_network_1_1_network_a1df8521ff14477f4dfe18d761a5074de}\label{class_network_1_1_network_a1df8521ff14477f4dfe18d761a5074de} 
 \index{Network.Network@{Network.Network}!add\_link@{add\_link}}
 \index{add\_link@{add\_link}!Network.Network@{Network.Network}}
@@ -107,22 +125,7 @@ Args:
     router_id2 (int): The ID of the second router.
     cost (int): The cost of the link.
 \end{DoxyVerb}
- \Hypertarget{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6}\label{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6} 
-\index{Network.Network@{Network.Network}!add\_router@{add\_router}}
-\index{add\_router@{add\_router}!Network.Network@{Network.Network}}
-\doxysubsubsection{\texorpdfstring{add\_router()}{add\_router()}}
-{\footnotesize\ttfamily Network.\+Network.\+add\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Adds a router to the network.
-
-Args:
-    router_id (int): The ID of the router to add.
-\end{DoxyVerb}
- 
-
-Reimplemented in \mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_a03e1b1e1143ed3e2e36cb59f0b900926}{Distance\+Vector\+Network.\+Distance\+Vector\+Network}}, and \mbox{\hyperlink{class_link_state_network_1_1_link_state_network_a550551b4e9a235d0549de46c08a92946}{Link\+State\+Network.\+Link\+State\+Network}}.
-
-\Hypertarget{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}\label{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683} 
+ \Hypertarget{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}\label{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683} 
 \index{Network.Network@{Network.Network}!check\_impossible\_to\_reach@{check\_impossible\_to\_reach}}
 \index{check\_impossible\_to\_reach@{check\_impossible\_to\_reach}!Network.Network@{Network.Network}}
 \doxysubsubsection{\texorpdfstring{check\_impossible\_to\_reach()}{check\_impossible\_to\_reach()}}

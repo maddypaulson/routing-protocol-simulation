@@ -37,7 +37,7 @@ class Network:
                 router1, router2, cost = line.split()
                 self.add_link(int(router1), int(router2), int(cost))
 
-    def add_router(self, router_id):
+    def _add_router(self, router_id):
         """
         Adds a router to the network.
 
@@ -84,9 +84,9 @@ class Network:
             cost (int): The cost of the link.
         """
         if router_id1 not in self.routers.keys():
-            self.add_router(router_id1)
+            self._add_router(router_id1)
         if router_id2 not in self.routers.keys():
-            self.add_router(router_id2)
+            self._add_router(router_id2)
 
         router1 = self.routers[router_id1]
         router2 = self.routers[router_id2]
@@ -240,9 +240,9 @@ class Network:
         """
         if cost == -999:
             if router_id1 not in self.routers.keys():
-                self.add_router(router_id1)
+                self._add_router(router_id1)
             if router_id2 not in self.routers.keys():
-                self.add_router(router_id2)
+                self._add_router(router_id2)
             router1 = self.get_router(router_id1)
             router2 = self.get_router(router_id2)
 

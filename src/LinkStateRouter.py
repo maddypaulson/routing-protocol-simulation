@@ -33,9 +33,9 @@ class LinkStateRouter(Router):
         """
         self.lsp_sequence_number += 1
         lsp =  {'id': self.id, 'sequence': self.lsp_sequence_number, 'neighbors': self.neighbors}
-        self.distribute_lsp(lsp, network)
+        self._distribute_lsp(lsp, network)
     
-    def process_lsp(self, lsp, network):
+    def _process_lsp(self, lsp, network):
         """
         Processes a received Link State Packet (LSP) and updates the network topology if necessary.
 
@@ -47,10 +47,10 @@ class LinkStateRouter(Router):
             self.sequence_number_tracker[lsp['id']] = lsp['sequence']
             self.network_topology[lsp['id']] = lsp['neighbors']
             self.network_topology[self.id] = self.neighbors
-            self.distribute_lsp(lsp, network)
+            self._distribute_lsp(lsp, network)
 
     
-    def distribute_lsp(self, lsp, network):
+    def _distribute_lsp(self, lsp, network):
         """
         Distributes a Link State Packet (LSP) to all other routers in the network.
 
@@ -59,11 +59,11 @@ class LinkStateRouter(Router):
             network (Network): The network object representing the network topology.
         """
         # send the lsp to all other routers in the network
-        for router2_id in self.neighbors.keys():
-                router2 = network.routers[router2_id]
-                router2.process_lsp(lsp, network)
+        for router_id in self.neighbors.keys():
+                router = network.routers[router_id]
+                router._process_lsp(lsp, network)
 
-    def ls_algorithm(self):
+    def _ls_algorithm(self):
         """
         Implements the Link State algorithm to calculate the shortest paths and next hops.
 
@@ -117,7 +117,7 @@ class LinkStateRouter(Router):
         This method calculates the shortest paths and next hops using the Link State algorithm,
         and updates the routing table accordingly.
         """
-        shortest_paths, next_hops = self.ls_algorithm()
+        shortest_paths, next_hops = self._ls_algorithm()
         self.routing_table = {}
         print(f"Shortest paths: ", shortest_paths)
         print(f"Next hops: ", next_hops)

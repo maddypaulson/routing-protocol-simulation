@@ -11,15 +11,7 @@ Inheritance diagram for Distance\+Vector\+Network.\+Distance\+Vector\+Network\+:
 \item 
 \mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_a3366132dbffee4b67be250befac1fe55}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, topology\+\_\+file, output\+\_\+file)
 \item 
-\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_a03e1b1e1143ed3e2e36cb59f0b900926}{add\+\_\+router}} (self, router\+\_\+id)
-\item 
 \mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_a7e894bb86762c94666405e8e44c58606}{apply\+\_\+changes\+\_\+and\+\_\+output}} (self, changes\+\_\+file, message\+\_\+file)
-\item 
-\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_adfefbb151a2470e81d6305d634ed7874}{dv\+\_\+algorithm}} (self)
-\item 
-\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_ab4683bdc25d6eed276e99e68af3b06ed}{notify\+\_\+neighbors}} (self, router, destination\+\_\+router)
-\item 
-\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_a514db288733865c561c9fad33a6f6163}{invalidate\+\_\+expired\+\_\+routes}} (self)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
 \begin{DoxyCompactItemize}
@@ -51,6 +43,17 @@ Inheritance diagram for Distance\+Vector\+Network.\+Distance\+Vector\+Network\+:
 \mbox{\hyperlink{class_network_1_1_network_a1ce2c4b7ab3d690319503da83295bd04}{process\+\_\+change}} (self, router\+\_\+id1, router\+\_\+id2, cost)
 \item 
 \mbox{\hyperlink{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}{\+\_\+\+\_\+del\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_ac4c480f8dab2d6df22418d834ff912ed}{\+\_\+add\+\_\+router}} (self, router\+\_\+id)
+\item 
+\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_a30e36e4f8b311742f32f327921a7c0f4}{\+\_\+dv\+\_\+algorithm}} (self)
+\item 
+\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_a3131c72ddc6f26d8f9909ab020b78f69}{\+\_\+notify\+\_\+neighbors}} (self, router, destination\+\_\+router)
+\item 
+\mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network_adab4c4b4f0fb064b3f40d77641e8ded6}{\+\_\+invalidate\+\_\+expired\+\_\+routes}} (self)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
@@ -84,11 +87,11 @@ Reimplemented from \mbox{\hyperlink{class_network_1_1_network_a9478c4fd4498c0b75
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_distance_vector_network_1_1_distance_vector_network_a03e1b1e1143ed3e2e36cb59f0b900926}\label{class_distance_vector_network_1_1_distance_vector_network_a03e1b1e1143ed3e2e36cb59f0b900926} 
-\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!add\_router@{add\_router}}
-\index{add\_router@{add\_router}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
-\doxysubsubsection{\texorpdfstring{add\_router()}{add\_router()}}
-{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+add\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id }\end{DoxyParamCaption})}
+\Hypertarget{class_distance_vector_network_1_1_distance_vector_network_ac4c480f8dab2d6df22418d834ff912ed}\label{class_distance_vector_network_1_1_distance_vector_network_ac4c480f8dab2d6df22418d834ff912ed} 
+\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!\_add\_router@{\_add\_router}}
+\index{\_add\_router@{\_add\_router}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{\_add\_router()}{\_add\_router()}}
+{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+\_\+add\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 \begin{DoxyVerb}Adds a router to the network.
 
@@ -97,9 +100,49 @@ Args:
 \end{DoxyVerb}
  
 
-Reimplemented from \mbox{\hyperlink{class_network_1_1_network_a9bda4e9cbfe06b485b9b9df3c54c00b6}{Network.\+Network}}.
+Reimplemented from \mbox{\hyperlink{class_network_1_1_network_ac3e466ec277567240d10727d2fd6ed36}{Network.\+Network}}.
 
-\Hypertarget{class_distance_vector_network_1_1_distance_vector_network_a7e894bb86762c94666405e8e44c58606}\label{class_distance_vector_network_1_1_distance_vector_network_a7e894bb86762c94666405e8e44c58606} 
+\Hypertarget{class_distance_vector_network_1_1_distance_vector_network_a30e36e4f8b311742f32f327921a7c0f4}\label{class_distance_vector_network_1_1_distance_vector_network_a30e36e4f8b311742f32f327921a7c0f4} 
+\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!\_dv\_algorithm@{\_dv\_algorithm}}
+\index{\_dv\_algorithm@{\_dv\_algorithm}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{\_dv\_algorithm()}{\_dv\_algorithm()}}
+{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+\_\+dv\+\_\+algorithm (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Distance Vector Algorithm implementation.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \Hypertarget{class_distance_vector_network_1_1_distance_vector_network_adab4c4b4f0fb064b3f40d77641e8ded6}\label{class_distance_vector_network_1_1_distance_vector_network_adab4c4b4f0fb064b3f40d77641e8ded6} 
+\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!\_invalidate\_expired\_routes@{\_invalidate\_expired\_routes}}
+\index{\_invalidate\_expired\_routes@{\_invalidate\_expired\_routes}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{\_invalidate\_expired\_routes()}{\_invalidate\_expired\_routes()}}
+{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+\_\+invalidate\+\_\+expired\+\_\+routes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Invalidate routes in the routing tables of all routers in the network.
+Except for the neighbors of the routers. 
+Way to simulate the timeout.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \Hypertarget{class_distance_vector_network_1_1_distance_vector_network_a3131c72ddc6f26d8f9909ab020b78f69}\label{class_distance_vector_network_1_1_distance_vector_network_a3131c72ddc6f26d8f9909ab020b78f69} 
+\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!\_notify\_neighbors@{\_notify\_neighbors}}
+\index{\_notify\_neighbors@{\_notify\_neighbors}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{\_notify\_neighbors()}{\_notify\_neighbors()}}
+{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+\_\+notify\+\_\+neighbors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router,  }\item[{}]{destination\+\_\+router }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Notify the neighbors of a router about a change in the routing table.
+Way to simulate the poison reverse.
+
+Args:
+    router (Router): The router that has a change in its routing table.
+    destination_router (Router): The router that is the destination of the change.
+
+Returns:
+    None
+\end{DoxyVerb}
+ \Hypertarget{class_distance_vector_network_1_1_distance_vector_network_a7e894bb86762c94666405e8e44c58606}\label{class_distance_vector_network_1_1_distance_vector_network_a7e894bb86762c94666405e8e44c58606} 
 \index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!apply\_changes\_and\_output@{apply\_changes\_and\_output}}
 \index{apply\_changes\_and\_output@{apply\_changes\_and\_output}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
 \doxysubsubsection{\texorpdfstring{apply\_changes\_and\_output()}{apply\_changes\_and\_output()}}
@@ -110,46 +153,6 @@ Reimplemented from \mbox{\hyperlink{class_network_1_1_network_a9bda4e9cbfe06b485
 Args:
     changes_file (str): The path to the file containing the changes to be applied.
     message_file (str): The path to the file containing the messages to be sent.
-
-Returns:
-    None
-\end{DoxyVerb}
- \Hypertarget{class_distance_vector_network_1_1_distance_vector_network_adfefbb151a2470e81d6305d634ed7874}\label{class_distance_vector_network_1_1_distance_vector_network_adfefbb151a2470e81d6305d634ed7874} 
-\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!dv\_algorithm@{dv\_algorithm}}
-\index{dv\_algorithm@{dv\_algorithm}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
-\doxysubsubsection{\texorpdfstring{dv\_algorithm()}{dv\_algorithm()}}
-{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+dv\+\_\+algorithm (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Distance Vector Algorithm implementation.
-
-Returns:
-    None
-\end{DoxyVerb}
- \Hypertarget{class_distance_vector_network_1_1_distance_vector_network_a514db288733865c561c9fad33a6f6163}\label{class_distance_vector_network_1_1_distance_vector_network_a514db288733865c561c9fad33a6f6163} 
-\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!invalidate\_expired\_routes@{invalidate\_expired\_routes}}
-\index{invalidate\_expired\_routes@{invalidate\_expired\_routes}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
-\doxysubsubsection{\texorpdfstring{invalidate\_expired\_routes()}{invalidate\_expired\_routes()}}
-{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+invalidate\+\_\+expired\+\_\+routes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Invalidate routes in the routing tables of all routers in the network.
-Except for the neighbors of the routers. 
-Way to simulate the timeout.
-
-Returns:
-    None
-\end{DoxyVerb}
- \Hypertarget{class_distance_vector_network_1_1_distance_vector_network_ab4683bdc25d6eed276e99e68af3b06ed}\label{class_distance_vector_network_1_1_distance_vector_network_ab4683bdc25d6eed276e99e68af3b06ed} 
-\index{DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}!notify\_neighbors@{notify\_neighbors}}
-\index{notify\_neighbors@{notify\_neighbors}!DistanceVectorNetwork.DistanceVectorNetwork@{DistanceVectorNetwork.DistanceVectorNetwork}}
-\doxysubsubsection{\texorpdfstring{notify\_neighbors()}{notify\_neighbors()}}
-{\footnotesize\ttfamily Distance\+Vector\+Network.\+Distance\+Vector\+Network.\+notify\+\_\+neighbors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router,  }\item[{}]{destination\+\_\+router }\end{DoxyParamCaption})}
-
-\begin{DoxyVerb}Notify the neighbors of a router about a change in the routing table.
-Way to simulate the poison reverse.
-
-Args:
-    router (Router): The router that has a change in its routing table.
-    destination_router (Router): The router that is the destination of the change.
 
 Returns:
     None

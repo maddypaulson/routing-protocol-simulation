@@ -77,6 +77,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_link_state_network_1_1_link_state_network-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">LinkStateNetwork.LinkStateNetwork Class Reference</div></div>
 </div><!--header-->
@@ -95,8 +96,6 @@ Inheritance diagram for LinkStateNetwork.LinkStateNetwork:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac50113a4ea4d92b9f59505378d95c86b" id="r_ac50113a4ea4d92b9f59505378d95c86b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac50113a4ea4d92b9f59505378d95c86b">__init__</a> (self, topology_file, output_file)</td></tr>
 <tr class="separator:ac50113a4ea4d92b9f59505378d95c86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a550551b4e9a235d0549de46c08a92946" id="r_a550551b4e9a235d0549de46c08a92946"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550551b4e9a235d0549de46c08a92946">add_router</a> (self, router_id)</td></tr>
-<tr class="separator:a550551b4e9a235d0549de46c08a92946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ad066b9db76643112269e6f79538d3a" id="r_a5ad066b9db76643112269e6f79538d3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ad066b9db76643112269e6f79538d3a">distribute_all_lsp</a> (self)</td></tr>
 <tr class="separator:a5ad066b9db76643112269e6f79538d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2a77e0cf4dfaa2683e3424a25ffcd95" id="r_aa2a77e0cf4dfaa2683e3424a25ffcd95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2a77e0cf4dfaa2683e3424a25ffcd95">apply_changes_and_output</a> (self, changes_file, message_file)</td></tr>
@@ -130,6 +129,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1ce2c4b7ab3d690319503da83295bd04 inherit pub_methods_class_network_1_1_network"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf06c376f4d7363a7fddae40dd5d145b inherit pub_methods_class_network_1_1_network" id="r_aaf06c376f4d7363a7fddae40dd5d145b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_1_1_network.html#aaf06c376f4d7363a7fddae40dd5d145b">__del__</a> (self)</td></tr>
 <tr class="separator:aaf06c376f4d7363a7fddae40dd5d145b inherit pub_methods_class_network_1_1_network"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a79742674b73e30634b15e25f100f6f1a" id="r_a79742674b73e30634b15e25f100f6f1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79742674b73e30634b15e25f100f6f1a">_add_router</a> (self, router_id)</td></tr>
+<tr class="separator:a79742674b73e30634b15e25f100f6f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -181,14 +185,17 @@ Args:
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a550551b4e9a235d0549de46c08a92946" name="a550551b4e9a235d0549de46c08a92946"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a550551b4e9a235d0549de46c08a92946">&#9670;&#160;</a></span>add_router()</h2>
+<a id="a79742674b73e30634b15e25f100f6f1a" name="a79742674b73e30634b15e25f100f6f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79742674b73e30634b15e25f100f6f1a">&#9670;&#160;</a></span>_add_router()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">LinkStateNetwork.LinkStateNetwork.add_router </td>
+          <td class="memname">LinkStateNetwork.LinkStateNetwork._add_router </td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
         </tr>
@@ -198,13 +205,18 @@ Args:
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>router_id</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <pre class="fragment">Adds a router to the network.
 
 Args:
     router_id (int): The ID of the router to add.
 </pre> 
-<p>Reimplemented from <a class="el" href="class_network_1_1_network.html#a9bda4e9cbfe06b485b9b9df3c54c00b6">Network.Network</a>.</p>
+<p>Reimplemented from <a class="el" href="class_network_1_1_network.html#ac3e466ec277567240d10727d2fd6ed36">Network.Network</a>.</p>
 
 </div>
 </div>
