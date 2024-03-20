@@ -76,10 +76,10 @@ class LinkStateRouter(Router):
         previous_nodes = {node: None for node in self.network_topology}
         next_hops = {node: None for node in self.network_topology}
         shortest_paths[self.id] = 0
-        pq = [(0, self.id)]
+        pq = [(0, self.id, self.id)]
         
         while pq:
-            current_distance, current_node = heapq.heappop(pq)
+            current_distance, current_node, _ = heapq.heappop(pq)
             
             if current_distance > shortest_paths[current_node]:
                 continue
@@ -90,7 +90,13 @@ class LinkStateRouter(Router):
                 if distance < shortest_paths[neighbor]:
                     shortest_paths[neighbor] = distance
                     previous_nodes[neighbor] = current_node
-                    heapq.heappush(pq, (distance, neighbor))
+                    heapq.heappush(pq, (distance, neighbor, neighbor))
+                elif distance == shortest_paths[neighbor] and previous_nodes[neighbor] is not None:
+                    # If there's a tie in cost, compare based on the last node's ID before the destination
+                    current_last_node = previous_nodes[current_node]
+                    existing_last_node = previous_nodes[previous_nodes[neighbor]]
+                    if current_last_node is not None and existing_last_node is not None and current_last_node < existing_last_node:
+                        previous_nodes[neighbor] = current_node
         
         # reconstruct shortest path in order to find the next hop
         for node in self.network_topology:
