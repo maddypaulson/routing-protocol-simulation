@@ -12,7 +12,7 @@ class LinkStateNetwork(Network):
         Args:
             router_id (int): The ID of the router to add.
         """
-        router = LinkStateRouter(router_id)
+        router = LinkStateRouter(router_id, self)
         self.routers[router.id] = router
 
     def distribute_lsp(self):
@@ -28,5 +28,4 @@ class LinkStateNetwork(Network):
     
     def apply_ls_all_routers(self):
         for router_id, router in self.routers.items():
-            # print(f"Router {router_id} Network Topology: {router.network_topology}")
             router.update_routing_table_dijkstra()

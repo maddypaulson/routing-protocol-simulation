@@ -18,7 +18,7 @@ def main():
     
     network.distribute_lsp()
     network.apply_ls_all_routers()
-    # network.print_network()
+    network.print_network()
 
 if __name__ == "__main__":
     main()
