@@ -16,7 +16,6 @@ def main():
 
     network = DistanceVectorNetwork(topology_file, output_file)
     network.apply_changes_and_output(changes_file, message_file)
-    network.print_network()
 
 
 if __name__ == "__main__":

@@ -62,9 +62,9 @@ class Router:
             return (None, INFINITY)
         return self.routing_table[destination_id]
 
-    def print_routing_table(self):
+    def get_routing_table_string(self):
         """
-        Prints the routing table of the router.
+        Creates string representing routing table  of the router.
 
         Parameters:
         - None

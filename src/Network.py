@@ -145,7 +145,7 @@ class Network:
         Writes the routing tables to the output file.
         """
         for router in sorted(self.routers.values(), key=lambda x: x.id):
-            routing_table_str = router.print_routing_table()
+            routing_table_str = router.get_routing_table_string()
             self.output_file_iterator.write(routing_table_str)
             self.output_file_iterator.write("\n")
     

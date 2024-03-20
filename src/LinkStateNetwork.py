@@ -78,7 +78,7 @@ class LinkStateNetwork(Network):
         """
         should_distribute_all_lsp = False
 
-        if (router_id1 not in self.routers or router_id2  not in self.routers) and cost > 0:
+        if (router_id1 not in self.routers or router_id2  not in self.routers) or cost < 0:
             should_distribute_all_lsp = True
             
         super().process_change(router_id1, router_id2, cost)

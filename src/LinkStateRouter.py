@@ -108,9 +108,9 @@ class LinkStateRouter(Router):
             if node == self.id:
                 next_hops[node] = self.id
             else:
-                path = paths[node]
-                if len(path) > 1:
-                    next_hops[node] = path[1]
+                
+                if paths.get(node, False) and len(paths[node]) > 1:
+                    next_hops[node] = paths[node][1]
                 else:
                     next_hops[node] = INFINITY
                         
