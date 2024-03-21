@@ -4,7 +4,14 @@ from Router import Router
 ## Implementation of the DistanceVectorRouter Class.
 ## @defgroup DVR Distance Vector Routing
 ## @{
+# This class represents a Distance Vector Router.
 class DistanceVectorRouter(Router):
+    """
+    This class represents a Distance Vector Router.
+
+    Inherits from the Router class.
+    """
+
     def __init__(self, id):
         super().__init__(id)
 

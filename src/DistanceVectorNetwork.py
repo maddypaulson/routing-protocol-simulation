@@ -3,10 +3,21 @@ from DistanceVectorRouter import DistanceVectorRouter
 
 
 ## @file
-## This is a file for DistanceVectorNetwork Class.
+## Implementation of DistanceVectorNetwork Class.
+## 
+## This is a class used for the implementation of the Distance Vector Algorithm. It inherits from the Network class.
+## It contains the implementation of the Distance Vector Algorithm.
+##
 ## @addtogroup DVR 
 ## @{
 class DistanceVectorNetwork(Network):
+    """
+    Represents a network using the Distance Vector routing algorithm.
+
+    Inherits from the Network class.
+
+    """
+
     def __init__(self, topology_file, output_file):
         super().__init__(topology_file, output_file)
 

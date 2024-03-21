@@ -5,6 +5,15 @@ from utilities import INFINITY
 ## @defgroup Super Super Classes
 ## @{
 class Router:
+    """
+    Represents a router in a network.
+
+    Attributes:
+    - id (int): The ID of the router.
+    - neighbors (dict): A dictionary of neighbor routers and their costs.
+    - routing_table (dict): A dictionary representing the routing table of the router.
+    """
+
     def __init__(self, id):
         """
         Initializes a Router object.
@@ -36,7 +45,10 @@ class Router:
     
     def update_routing_table(self, destination, next_hop, cost):
         """
-        Updates the routing table of the router.
+        Updates the routing table of the router. 
+        Sets the next hop and cost to reach a destination.
+            - If the cost is INFINITY, the destination is unreachable and next_hop set to None.
+
 
         Parameters:
         - destination (Router): The destination router object.
@@ -56,10 +68,12 @@ class Router:
         Retrieves the next hop and cost to reach a destination.
 
         Parameters:
-        - destination_id (int): The destination router object.
+        - destination_id (int): The destination router id.
 
         Returns:
         - tuple: A tuple containing the next hop and cost.
+            - next_hop (int): The ID of the next hop router. None if the destination is unreachable.
+            - cost (int): The cost to reach the destination. INFINITY if the destination is unreachable.
         """
         if(destination_id not in self.routing_table.keys()):
             return (None, INFINITY)

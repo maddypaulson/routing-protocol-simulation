@@ -7,6 +7,8 @@ from LinkStateRouter import LinkStateRouter
 class LinkStateNetwork(Network):
     """
     Represents a network using the Link State routing algorithm.
+
+    Inherits from the Network class.
     """
 
     def __init__(self, topology_file, output_file):
