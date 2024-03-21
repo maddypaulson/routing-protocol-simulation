@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['check_5fimpossible_5fto_5freach_0',['check_impossible_to_reach',['../class_network_1_1_network.html#a32cc252da937bca2999f400d0f9eb683',1,'Network::Network']]],
-  ['classes_1',['Super Classes',['../group___super.html',1,'']]],
-  ['contribs_2',['CONTRIBS',['../md__c_o_n_t_r_i_b_s.html',1,'']]],
-  ['custom_5fdijkstra_5flsr_5ftest_2epy_3',['custom_dijkstra_lsr_test.py',['../custom__dijkstra__lsr__test_8py.html',1,'']]]
+  ['_5f_5fdel_5f_5f_0',['__del__',['../class_network_1_1_network.html#aaf06c376f4d7363a7fddae40dd5d145b',1,'Network::Network']]],
+  ['_5f_5finit_5f_5f_1',['__init__',['../class_distance_vector_network_1_1_distance_vector_network.html#a3366132dbffee4b67be250befac1fe55',1,'DistanceVectorNetwork.DistanceVectorNetwork.__init__()'],['../class_distance_vector_router_1_1_distance_vector_router.html#a1f6d0b4a9453aa0232abee1c70ecfd72',1,'DistanceVectorRouter.DistanceVectorRouter.__init__()'],['../class_link_state_network_1_1_link_state_network.html#ac50113a4ea4d92b9f59505378d95c86b',1,'LinkStateNetwork.LinkStateNetwork.__init__()'],['../class_link_state_router_1_1_link_state_router.html#aa9ecf98ff9ef648d137068a62e9c57c0',1,'LinkStateRouter.LinkStateRouter.__init__()'],['../class_network_1_1_network.html#a9478c4fd4498c0b752b03fd7a04ba042',1,'Network.Network.__init__()'],['../class_router_1_1_router.html#a70717ff4caaf973fb3a9334f0b5677f8',1,'Router.Router.__init__()']]],
+  ['_5fadd_5frouter_2',['_add_router',['../class_distance_vector_network_1_1_distance_vector_network.html#ac4c480f8dab2d6df22418d834ff912ed',1,'DistanceVectorNetwork.DistanceVectorNetwork._add_router()'],['../class_link_state_network_1_1_link_state_network.html#a79742674b73e30634b15e25f100f6f1a',1,'LinkStateNetwork.LinkStateNetwork._add_router()'],['../class_network_1_1_network.html#ac3e466ec277567240d10727d2fd6ed36',1,'Network.Network._add_router()']]],
+  ['_5fdistribute_5flsp_3',['_distribute_lsp',['../class_link_state_router_1_1_link_state_router.html#a7b60c00d701297a3a38ef7bc85895a53',1,'LinkStateRouter::LinkStateRouter']]],
+  ['_5fdv_5falgorithm_4',['_dv_algorithm',['../class_distance_vector_network_1_1_distance_vector_network.html#a30e36e4f8b311742f32f327921a7c0f4',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
+  ['_5finvalidate_5fexpired_5froutes_5',['_invalidate_expired_routes',['../class_distance_vector_network_1_1_distance_vector_network.html#adab4c4b4f0fb064b3f40d77641e8ded6',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
+  ['_5fls_5falgorithm_6',['_ls_algorithm',['../class_link_state_router_1_1_link_state_router.html#aae1c1b1e5efba4a46e1e4a55b5c2c60a',1,'LinkStateRouter::LinkStateRouter']]],
+  ['_5fnotify_5fneighbors_7',['_notify_neighbors',['../class_distance_vector_network_1_1_distance_vector_network.html#a3131c72ddc6f26d8f9909ab020b78f69',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
+  ['_5fprocess_5flsp_8',['_process_lsp',['../class_link_state_router_1_1_link_state_router.html#a761e419afcbaf41db5957a1eae06f1af',1,'LinkStateRouter::LinkStateRouter']]]
 ];

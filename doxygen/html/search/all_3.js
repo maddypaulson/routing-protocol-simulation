@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['distance_20vector_20routing_0',['Distance Vector Routing',['../group___d_v_r.html',1,'']]],
-  ['distancevectornetwork_1',['DistanceVectorNetwork',['../class_distance_vector_network_1_1_distance_vector_network.html',1,'DistanceVectorNetwork']]],
-  ['distancevectornetwork_2epy_2',['DistanceVectorNetwork.py',['../_distance_vector_network_8py.html',1,'']]],
-  ['distancevectorrouter_3',['DistanceVectorRouter',['../class_distance_vector_router_1_1_distance_vector_router.html',1,'DistanceVectorRouter']]],
-  ['distancevectorrouter_2epy_4',['DistanceVectorRouter.py',['../_distance_vector_router_8py.html',1,'']]],
-  ['distribute_5fall_5flsp_5',['distribute_all_lsp',['../class_link_state_network_1_1_link_state_network.html#a5ad066b9db76643112269e6f79538d3a',1,'LinkStateNetwork::LinkStateNetwork']]]
+  ['add_5flink_0',['add_link',['../class_network_1_1_network.html#a1df8521ff14477f4dfe18d761a5074de',1,'Network::Network']]],
+  ['add_5fneighbor_1',['add_neighbor',['../class_router_1_1_router.html#aeeed50e0918d7b6eebd0ac3cb19c43bf',1,'Router::Router']]],
+  ['ai_20tools_2',['Disclaimer - Usage of Generative AI Tools',['../index.html#ai_disclaimer',1,'']]],
+  ['apply_5fchanges_5fand_5foutput_3',['apply_changes_and_output',['../class_distance_vector_network_1_1_distance_vector_network.html#a7e894bb86762c94666405e8e44c58606',1,'DistanceVectorNetwork.DistanceVectorNetwork.apply_changes_and_output()'],['../class_link_state_network_1_1_link_state_network.html#aa2a77e0cf4dfaa2683e3424a25ffcd95',1,'LinkStateNetwork.LinkStateNetwork.apply_changes_and_output()']]],
+  ['apply_5fchanges_5ffrom_5ffile_4',['apply_changes_from_file',['../group___tests.html#gab0eb2352fdee6d526f0a8fc4952e6d34',1,'custom_dijkstra_lsr_test']]],
+  ['assignment_202_20routing_20protocols_20simulation_5',['ELEC 331 Programming Assignment 2 - Routing Protocols Simulation',['../index.html',1,'']]]
 ];
