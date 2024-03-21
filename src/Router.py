@@ -1,6 +1,9 @@
 from utilities import INFINITY
 
-
+## @file
+## Implementation of  the Router Class, that is  the parent of the DistanceVectorRouter and LinkStateRouter classes.
+## @defgroup Super Super Classes
+## @{
 class Router:
     def __init__(self, id):
         """
@@ -78,4 +81,4 @@ class Router:
             if cost != INFINITY:
                 routing_table_str += f"{destination} {next_hop} {cost}\n"
         return routing_table_str
-        
+## @}

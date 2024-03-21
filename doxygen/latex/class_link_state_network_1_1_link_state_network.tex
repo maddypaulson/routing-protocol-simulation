@@ -14,6 +14,8 @@ Inheritance diagram for Link\+State\+Network.\+Link\+State\+Network\+:\begin{fig
 \mbox{\hyperlink{class_link_state_network_1_1_link_state_network_a5ad066b9db76643112269e6f79538d3a}{distribute\+\_\+all\+\_\+lsp}} (self)
 \item 
 \mbox{\hyperlink{class_link_state_network_1_1_link_state_network_aa2a77e0cf4dfaa2683e3424a25ffcd95}{apply\+\_\+changes\+\_\+and\+\_\+output}} (self, changes\+\_\+file, message\+\_\+file)
+\item 
+\mbox{\hyperlink{class_link_state_network_1_1_link_state_network_a64569e9b54bc280010752e19572781b4}{process\+\_\+change}} (self, router\+\_\+id1, router\+\_\+id2, cost)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
 \begin{DoxyCompactItemize}
@@ -42,16 +44,14 @@ Inheritance diagram for Link\+State\+Network.\+Link\+State\+Network\+:\begin{fig
 \item 
 \mbox{\hyperlink{class_network_1_1_network_a32cc252da937bca2999f400d0f9eb683}{check\+\_\+impossible\+\_\+to\+\_\+reach}} (self, router\+\_\+from, router\+\_\+to)
 \item 
-\mbox{\hyperlink{class_network_1_1_network_a1ce2c4b7ab3d690319503da83295bd04}{process\+\_\+change}} (self, router\+\_\+id1, router\+\_\+id2, cost)
-\item 
 \mbox{\hyperlink{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}{\+\_\+\+\_\+del\+\_\+\+\_\+}} (self)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Member Functions}
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_link_state_network_1_1_link_state_network_a79742674b73e30634b15e25f100f6f1a}{\+\_\+add\+\_\+router}} (self, router\+\_\+id)
+\Hypertarget{class_link_state_network_1_1_link_state_network_ae0cdd7a1e142a2f7f2c5e1e836b695dc}\label{class_link_state_network_1_1_link_state_network_ae0cdd7a1e142a2f7f2c5e1e836b695dc} 
+{\bfseries routers}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,6 +60,11 @@ Inheritance diagram for Link\+State\+Network.\+Link\+State\+Network\+:\begin{fig
 {\bfseries output\+\_\+file}
 \item 
 {\bfseries output\+\_\+file\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_link_state_network_1_1_link_state_network_a79742674b73e30634b15e25f100f6f1a}{\+\_\+add\+\_\+router}} (self, router\+\_\+id)
 \end{DoxyCompactItemize}
 
 
@@ -123,8 +128,25 @@ Args:
 
 \begin{DoxyVerb}Distributes the Link State Packets (LSP) from all routers in the network.
 \end{DoxyVerb}
+ \Hypertarget{class_link_state_network_1_1_link_state_network_a64569e9b54bc280010752e19572781b4}\label{class_link_state_network_1_1_link_state_network_a64569e9b54bc280010752e19572781b4} 
+\index{LinkStateNetwork.LinkStateNetwork@{LinkStateNetwork.LinkStateNetwork}!process\_change@{process\_change}}
+\index{process\_change@{process\_change}!LinkStateNetwork.LinkStateNetwork@{LinkStateNetwork.LinkStateNetwork}}
+\doxysubsubsection{\texorpdfstring{process\_change()}{process\_change()}}
+{\footnotesize\ttfamily Link\+State\+Network.\+Link\+State\+Network.\+process\+\_\+change (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id1,  }\item[{}]{router\+\_\+id2,  }\item[{}]{cost }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Processes a change in the network.
+
+Args:
+    router_id1 (int): The ID of the first router.
+    router_id2 (int): The ID of the second router.
+    cost (int): The cost of the link between the routers.
+\end{DoxyVerb}
  
+
+Reimplemented from \mbox{\hyperlink{class_network_1_1_network_a1ce2c4b7ab3d690319503da83295bd04}{Network.\+Network}}.
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/Link\+State\+Network.\+py\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{_link_state_network_8py}{Link\+State\+Network.\+py}}\end{DoxyCompactItemize}

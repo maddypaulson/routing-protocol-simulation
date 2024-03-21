@@ -2,7 +2,10 @@ from Router import Router
 from utilities import INFINITY
 import heapq
 
-
+## @file
+## TImplementation of the LinkStateRouter Class.
+## @defgroup LSR Link State Routing
+## @{
 class LinkStateRouter(Router):
     
     """
@@ -132,3 +135,5 @@ class LinkStateRouter(Router):
                 next_hop_router = None
                 
             self.update_routing_table(destination_router, next_hop_router, cost)
+
+## @}

@@ -1,5 +1,9 @@
 from Router import Router
 
+## @file
+## Implementation of the DistanceVectorRouter Class.
+## @defgroup DVR Distance Vector Routing
+## @{
 class DistanceVectorRouter(Router):
     def __init__(self, id):
         super().__init__(id)
@@ -42,3 +46,5 @@ class DistanceVectorRouter(Router):
         elif self.routing_table[destination.id][0] == advertiser_router.id and self.routing_table[destination.id][1] < cost + advertiser_router.neighbors[self.id]:
             return True 
         return False
+    
+## @}

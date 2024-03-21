@@ -1,6 +1,9 @@
 from Network import Network
 from LinkStateRouter import LinkStateRouter 
-
+## @file
+## Implementation of the LinkStateNetwork Class.
+## @addtogroup  LSR 
+## @{
 class LinkStateNetwork(Network):
     """
     Represents a network using the Link State routing algorithm.
@@ -85,3 +88,5 @@ class LinkStateNetwork(Network):
 
         if should_distribute_all_lsp:
             self.distribute_all_lsp()
+
+## @}

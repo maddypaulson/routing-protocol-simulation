@@ -1,0 +1,86 @@
+\doxysection{Tests}
+\hypertarget{group___tests}{}\label{group___tests}\index{Tests@{Tests}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_router}{test\+\_\+dvr.\+Test\+Distance\+Vector\+Router}}
+\item 
+class \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network}{test\+\_\+dvr.\+Test\+Distance\+Vector\+Network}}
+\item 
+class \mbox{\hyperlink{classtest__lsr_1_1_test_link_state}{test\+\_\+lsr.\+Test\+Link\+State}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___tests_gaf86f718d5ef91ab00f5a6d88e3767bc3}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+parse\+Args}} ()
+\item 
+\mbox{\hyperlink{group___tests_ga648a74014f708f177d2eff652a510e29}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+read\+\_\+topology\+\_\+from\+\_\+file}} (filename)
+\item 
+\mbox{\hyperlink{group___tests_ga2823d506cde8daf43f0a1b60b6b115cc}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+messages\+\_\+from\+\_\+file}} (filename, graph, output\+\_\+iterator)
+\item 
+\mbox{\hyperlink{group___tests_gab0eb2352fdee6d526f0a8fc4952e6d34}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+apply\+\_\+changes\+\_\+from\+\_\+file}} (graph, changes\+\_\+filename, message\+\_\+filename, output\+\_\+iterator)
+\item 
+\Hypertarget{group___tests_gab53cabcfedc4bbb86fb396bab734629a}\label{group___tests_gab53cabcfedc4bbb86fb396bab734629a} 
+{\bfseries custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+custom\+\_\+dijkstra} (graph, source)
+\item 
+\mbox{\hyperlink{group___tests_ga8c6c49479141c5d89754b7fb64df4d09}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+routing\+\_\+tables}} (graph, output\+\_\+iterator)
+\item 
+\Hypertarget{group___tests_ga5cecccdfacda86e2e7524db5bd3579a9}\label{group___tests_ga5cecccdfacda86e2e7524db5bd3579a9} 
+{\bfseries custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___tests_gab0eb2352fdee6d526f0a8fc4952e6d34}\label{group___tests_gab0eb2352fdee6d526f0a8fc4952e6d34} 
+\index{Tests@{Tests}!apply\_changes\_from\_file@{apply\_changes\_from\_file}}
+\index{apply\_changes\_from\_file@{apply\_changes\_from\_file}!Tests@{Tests}}
+\doxysubsubsection{\texorpdfstring{apply\_changes\_from\_file()}{apply\_changes\_from\_file()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+apply\+\_\+changes\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{graph,  }\item[{}]{changes\+\_\+filename,  }\item[{}]{message\+\_\+filename,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply changes to the graph based on a file.
+Each line of the file should be "node1 node2 cost",
+where a cost of -999 indicates the removal of a link.
+\end{DoxyVerb}
+ \Hypertarget{group___tests_gaf86f718d5ef91ab00f5a6d88e3767bc3}\label{group___tests_gaf86f718d5ef91ab00f5a6d88e3767bc3} 
+\index{Tests@{Tests}!parseArgs@{parseArgs}}
+\index{parseArgs@{parseArgs}!Tests@{Tests}}
+\doxysubsubsection{\texorpdfstring{parseArgs()}{parseArgs()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+parse\+Args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parses the command line arguments and returns them as a list.
+
+Returns:
+    list: A list containing the command line arguments.
+\end{DoxyVerb}
+ \Hypertarget{group___tests_ga2823d506cde8daf43f0a1b60b6b115cc}\label{group___tests_ga2823d506cde8daf43f0a1b60b6b115cc} 
+\index{Tests@{Tests}!print\_messages\_from\_file@{print\_messages\_from\_file}}
+\index{print\_messages\_from\_file@{print\_messages\_from\_file}!Tests@{Tests}}
+\doxysubsubsection{\texorpdfstring{print\_messages\_from\_file()}{print\_messages\_from\_file()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+messages\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{graph,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read and parse messages from a file.
+Each line of the file should be "from to message".
+\end{DoxyVerb}
+ \Hypertarget{group___tests_ga8c6c49479141c5d89754b7fb64df4d09}\label{group___tests_ga8c6c49479141c5d89754b7fb64df4d09} 
+\index{Tests@{Tests}!print\_routing\_tables@{print\_routing\_tables}}
+\index{print\_routing\_tables@{print\_routing\_tables}!Tests@{Tests}}
+\doxysubsubsection{\texorpdfstring{print\_routing\_tables()}{print\_routing\_tables()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+routing\+\_\+tables (\begin{DoxyParamCaption}\item[{}]{graph,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute and print the routing table for each router.
+\end{DoxyVerb}
+ \Hypertarget{group___tests_ga648a74014f708f177d2eff652a510e29}\label{group___tests_ga648a74014f708f177d2eff652a510e29} 
+\index{Tests@{Tests}!read\_topology\_from\_file@{read\_topology\_from\_file}}
+\index{read\_topology\_from\_file@{read\_topology\_from\_file}!Tests@{Tests}}
+\doxysubsubsection{\texorpdfstring{read\_topology\_from\_file()}{read\_topology\_from\_file()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+read\+\_\+topology\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read and parse a topology from a file.
+Each line of the file should be "node1 node2 cost".
+\end{DoxyVerb}
+ 

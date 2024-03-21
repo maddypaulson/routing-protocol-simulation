@@ -2,6 +2,11 @@ import sys
 import networkx as nx
 import heapq
 
+## @file
+## File for a custom Dijkstra's algorithm to compare output with the Link State Routing algorithm.
+## @addtogroup Tests
+## @{
+
 def parseArgs():
     """
     Parses the command line arguments and returns them as a list.
@@ -133,3 +138,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+## @}

@@ -1,6 +1,11 @@
 from Network import Network
 from DistanceVectorRouter import DistanceVectorRouter 
 
+
+## @file
+## This is a file for DistanceVectorNetwork Class.
+## @addtogroup DVR 
+## @{
 class DistanceVectorNetwork(Network):
     def __init__(self, topology_file, output_file):
         super().__init__(topology_file, output_file)
@@ -114,5 +119,4 @@ class DistanceVectorNetwork(Network):
                 if destination_id not in router.neighbors.keys() and router.id != destination_id:
                     router.routing_table[destination_id] = (None, float('inf'))
 
-
-  
+## @}

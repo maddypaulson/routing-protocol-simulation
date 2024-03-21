@@ -12,11 +12,13 @@ topology_file="$1"
 message_file="$2"
 change_file="$3"
 
+./make.sh
+
 # Run the first Python script
-python3 "$script_dir/lsr_test.py" "$topology_file" "$message_file" "$change_file"
+python3 "$script_dir/custom_dijkstra_lsr_test.py" "$topology_file" "$message_file" "$change_file"
 
 # Run the second Python script
-python3 "$script_dir/../src/lsr.py" "$topology_file" "$message_file" "$change_file"
+./dist/lsr "$topology_file" "$message_file" "$change_file"
 
 # Compare the contents of output.txt and output_test.txt
 if cmp -s output.txt output_test.txt; then

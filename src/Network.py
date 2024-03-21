@@ -1,7 +1,10 @@
 from utilities import INFINITY
 from Router import Router
 
-
+## @file
+## Implementation of the Network Class, that is  the parent of the DistanceVectorNetwork and LinkStateNetwork classes.
+## @addtogroup Super
+## @{
 class Network:
     """
     Represents a network of routers.
@@ -256,3 +259,5 @@ class Network:
         Closes the output file when the Network object is deleted.
         """
         self.output_file_iterator.close()
+
+## @}
