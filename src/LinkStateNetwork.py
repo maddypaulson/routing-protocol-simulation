@@ -31,7 +31,7 @@ class LinkStateNetwork(Network):
         Distributes the Link State Packets (LSP) from all routers in the network.
         """
         for router in self.routers.values():
-            router.generate_lsp(self)
+            router.generate_lsp()
 
     def apply_changes_and_output(self, changes_file, message_file):
         """
@@ -58,8 +58,8 @@ class LinkStateNetwork(Network):
 
                 router_1 = self.get_router(int(router_id1))
                 router_2 = self.get_router(int(router_id2))
-                router_1.generate_lsp(self)
-                router_2.generate_lsp(self)
+                router_1.generate_lsp()
+                router_2.generate_lsp()
 
                 for router in self.routers.values():
                     router.update_routing_table_dijkstra()
