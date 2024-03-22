@@ -1,9 +1,13 @@
 from DistanceVectorNetwork import DistanceVectorNetwork
 from utilities import parseArgs
 
+## @file
+## Main file to run the Distance Vector Routing Algorithm.
+## @addtogroup DVR
+## @{
 def main():
     """
-    Main function to run the Distance Vector Algorithm.
+    Main function to run the Distance Vector Routing Algorithm.
 
     Args:
         None
@@ -20,3 +24,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+## @}
