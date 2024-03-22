@@ -58,3 +58,7 @@ Dockerfile
 dist/*
 
 src/__pycache__/*
+
+# Test File outputs
+/test/testfiles/outputs/lsr/*.txt
+/test/testfiles/outputs/dvr/*.txt
