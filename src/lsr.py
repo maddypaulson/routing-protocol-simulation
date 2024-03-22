@@ -1,9 +1,12 @@
 from LinkStateNetwork import LinkStateNetwork
 from utilities import parseArgs
 
+## @file
+## Main file to run the Link State Routing Algorithm.
+## @addtogroup LSR
 def main():
     """
-    Main function to run the Distance Vector Algorithm.
+    Main function to run the Link State Routing Algorithm.
 
     Args:
         None
@@ -22,3 +25,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+## @}
