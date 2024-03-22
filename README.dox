@@ -25,6 +25,7 @@ To understand more about each different part of our project check the following 
 
 
 \section use Usage
+\subsection bash_scripts Bash Scripts - dvr.sh and lsr.sh
 We have created a bash script which allows running our project with the following commands
 \code
 ./dvr.sh <topologyFile> <messageFile> <changesFile> [outputFile]
@@ -33,7 +34,7 @@ We have created a bash script which allows running our project with the followin
 ./lsr.sh <topologyFile> <messageFile> <changesFile> [outputFile]
 \endcode
 
-\subsection make_bash make.sh
+\subsection make_bash Executable Files - make.sh
 We also created bash scripts to compile the code into executable binaries
 
 The script is used as follows:
@@ -41,7 +42,12 @@ The script is used as follows:
 ./make.sh
 \endcode
 
-The output will be present in the dist folder. The executable binaries are named dvr and lsr.
+The executable files will be present in the dist folder. The executable binaries are named dvr and lsr and are executed from the project source folder using:
+\code
+./dist/dvr <topologyFile> <messageFile> <changesFile> [outputFile]
+./dist/lsr <topologyFile> <messageFile> <changesFile> [outputFile]
+\endcode
+
 The script consists of checking the presence of python in the system, installing pyinstaller and using it to generate the executables.
 
 \section ai_disclaimer Disclaimer - Usage of Generative AI Tools
