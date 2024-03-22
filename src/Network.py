@@ -188,9 +188,21 @@ class Network:
             router_id_to (int): The ID of the destination router.
             message (str): The message to send.
         
+        """
+        formatted_message = self._generate_message_string(router_id_from, router_id_to, message)
+        self.output_file_iterator.write(formatted_message)
+    
+    def _generate_message_string(self, router_id_from, router_id_to, message):
+        """
+        Generates a message string formatted to be written to the output file.
+
+        Args:
+            router_id_from (int): The ID of the source router.
+            router_id_to (int): The ID of the destination router.
+            message (str): The message to send.
+
         Returns:
             str: The formatted message.
-
         """
         router_from = self.get_router(router_id_from)
         router_to = self.get_router(router_id_to)
@@ -198,14 +210,13 @@ class Network:
         if self.check_impossible_to_reach(router_from, router_to):
             # impossible to reach
             formatted_message = f"from {router_id_from} to {router_id_to} cost infinite hops unreachable message {message}"
-            self.output_file_iterator.write(formatted_message)
         else:
             hops, total_cost = self.get_hops_and_cost_from_to(router_from, router_to)
             hops_str = ' '.join(map(str, hops))
             formatted_message = f"from {router_id_from} to {router_id_to} cost {total_cost} hops {hops_str} message {message}"
-            self.output_file_iterator.write(formatted_message)
 
         return formatted_message
+
     def get_hops_and_cost_from_to(self, router_from, router_to):
         """
         Calculates the hops and total cost to reach a destination router.
