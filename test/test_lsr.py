@@ -5,7 +5,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / "src"))
 from LinkStateNetwork import LinkStateNetwork
 from LinkStateRouter import LinkStateRouter
 ## @file
-## @brief Test file for LinkSateRouting.
+## @brief Test file for LinkStateRouting.
 # This script includes unit tests for the Link State Routing (LSR) simulation, specifically testing the 
 # distribution of Link State Packets (LSPs) across a network and verifying correct network topology knowledge 
 # among routers. Tests cover scenarios with both fully connected and disconnected graphs, ensuring the 
