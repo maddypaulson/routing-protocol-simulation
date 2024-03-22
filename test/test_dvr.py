@@ -5,7 +5,14 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / "src"))
 from DistanceVectorNetwork import DistanceVectorNetwork
 from DistanceVectorRouter import DistanceVectorRouter
 ## @file
-## Test file for Distance Vector Routing.
+## @brief Test file for Distance Vector Routing.
+# Contains tests for the DistanceVectorRouting simulation, focusing on routing table updates, 
+# message handling, and network changes. Ensures the DistanceVectorNetwork and DistanceVectorRouter 
+# classes operate correctly, adhering to DVR principles. A key tool for validating DVR simulation 
+# accuracy and reliability.
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
 ## @addtogroup Tests
 ## @{
 class TestDistanceVectorRouter(unittest.TestCase):

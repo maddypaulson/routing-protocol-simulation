@@ -3,9 +3,9 @@ var indexSectionsWithContent =
   0: "23_abcdegiklmnoprstuv",
   1: "dlnrt",
   2: "cdlnrt",
-  3: "_acdgiprstu",
+  3: "_acdgimprstu",
   4: "cdlprstv",
-  5: "23aceprs"
+  5: "23abcelprs"
 };
 
 var indexSectionNames =

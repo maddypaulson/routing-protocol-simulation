@@ -3,7 +3,16 @@ from utilities import INFINITY
 import heapq
 
 ## @file
-## TImplementation of the LinkStateRouter Class.
+## @brief Implementation of the LinkStateRouter Class.
+# This file defines the LinkStateRouter class, inheriting from the Router class, to simulate the functionalities
+# of a router within a Link State routing protocol environment. It focuses on generating and processing Link State
+# Packets (LSPs) to maintain an updated view of the network topology. Through the Dijkstra algorithm, it calculates
+# the shortest path to all other routers in the network, updating the routing table accordingly. This class is
+# crucial to the Link State routing simulation, enabling the distribution of topology information and the calculation
+# of optimal routing paths.
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
 ## @addtogroup LSR
 ## @{
 class LinkStateRouter(Router):

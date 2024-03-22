@@ -72,7 +72,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Distance Vector Routing</div></div>
 </div><!--header-->
 <div class="contents">
@@ -83,11 +84,41 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_distance_vector_router_1_1_distance_vector_router.html">DistanceVectorRouter.DistanceVectorRouter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gac54f2e3e555e32990b2d25475d9e4c4c" id="r_gac54f2e3e555e32990b2d25475d9e4c4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac54f2e3e555e32990b2d25475d9e4c4c">dvr.main</a> ()</td></tr>
+<tr class="separator:gac54f2e3e555e32990b2d25475d9e4c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>The Distance Vector Routing (DVR) module, which encompasses the DistanceVectorNetwork and DistanceVectorRouter classes, implements the foundational concepts of Distance Vector routing protocol. This protocol is characterized by routers sharing information only with their immediate neighbors, gradually propagating knowledge of the entire network's topology through repeated exchanges. This implementation captures the essence of DVR, focusing on simplicity and direct communication between routers to calculate the shortest paths.</p>
 <p>The DistanceVectorNetwork class, inheriting from the Network base class, orchestrates the network-wide operations necessary for the Distance Vector algorithm. Upon initialization, routers are instantiated as DistanceVectorRouter objects and added to the network, establishing a framework for simulating distance vector routing. The network facilitates the iterative process of updating routing tables based on exchanges between neighboring routers, utilizing the distance vector algorithm to converge on the shortest paths to all destinations.</p>
 <p>Each DistanceVectorRouter represents an individual router in the network, inheriting basic functionalities from the Router class while integrating the specifics of the Distance Vector protocol. Routers maintain a routing table that maps destinations to the next hop and the cost of reaching them. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gac54f2e3e555e32990b2d25475d9e4c4c" name="gac54f2e3e555e32990b2d25475d9e4c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac54f2e3e555e32990b2d25475d9e4c4c">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dvr.main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Main function to run the Distance Vector Routing Algorithm.
+
+Args:
+    None
+
+Returns:
+    None
+</pre> 
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

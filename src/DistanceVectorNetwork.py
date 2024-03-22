@@ -1,13 +1,22 @@
 from Network import Network
 from DistanceVectorRouter import DistanceVectorRouter 
 
-
-## @file
-## Implementation of DistanceVectorNetwork Class.
-## 
-## This is a class used for the implementation of the Distance Vector Algorithm. It inherits from the Network class.
-## It contains the implementation of the Distance Vector Algorithm.
+## @file DistanceVectorNetwork.py
+## @brief Implementation of the Distance Vector Network class for routing simulation.
 ##
+## This module contains the definition and implementation of the DistanceVectorNetwork class,
+## which simulates a network using the Distance Vector routing protocol. It inherits from
+## the Network base class and integrates the DistanceVectorRouter class to represent individual
+## routers within the network. The DistanceVectorNetwork class is responsible for initializing
+## the network topology from a given topology file, applying topology changes, executing the
+## Distance Vector algorithm to update routing tables across routers, and facilitating the
+## transmission of messages based on the updated routing tables. Key operations include network
+## initialization, routing table updates, and message handling according to the Distance Vector
+## routing principles.
+##
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
 ## @addtogroup DVR 
 ## @{
 class DistanceVectorNetwork(Network):

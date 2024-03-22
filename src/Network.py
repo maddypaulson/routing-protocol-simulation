@@ -2,7 +2,16 @@ from utilities import INFINITY
 from Router import Router
 
 ## @file
-## Implementation of the Network Class, that is  the parent of the DistanceVectorNetwork and LinkStateNetwork classes.
+## @brief Implementation of the Network Class, that is the parent of the DistanceVectorNetwork and LinkStateNetwork classes.
+# This file defines the Network class, which serves as a foundatio for simulating 
+# various routing protocols, including both Distance Vector and Link State routing. The Network 
+# class is responsible for maintaining a collection of Router objects, initializing the network 
+# topology from a specified topology file, and providing core functionalities such as adding or 
+# removing links between routers, updating routing tables, and handling message transmissions 
+# across the network.
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
 ## @addtogroup Super
 ## @{
 class Network:

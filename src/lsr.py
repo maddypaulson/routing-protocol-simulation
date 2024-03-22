@@ -2,7 +2,12 @@ from LinkStateNetwork import LinkStateNetwork
 from utilities import parseArgs
 
 ## @file
-## Main file to run the Link State Routing Algorithm.
+## @brief Main file to run the Link State Routing Algorithm.
+## This script serves as the entry point for simulating a network utilizing the Link State Routing protocol.
+##
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
 ## @addtogroup LSR
 def main():
     """

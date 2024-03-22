@@ -1,8 +1,19 @@
 from Router import Router
 
-## @file
-## Implementation of the DistanceVectorRouter Class.
-## @addtogroup DVR
+## @file DistanceVectorRouter.py
+## @brief Implementation of the DistanceVectorRouter Class.
+##
+## This file defines the DistanceVectorRouter class, which extends the Router base class to implement
+## router functionalities specific to the Distance Vector routing protocol. Key responsibilities include
+## deciding whether to transmit or accept routing information based on the protocol's rules, enabling
+## the iterative process of distance vector routing. The class plays a crucial role in the simulation of 
+## Distance Vector networks by facilitating the update and updating of routing tables among neighboring 
+## routers, adhering to the principles of distance vector routing for path determination and message forwarding.
+##
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
+## @addtogroup DVR 
 ## @{
 class DistanceVectorRouter(Router):
     """
