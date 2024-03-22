@@ -68,7 +68,7 @@ class TestDistanceVectorNetwork(unittest.TestCase):
         - The router is added to the network.
         """
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_connected.txt"
-        output_path = Path(__file__).resolve().parent / "testfiles/output_file1.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_add_router.txt"
         network = DistanceVectorNetwork(str(topology_path), str(output_path))
         network._add_router(22)
         self.assertIn(22, network.routers)
@@ -89,14 +89,87 @@ class TestDistanceVectorNetwork(unittest.TestCase):
         - The routing tables of the routers are updated correctly.
         """
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_connected.txt"
-        output_path = Path(__file__).resolve().parent / "testfiles/output_file1.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_test_dv_algorithm.txt"
         network = DistanceVectorNetwork(str(topology_path), str(output_path))
         
         network._dv_algorithm()
-        print(network.routers[1].routing_table)
         self.assertEqual(network.routers[1].routing_table[3], (4, 9))
         self.assertEqual(network.routers[2].routing_table[1], (5, 6))
         self.assertEqual(network.routers[3].routing_table[4], (2, 8))
+    
+    def test_tie_brak(self):
+        """
+        Test case for the tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class.
+
+        This test case verifies the functionality of the tie breaking in the _dv_algorithm method.
+        It creates a DistanceVectorNetwork object, runs the distance vector algorithm, and checks the routing tables.
+
+        The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
+        The testfile topology_tie_break.txt contains the following topology with all edges equal to 1:
+            3 - 4 - 5 - 6
+              \    /
+                2 
+        Therefore routing table from 3 to 6 should have 2 as next hop.
+
+        Test Steps:
+        1. Create a DistanceVectorNetwork object.
+        2. Call the _dv_algorithm method to run the distance vector algorithm.
+        3. Check the routing table of the router 3.
+
+        Expected Results:
+        - The routing table router 3 has next hop as 2, not 4.
+        """
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_tie_break.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_tie_break.txt"
+        network = DistanceVectorNetwork(str(topology_path), str(output_path))
+        
+        network._dv_algorithm()
+        self.assertEqual(network.routers[3].routing_table[6], (2, 3))
+    
+    def test_tie_break_2(self):
+        """
+        Test case for the tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class, after applying changes to topology.
+
+        This test case verifies the functionality of the tie breaking in the _dv_algorithm method, after applying changes to the topology.
+        It creates a DistanceVectorNetwork object, runs the distance vector algorithm, apply changes, and checks the routing tables.
+
+        The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
+        The testfile topology_tie_break_2.txt contains the following topology (the number of lines is the cost of the edge):
+            1 - 4 - 12 -- 9
+                \        /
+                  5     11 
+        And the changes_tie_break_2.txt contains the following changes:
+            5 11 1
+
+        Initially, the routing table from 4 to 9 should have 12 as next hop. After the change, the routing table from 4 to 9 should have 5 as next hop.
+
+        Test Steps:
+        1. Create a DistanceVectorNetwork object.
+        2. Call the _dv_algorithm method to run the distance vector algorithm.
+        3. Check the routing table of the router 4.
+        4. Apply the changes.
+        5. Check the routing table of the router 4.
+
+        Expected Results:
+        - Initially, the routing table router 4 has next hop to 9 as 12, not 5.
+        - After changes, the routing table router 4 has next hop to 9 as 5, not 12.
+        """
+
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_tie_break_2.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_tie_break_2.txt"
+        network = DistanceVectorNetwork(str(topology_path), str(output_path))
+        
+        network._dv_algorithm()
+        self.assertEqual(network.routers[4].routing_table[9], (12, 3))
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_tie_break_2.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_tie_break_2.txt"
+
+        network.apply_changes_and_output(str(changes_path), str(message_path))
+
+        self.assertEqual(network.routers[4].routing_table[9], (5, 3))
+
+        
 ## @}
 
 if __name__ == '__main__':
