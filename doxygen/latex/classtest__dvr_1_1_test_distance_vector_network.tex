@@ -12,6 +12,10 @@ Inheritance diagram for test\+\_\+dvr.\+Test\+Distance\+Vector\+Network\+:\begin
 \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_ac063b0552c86373776006054b428f2c0}{test\+\_\+add\+\_\+router}} (self)
 \item 
 \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a9bc9c11716a1f59c7487e116ad134d07}{test\+\_\+dv\+\_\+algorithm}} (self)
+\item 
+\mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a3b0172068756b5c36367de003710d66e}{test\+\_\+tie\+\_\+brak}} (self)
+\item 
+\mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a4d15bd224b267629fcef9a006acb9caf}{test\+\_\+tie\+\_\+break\+\_\+2}} (self)
 \end{DoxyCompactItemize}
 
 
@@ -53,6 +57,64 @@ Test Steps:
 
 Expected Results:
 - The routing tables of the routers are updated correctly.
+\end{DoxyVerb}
+ \Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a3b0172068756b5c36367de003710d66e}\label{classtest__dvr_1_1_test_distance_vector_network_a3b0172068756b5c36367de003710d66e} 
+\index{test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}!test\_tie\_brak@{test\_tie\_brak}}
+\index{test\_tie\_brak@{test\_tie\_brak}!test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{test\_tie\_brak()}{test\_tie\_brak()}}
+{\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+tie\+\_\+brak (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test case for the tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class.
+
+This test case verifies the functionality of the tie breaking in the _dv_algorithm method.
+It creates a DistanceVectorNetwork object, runs the distance vector algorithm, and checks the routing tables.
+
+The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
+The testfile topology_tie_break.txt contains the following topology with all edges equal to 1:
+    3 - 4 - 5 - 6
+      \    /
+        2 
+Therefore routing table from 3 to 6 should have 2 as next hop.
+
+Test Steps:
+1. Create a DistanceVectorNetwork object.
+2. Call the _dv_algorithm method to run the distance vector algorithm.
+3. Check the routing table of the router 3.
+
+Expected Results:
+- The routing table router 3 has next hop as 2, not 4.
+\end{DoxyVerb}
+ \Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a4d15bd224b267629fcef9a006acb9caf}\label{classtest__dvr_1_1_test_distance_vector_network_a4d15bd224b267629fcef9a006acb9caf} 
+\index{test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}!test\_tie\_break\_2@{test\_tie\_break\_2}}
+\index{test\_tie\_break\_2@{test\_tie\_break\_2}!test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{test\_tie\_break\_2()}{test\_tie\_break\_2()}}
+{\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+tie\+\_\+break\+\_\+2 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Test case for the tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class, after applying changes to topology.
+
+This test case verifies the functionality of the tie breaking in the _dv_algorithm method, after applying changes to the topology.
+It creates a DistanceVectorNetwork object, runs the distance vector algorithm, apply changes, and checks the routing tables.
+
+The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
+The testfile topology_tie_break_2.txt contains the following topology (the number of lines is the cost of the edge):
+    1 - 4 - 12 -- 9
+        \        /
+          5     11 
+And the changes_tie_break_2.txt contains the following changes:
+    5 11 1
+
+Initially, the routing table from 4 to 9 should have 12 as next hop. After the change, the routing table from 4 to 9 should have 5 as next hop.
+
+Test Steps:
+1. Create a DistanceVectorNetwork object.
+2. Call the _dv_algorithm method to run the distance vector algorithm.
+3. Check the routing table of the router 4.
+4. Apply the changes.
+5. Check the routing table of the router 4.
+
+Expected Results:
+- Initially, the routing table router 4 has next hop to 9 as 12, not 5.
+- After changes, the routing table router 4 has next hop to 9 as 5, not 12.
 \end{DoxyVerb}
  
 
