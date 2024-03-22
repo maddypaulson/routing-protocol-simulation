@@ -11,7 +11,10 @@ This project contains the implementations for two different routing protocols\+:
 
 To understand more about each different part of our project check the following pages
 \begin{DoxyItemize}
-\item \doxylink{group___tests}{Test Pages}
+\item \doxylink{group___d_v_r}{Distance Vector Routing}
+\item \doxylink{group___l_s_r}{Link Stating Routing}
+\item \doxylink{group___tests}{Project Testing}
+\item \doxylink{group___super}{Super Classes}
 \end{DoxyItemize}\hypertarget{index_use}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{index_use}
 We have created bash scripts which allows for testing our submission with the following commands 
 \begin{DoxyCode}{0}
@@ -23,7 +26,17 @@ We have created bash scripts which allows for testing our submission with the fo
 \DoxyCodeLine{./lsr.sh\ <topologyFile>\ <messageFile>\ <changesFile>\ [outputFile]}
 
 \end{DoxyCode}
-\hypertarget{index_ai_disclaimer}{}\doxysection{\texorpdfstring{Disclaimer -\/ Usage of Generative AI Tools}{Disclaimer -\/ Usage of Generative AI Tools}}\label{index_ai_disclaimer}
+\hypertarget{index_make_bash}{}\doxysubsection{\texorpdfstring{make.\+sh}{make.\+sh}}\label{index_make_bash}
+We also created bash scripts to compile the code into executable binaries
+
+The script is used as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./make.sh}
+
+\end{DoxyCode}
+
+
+The output will be present in the dist folder. The executable binaries are named dvr and lsr. The script consists of checking the presence of python in the system, installing pyinstaller and using it to generate the executables.\hypertarget{index_ai_disclaimer}{}\doxysection{\texorpdfstring{Disclaimer -\/ Usage of Generative AI Tools}{Disclaimer -\/ Usage of Generative AI Tools}}\label{index_ai_disclaimer}
 
 \begin{DoxyItemize}
 \item {\bfseries{Chat\+GPT}} 4\+: This tool was used on multiple different occasions to help figuring out/correcting Python syntax and assisted the creation of bash scripts.

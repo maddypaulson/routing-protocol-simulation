@@ -87,13 +87,21 @@ Contributions</h1>
 Details of Project</h1>
 <p>This project contains the implementations for two different routing protocols: Distance Vector Routing and Link State Routing. The programs are seperate and can be run using the commands specified in the documentation below. The Distance Vector protocol operates on the principle of routers exchanging information about the network with their immediate neighbours, ultimately allowing each router to construct a complete picture of the network topology. The implementation is split into <a class="el" href="_distance_vector_network_8py.html" title="Implementation of the Distance Vector Network class for routing simulation.">DistanceVectorNetwork.py</a> which handles the overall network operations and <a class="el" href="_distance_vector_router_8py.html" title="Implementation of the DistanceVectorRouter Class.">DistanceVectorRouter.py</a> which represents individual routers in the network. The Link State protocol utilizes an adapted version of Dijkstra's algorithm and operates on the principle that routers have a global view of the network topology. Similar to Distance Vector the implementation is split into <a class="el" href="_distance_vector_network_8py.html" title="Implementation of the Distance Vector Network class for routing simulation.">DistanceVectorNetwork.py</a> which handles the overall network operations and <a class="el" href="_distance_vector_router_8py.html" title="Implementation of the DistanceVectorRouter Class.">DistanceVectorRouter.py</a> which represents individual routers in the network. Both protocols follow the tie breaking rules established in the assignment documentation.</p>
 <p>To understand more about each different part of our project check the following pages</p><ul>
-<li><a class="el" href="group___tests.html">Test Pages</a></li>
+<li><a class="el" href="group___d_v_r.html">Distance Vector Routing</a></li>
+<li><a class="el" href="group___l_s_r.html">Link Stating Routing</a></li>
+<li><a class="el" href="group___tests.html">Project Testing</a></li>
+<li><a class="el" href="group___super.html">Super Classes</a></li>
 </ul>
 <h1><a class="anchor" id="use"></a>
 Usage</h1>
 <p>We have created bash scripts which allows for testing our submission with the following commands </p><div class="fragment"><div class="line">./dvr.sh &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">./lsr.sh &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
-</div><!-- fragment --><h1><a class="anchor" id="ai_disclaimer"></a>
+</div><!-- fragment --><h2><a class="anchor" id="make_bash"></a>
+make.sh</h2>
+<p>We also created bash scripts to compile the code into executable binaries</p>
+<p>The script is used as follows: </p><div class="fragment"><div class="line">./make.sh</div>
+</div><!-- fragment --><p>The output will be present in the dist folder. The executable binaries are named dvr and lsr. The script consists of checking the presence of python in the system, installing pyinstaller and using it to generate the executables.</p>
+<h1><a class="anchor" id="ai_disclaimer"></a>
 Disclaimer - Usage of Generative AI Tools</h1>
 <ul>
 <li><b>ChatGPT</b> 4: This tool was used on multiple different occasions to help figuring out/correcting Python syntax and assisted the creation of bash scripts.</li>

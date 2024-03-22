@@ -18,16 +18,31 @@ the principle that routers have a global view of the network topology. Similar t
 represents individual routers in the network. Both protocols follow the tie breaking rules established in the assignment documentation.
 
 To understand more about each different part of our project check the following pages
-- \ref Tests "Test Pages"
+- \ref DVR "Distance Vector Routing"
+- \ref LSR "Link Stating Routing"
+- \ref Tests "Project Testing"
+- \ref Super "Super Classes"
+
 
 \section use Usage
-We have created bash scripts which allows for testing our submission with the following commands
+We have created a bash script which allows running our project with the following commands
 \code
 ./dvr.sh <topologyFile> <messageFile> <changesFile> [outputFile]
 \endcode
 \code
 ./lsr.sh <topologyFile> <messageFile> <changesFile> [outputFile]
 \endcode
+
+\subsection make_bash make.sh
+We also created bash scripts to compile the code into executable binaries
+
+The script is used as follows:
+\code
+./make.sh
+\endcode
+
+The output will be present in the dist folder. The executable binaries are named dvr and lsr.
+The script consists of checking the presence of python in the system, installing pyinstaller and using it to generate the executables.
 
 \section ai_disclaimer Disclaimer - Usage of Generative AI Tools
 
