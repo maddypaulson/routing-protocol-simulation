@@ -2,7 +2,7 @@ from utilities import INFINITY
 
 ## @file
 ## Implementation of  the Router Class, that is  the parent of the DistanceVectorRouter and LinkStateRouter classes.
-## @defgroup Super Super Classes
+## @addtogroup Super
 ## @{
 class Router:
     """

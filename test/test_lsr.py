@@ -6,7 +6,7 @@ from LinkStateNetwork import LinkStateNetwork
 from LinkStateRouter import LinkStateRouter
 ## @file
 ## Test file for LinkSateRouting.
-## @defgroup Tests
+## @addtogroup Tests
 ## @{
 
 class TestLinkState(unittest.TestCase):

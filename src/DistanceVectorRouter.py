@@ -2,9 +2,8 @@ from Router import Router
 
 ## @file
 ## Implementation of the DistanceVectorRouter Class.
-## @defgroup DVR Distance Vector Routing
+## @addtogroup DVR
 ## @{
-# This class represents a Distance Vector Router.
 class DistanceVectorRouter(Router):
     """
     This class represents a Distance Vector Router.

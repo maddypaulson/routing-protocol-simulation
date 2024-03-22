@@ -4,7 +4,7 @@ import heapq
 
 ## @file
 ## TImplementation of the LinkStateRouter Class.
-## @defgroup LSR Link State Routing
+## @addtogroup LSR
 ## @{
 class LinkStateRouter(Router):
     
