@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector_20routing_0',['Distance Vector Routing',['../group___d_v_r.html',1,'']]]
+  ['of_20generative_20ai_20tools_0',['Disclaimer - Usage of Generative AI Tools',['../index.html#ai_disclaimer',1,'']]],
+  ['of_20project_1',['Details of Project',['../index.html#link_to_page',1,'']]]
 ];

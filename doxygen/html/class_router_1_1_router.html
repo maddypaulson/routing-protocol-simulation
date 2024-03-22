@@ -79,7 +79,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_router_1_1_router-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Router.Router Class Reference<div class="ingroups"><a class="el" href="group___super.html">Super Classes</a></div></div></div>
+  <div class="headertitle"><div class="title">Router.Router Class Reference<div class="ingroups"><a class="el" href="group___super.html">Parent Classes</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -118,7 +118,14 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>routing_table</b></td></tr>
 <tr class="separator:a6795e76e89e0486b210084f83b1b506b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><pre class="fragment">Represents a router in a network.
+
+Attributes:
+- id (int): The ID of the router.
+- neighbors (dict): A dictionary of neighbor routers and their costs.
+- routing_table (dict): A dictionary representing the routing table of the router.
+</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a70717ff4caaf973fb3a9334f0b5677f8" name="a70717ff4caaf973fb3a9334f0b5677f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70717ff4caaf973fb3a9334f0b5677f8">&#9670;&#160;</a></span>__init__()</h2>
 
@@ -205,10 +212,12 @@ Returns:
 <pre class="fragment">Retrieves the next hop and cost to reach a destination.
 
 Parameters:
-- destination_id (int): The destination router object.
+- destination_id (int): The destination router id.
 
 Returns:
 - tuple: A tuple containing the next hop and cost.
+    - next_hop (int): The ID of the next hop router. None if the destination is unreachable.
+    - cost (int): The cost to reach the destination. INFINITY if the destination is unreachable.
 </pre> 
 </div>
 </div>
@@ -264,7 +273,10 @@ Returns:
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Updates the routing table of the router.
+<pre class="fragment">Updates the routing table of the router. 
+Sets the next hop and cost to reach a destination.
+    - If the cost is INFINITY, the destination is unreachable and next_hop set to None.
+
 
 Parameters:
 - destination (Router): The destination router object.

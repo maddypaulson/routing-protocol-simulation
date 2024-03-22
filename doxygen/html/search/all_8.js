@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['parseargs_0',['parseArgs',['../group___tests.html#gaf86f718d5ef91ab00f5a6d88e3767bc3',1,'custom_dijkstra_lsr_test']]],
-  ['print_5fmessages_5ffrom_5ffile_1',['print_messages_from_file',['../group___tests.html#ga2823d506cde8daf43f0a1b60b6b115cc',1,'custom_dijkstra_lsr_test']]],
-  ['print_5fnetwork_2',['print_network',['../class_network_1_1_network.html#a9f2e744c6a61959237001a1569c5bc7f',1,'Network::Network']]],
-  ['print_5frouting_5ftables_3',['print_routing_tables',['../group___tests.html#ga8c6c49479141c5d89754b7fb64df4d09',1,'custom_dijkstra_lsr_test']]],
-  ['process_5fchange_4',['process_change',['../class_link_state_network_1_1_link_state_network.html#a64569e9b54bc280010752e19572781b4',1,'LinkStateNetwork.LinkStateNetwork.process_change()'],['../class_network_1_1_network.html#a1ce2c4b7ab3d690319503da83295bd04',1,'Network.Network.process_change()']]]
+  ['generate_5flsp_0',['generate_lsp',['../class_link_state_router_1_1_link_state_router.html#a8d82d0eead49d67df2c98f91a478f5b9',1,'LinkStateRouter::LinkStateRouter']]],
+  ['generative_20ai_20tools_1',['Disclaimer - Usage of Generative AI Tools',['../index.html#ai_disclaimer',1,'']]],
+  ['get_5fhops_5fand_5fcost_5ffrom_5fto_2',['get_hops_and_cost_from_to',['../class_network_1_1_network.html#a76a501317547e9f4049fdb16ce820cba',1,'Network::Network']]],
+  ['get_5fnext_5fhop_5fcost_3',['get_next_hop_cost',['../class_router_1_1_router.html#af77bcb03001f08bfe2211f1354f1eeb8',1,'Router::Router']]],
+  ['get_5frouter_4',['get_router',['../class_network_1_1_network.html#a5cb9b371da3153d4a64e577d419ec98c',1,'Network::Network']]],
+  ['get_5frouting_5ftable_5fstring_5',['get_routing_table_string',['../class_router_1_1_router.html#a706510617536d9f3fd20aa6fb645de9d',1,'Router::Router']]]
 ];

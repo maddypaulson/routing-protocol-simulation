@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['state_20routing_0',['Link State Routing',['../group___l_s_r.html',1,'']]],
-  ['super_20classes_1',['Super Classes',['../group___super.html',1,'']]]
+  ['routing_0',['Routing',['../group___d_v_r.html',1,'Distance Vector Routing'],['../group___l_s_r.html',1,'Link State Routing']]]
 ];

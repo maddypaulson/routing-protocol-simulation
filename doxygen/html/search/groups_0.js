@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['classes_0',['Super Classes',['../group___super.html',1,'']]]
+  ['classes_0',['Parent Classes',['../group___super.html',1,'']]]
 ];

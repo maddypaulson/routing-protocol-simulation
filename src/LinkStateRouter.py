@@ -4,7 +4,7 @@ import heapq
 
 ## @file
 ## TImplementation of the LinkStateRouter Class.
-## @defgroup LSR Link State Routing
+## @addtogroup LSR
 ## @{
 class LinkStateRouter(Router):
     
@@ -97,8 +97,9 @@ class LinkStateRouter(Router):
                     shortest_distances[neighbor] = distance
                     paths[neighbor] = new_path
                     heapq.heappush(pq, (distance, neighbor, new_path))
-                elif distance == shortest_distances[neighbor] and  new_path[-2] < paths[neighbor][-2]:
+                elif distance == shortest_distances[neighbor] and  self.check_new_path_lexicographically_smaller(new_path, paths[neighbor]):
                     paths[neighbor] = new_path
+                    heapq.heappush(pq, (distance, neighbor, new_path))
 
         # reconstruct shortest path in order to find the next hop
         next_hops = {node: None for node in self.network_topology}
@@ -114,7 +115,32 @@ class LinkStateRouter(Router):
                     next_hops[node] = INFINITY
                         
         return shortest_distances, next_hops
+    
+    def check_new_path_lexicographically_smaller(self, new_path, old_path):
+        """
+        Checks if a new path is lexicographically smaller than another path.
+
+        Args:
+            new_path (list): The first path.
+            old_path (list): The second path.
+
+        Returns:
+            bool: True if new_path is lexicographically smaller than old_path, False otherwise.
+        """
+        new_path = new_path[::-1]
+        old_path = old_path[::-1]
         
+        for i in range(min(len(new_path), len(old_path))):
+            if new_path[i] < old_path[i]:
+                return True
+            elif new_path[i] > old_path[i]:
+                return False
+        
+        if len(new_path) < len(old_path):
+            return True
+        else:
+            return False
+    
     def update_routing_table_dijkstra(self):
         """
         Updates the routing table using Dijkstra's algorithm.

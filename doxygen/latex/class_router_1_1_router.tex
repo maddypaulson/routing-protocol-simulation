@@ -33,6 +33,16 @@ Inheritance diagram for Router.\+Router\+:\begin{figure}[H]
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represents a router in a network.
+
+Attributes:
+- id (int): The ID of the router.
+- neighbors (dict): A dictionary of neighbor routers and their costs.
+- routing_table (dict): A dictionary representing the routing table of the router.
+\end{DoxyVerb}
+ 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_router_1_1_router_a70717ff4caaf973fb3a9334f0b5677f8}\label{class_router_1_1_router_a70717ff4caaf973fb3a9334f0b5677f8} 
 \index{Router.Router@{Router.Router}!\_\_init\_\_@{\_\_init\_\_}}
@@ -79,10 +89,12 @@ Returns:
 \begin{DoxyVerb}Retrieves the next hop and cost to reach a destination.
 
 Parameters:
-- destination_id (int): The destination router object.
+- destination_id (int): The destination router id.
 
 Returns:
 - tuple: A tuple containing the next hop and cost.
+    - next_hop (int): The ID of the next hop router. None if the destination is unreachable.
+    - cost (int): The cost to reach the destination. INFINITY if the destination is unreachable.
 \end{DoxyVerb}
  \Hypertarget{class_router_1_1_router_a706510617536d9f3fd20aa6fb645de9d}\label{class_router_1_1_router_a706510617536d9f3fd20aa6fb645de9d} 
 \index{Router.Router@{Router.Router}!get\_routing\_table\_string@{get\_routing\_table\_string}}
@@ -104,7 +116,10 @@ Returns:
 \doxysubsubsection{\texorpdfstring{update\_routing\_table()}{update\_routing\_table()}}
 {\footnotesize\ttfamily Router.\+Router.\+update\+\_\+routing\+\_\+table (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{destination,  }\item[{}]{next\+\_\+hop,  }\item[{}]{cost }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Updates the routing table of the router.
+\begin{DoxyVerb}Updates the routing table of the router. 
+Sets the next hop and cost to reach a destination.
+    - If the cost is INFINITY, the destination is unreachable and next_hop set to None.
+
 
 Parameters:
 - destination (Router): The destination router object.

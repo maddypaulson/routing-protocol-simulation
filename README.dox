@@ -1,0 +1,18 @@
+/*! \mainpage ELEC 331 Programming Assignment 2 - Routing Protocols Simulation
+
+For contributions check \ref Contributions_Page "Contributions Page"
+
+\section link_to_page Details of Project
+To understand more about each different part of our project check the following pages
+- \ref Tests "Test Pages"
+
+\section ai_disclaimer Disclaimer - Usage of Generative AI Tools
+
+- \b ChatGPT 4: This tool was used on multiple different occasions to help figuring out/correcting Python syntax and assisted the creation of bash scripts.
+
+- \b GitHub \b Copilot: This tool was used in order to create comments for Doxygen documentation. Human review was performed for these comments, and adjustments made on a need-basis.
+    - The tool performed extremely well, saving a lot of time on the tedious process of documenting code.
+
+- Generative AI was \b NOT used for the classes' implementation and algorithms' logic.
+
+*/
