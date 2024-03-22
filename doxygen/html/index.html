@@ -74,13 +74,26 @@ $(function() {
   <div class="headertitle"><div class="title">ELEC 331 Programming Assignment 2 - Routing Protocols Simulation </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>For contributions check <a class="el" href="_contributions__page.html">Contributions Page</a></p>
+<div class="textblock"><h1><a class="anchor" id="Authors"></a>
+Authors</h1>
+<ul>
+<li>Maddy Paulson (maddypaulson)</li>
+<li>Leonardo Kamino Barros (LeonardoKamino)</li>
+</ul>
+<h1><a class="anchor" id="Contributions"></a>
+Contributions</h1>
+<p>For contributions check <a class="el" href="_contributions__page.html">Contributions Page</a></p>
 <h1><a class="anchor" id="link_to_page"></a>
 Details of Project</h1>
+<p>This project contains the implementations for two different routing protocols: Distance Vector Routing and Link State Routing. The programs are seperate and can be run using the commands specified in the documentation below. The Distance Vector protocol operates on the principle of routers exchanging information about the network with their immediate neighbours, ultimately allowing each router to construct a complete picture of the network topology. The implementation is split into <a class="el" href="_distance_vector_network_8py.html" title="Implementation of DistanceVectorNetwork Class.">DistanceVectorNetwork.py</a> which handles the overall network operations and <a class="el" href="_distance_vector_router_8py.html" title="Implementation of the DistanceVectorRouter Class.">DistanceVectorRouter.py</a> which represents individual routers in the network. The Link State protocol utilizes an adapted version of Dijkstra's algorithm and operates on the principle that routers have a global view of the network topology. Similar to Distance Vector the implementation is split into <a class="el" href="_distance_vector_network_8py.html" title="Implementation of DistanceVectorNetwork Class.">DistanceVectorNetwork.py</a> which handles the overall network operations and <a class="el" href="_distance_vector_router_8py.html" title="Implementation of the DistanceVectorRouter Class.">DistanceVectorRouter.py</a> which represents individual routers in the network. Both protocols follow the tie breaking rules established in the assignment documentation.</p>
 <p>To understand more about each different part of our project check the following pages</p><ul>
 <li><a class="el" href="group___tests.html">Test Pages</a></li>
 </ul>
-<h1><a class="anchor" id="ai_disclaimer"></a>
+<h1><a class="anchor" id="use"></a>
+Usage</h1>
+<p>We have created bash scripts which allows for testing our submission with the following commands </p><div class="fragment"><div class="line">./dvr.sh &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">./lsr.sh &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
+</div><!-- fragment --><h1><a class="anchor" id="ai_disclaimer"></a>
 Disclaimer - Usage of Generative AI Tools</h1>
 <ul>
 <li><b>ChatGPT</b> 4: This tool was used on multiple different occasions to help figuring out/correcting Python syntax and assisted the creation of bash scripts.</li>

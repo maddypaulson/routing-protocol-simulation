@@ -12,4 +12,8 @@ class \mbox{\hyperlink{class_distance_vector_router_1_1_distance_vector_router}{
 \doxysubsection{Detailed Description}
 
 
-This module does yada yada yada 
+The Distance Vector Routing (DVR) module, which encompasses the Distance\+Vector\+Network and Distance\+Vector\+Router classes, implements the foundational concepts of Distance Vector routing protocol. This protocol is characterized by routers sharing information only with their immediate neighbors, gradually propagating knowledge of the entire network\textquotesingle{}s topology through repeated exchanges. This implementation captures the essence of DVR, focusing on simplicity and direct communication between routers to calculate the shortest paths.
+
+The Distance\+Vector\+Network class, inheriting from the Network base class, orchestrates the network-\/wide operations necessary for the Distance Vector algorithm. Upon initialization, routers are instantiated as Distance\+Vector\+Router objects and added to the network, establishing a framework for simulating distance vector routing. The network facilitates the iterative process of updating routing tables based on exchanges between neighboring routers, utilizing the distance vector algorithm to converge on the shortest paths to all destinations.
+
+Each Distance\+Vector\+Router represents an individual router in the network, inheriting basic functionalities from the Router class while integrating the specifics of the Distance Vector protocol. Routers maintain a routing table that maps destinations to the next hop and the cost of reaching them. 

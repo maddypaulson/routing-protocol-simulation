@@ -13,6 +13,8 @@ Inheritance diagram for Link\+State\+Router.\+Link\+State\+Router\+:\begin{figur
 \item 
 \mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a8d82d0eead49d67df2c98f91a478f5b9}{generate\+\_\+lsp}} (self)
 \item 
+\mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a8d0c9491ea7bd78f8105ca14043b1ee4}{check\+\_\+new\+\_\+path\+\_\+lexicographically\+\_\+smaller}} (self, new\+\_\+path, old\+\_\+path)
+\item 
 \mbox{\hyperlink{class_link_state_router_1_1_link_state_router_a77602edd6fa2f331c6021f2ed23970b5}{update\+\_\+routing\+\_\+table\+\_\+dijkstra}} (self)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_router_1_1_router}{Router.\+Router}}}
@@ -132,6 +134,21 @@ Returns:
 
 Args:
     lsp (dict): The received LSP.
+\end{DoxyVerb}
+ \Hypertarget{class_link_state_router_1_1_link_state_router_a8d0c9491ea7bd78f8105ca14043b1ee4}\label{class_link_state_router_1_1_link_state_router_a8d0c9491ea7bd78f8105ca14043b1ee4} 
+\index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!check\_new\_path\_lexicographically\_smaller@{check\_new\_path\_lexicographically\_smaller}}
+\index{check\_new\_path\_lexicographically\_smaller@{check\_new\_path\_lexicographically\_smaller}!LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}}
+\doxysubsubsection{\texorpdfstring{check\_new\_path\_lexicographically\_smaller()}{check\_new\_path\_lexicographically\_smaller()}}
+{\footnotesize\ttfamily Link\+State\+Router.\+Link\+State\+Router.\+check\+\_\+new\+\_\+path\+\_\+lexicographically\+\_\+smaller (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{new\+\_\+path,  }\item[{}]{old\+\_\+path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Checks if a new path is lexicographically smaller than another path.
+
+Args:
+    new_path (list): The first path.
+    old_path (list): The second path.
+
+Returns:
+    bool: True if new_path is lexicographically smaller than old_path, False otherwise.
 \end{DoxyVerb}
  \Hypertarget{class_link_state_router_1_1_link_state_router_a8d82d0eead49d67df2c98f91a478f5b9}\label{class_link_state_router_1_1_link_state_router_a8d82d0eead49d67df2c98f91a478f5b9} 
 \index{LinkStateRouter.LinkStateRouter@{LinkStateRouter.LinkStateRouter}!generate\_lsp@{generate\_lsp}}

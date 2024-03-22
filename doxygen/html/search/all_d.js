@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['of_20generative_20ai_20tools_0',['Disclaimer - Usage of Generative AI Tools',['../index.html#ai_disclaimer',1,'']]],
-  ['of_20project_1',['Details of Project',['../index.html#link_to_page',1,'']]]
+  ['network_0',['Network',['../class_network_1_1_network.html',1,'Network.Network'],['../group___super.html#network',1,'Network']]],
+  ['network_2epy_1',['Network.py',['../_network_8py.html',1,'']]]
 ];
