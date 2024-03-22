@@ -55,7 +55,6 @@ class LinkStateNetwork(Network):
         self.send_messages(message_file)
 
         with open(changes_file, 'r') as changes_file:
-            print("Processing changes...")
             for line in changes_file:
                 router_id1, router_id2, cost = line.split()
                
