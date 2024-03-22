@@ -3,7 +3,14 @@ import networkx as nx
 import heapq
 
 ## @file
-## File for a custom Dijkstra's algorithm to compare output with the Link State Routing algorithm.
+## @brief File for a custom Dijkstra's algorithm to compare output with the Link State Routing algorithm.
+# Implements Dijkstra's algorithm to validate Link State Routing (LSR) simulations by comparing 
+# computed shortest paths with LSR outputs. It processes network topologies, simulates routing 
+# after topology changes, and ensures the LSR's accuracy. Essential for testing the robustness 
+# and correctness of LSR implementations under dynamic network conditions.
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
 ## @addtogroup Tests
 ## @{
 

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Check if Python is installed
 if command -v python &> /dev/null; then
     python_cmd="python"
@@ -21,14 +19,11 @@ message_file=$2
 changes_file=$3
 output_file=${4:-output.txt} # Default to output.txt if not provided
 
-# Placeholder for the main logic
-# Here, you would include the commands or calls to other scripts/programs that process the inputs
 echo "Running Distance Vector Simulation with the following inputs:"
 echo "Topology file: $topology_file"
 echo "Message file: $message_file"
 echo "Changes file: $changes_file"
 echo "Output will be written to: $output_file"
-
 
 $python_cmd "src/dvr.py" "$topology_file" "$message_file" "$changes_file" "$output_file"
 

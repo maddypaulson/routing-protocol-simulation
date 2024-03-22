@@ -2,8 +2,14 @@ from DistanceVectorNetwork import DistanceVectorNetwork
 from utilities import parseArgs
 
 ## @file
-## Main file to run the Distance Vector Routing Algorithm.
-## @addtogroup DVR
+## @brief Main file to run the Distance Vector Routing Algorithm.
+##
+## This script serves as the entry point for simulating a network utilizing the Distance Vector Routing protocol.
+##
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
+## @addtogroup DVR 
 ## @{
 def main():
     """

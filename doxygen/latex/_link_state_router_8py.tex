@@ -2,7 +2,7 @@
 \hypertarget{_link_state_router_8py}{}\label{_link_state_router_8py}\index{src/LinkStateRouter.py@{src/LinkStateRouter.py}}
 
 
-TImplementation of the Link\+State\+Router Class.  
+Implementation of the Link\+State\+Router Class.  
 
 
 \doxysubsubsection*{Classes}
@@ -13,5 +13,12 @@ class \mbox{\hyperlink{class_link_state_router_1_1_link_state_router}{Link\+Stat
 
 
 \doxysubsection{Detailed Description}
-TImplementation of the Link\+State\+Router Class. 
+Implementation of the Link\+State\+Router Class. 
 
+This file defines the Link\+State\+Router class, inheriting from the Router class, to simulate the functionalities of a router within a Link State routing protocol environment. It focuses on generating and processing Link State Packets (LSPs) to maintain an updated view of the network topology. Through the Dijkstra algorithm, it calculates the shortest path to all other routers in the network, updating the routing table accordingly. This class is crucial to the Link State routing simulation, enabling the distribution of topology information and the calculation of optimal routing paths. \begin{DoxyAuthor}{Author}
+Maddy Paulson (maddypaulson) 
+
+Leonardo Kamino Barros (Leonardo\+Kamino) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]No known bugs. \end{DoxyRefDesc}

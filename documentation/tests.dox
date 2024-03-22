@@ -1,5 +1,16 @@
 /** @defgroup Tests
  *
- * This module does yada yada yada
+ * The test suite was designed were designed to ensure the accuracy and reliability of the implementations for both the Distance Vector (DVR) and Link State (LSR) routing protocols.
+ * The test utilizes an adapted version of Dijkstra's algorithm to compare the output
+ * with the results from running `lsr.py` and `dvr.py`. 
+ *
+ * The suite includes unit tests for individual functions and integration tests that 
+ * simulate real-world networking conditions. Tests for the Distance Vector Routing 
+ * include verifying the update of routing tables upon receiving new distance information 
+ * and ensuring that routers correctly decide whether to accept or ignore incoming 
+ * messages based on their current knowledge of the network topology. Similarly, tests 
+ * for the Link State Routing protocol assess the distribution of Link State Packets 
+ * (LSPs) throughout the network, confirming that all routers attain a global view of 
+ * the network topology and correctly compute shortest paths using Dijkstra's algorithm.
  *
  */

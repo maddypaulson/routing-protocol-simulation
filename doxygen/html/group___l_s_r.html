@@ -85,7 +85,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This module does yada yada yada </p>
+<p>Within the LinkStateNetwork class, the network is initialized based on a topology file, and routers are added to the network as instances of the LinkStateRouter. This setup facilitates the distribution of Link State Packets (LSPs) across the network, ensuring that each router obtains a global view of the network's topology. By broadcasting LSPs containing information about directly connected neighbors and their link costs, routers can construct a comprehensive map of the network.</p>
+<p>The LinkStateRouter class further details the operations of a router within a Link State network, focusing on generating, processing, and distributing LSPs. Each router maintains a sequence number for LSPs to ensure the freshness of the information received. Upon receiving an LSP, routers update their local view of the network's topology and recompute routing tables using Dijkstra's algorithm. This process involves determining the shortest path to every other router in the network, considering the most recent state of the network as depicted by the LSPs.</p>
+<p>Moreover, the LSR implementation allows for dynamic adjustments to the network topology, including adding and removing links or changing link costs. Changes like this trigger the redistribution of LSPs and recalculation of routing tables, demonstrating the protocol's adaptability to changing network conditions. </p>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

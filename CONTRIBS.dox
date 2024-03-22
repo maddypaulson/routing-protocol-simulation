@@ -7,11 +7,15 @@ This page outlines the shared efforts and individual contributions of the team m
 The following list details the efforts shared by the team:
 - Creation of super classes `Network` and `Router`
 - Development of a custom Dijkstra algorithm for testing LSR (Link State Routing)
+- Creating documentation
 
 \section individual_contributions Individual Contributions
 
 \subsection leonardo Leonardo Kamino Barros
 - Implemented the Distance Vector Routing Algorithm
 - Developed the mechanism for tie-breaking in the Link State Routing Algorithm
+
+\subsection maddy Maddy Paulson
+- Implemented the Link State Routing Algorithm
 
 */

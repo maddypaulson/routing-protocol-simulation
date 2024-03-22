@@ -85,7 +85,13 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This module does yada yada yada </p>
+<h2><a class="anchor" id="network"></a>
+Network</h2>
+<p>The Network class serves as the foundation for simulating routing protocols within a network of routers. It acts as a parent class for more specific network types, such as DistanceVectorNetwork and LinkStateNetwork, which implement the Distance Vector and Link State routing protocols. This class is designed to manage a collection of router instances, each represented by the Router class, and facilitates the initialization and manipulation of the network topology based on input from a topology file.</p>
+<p>Key functionalities of the Network class include the ability to add and remove links between routers, update routing tables, and simulate the sending of messages across the network. It achieves this through methods that add routers to the network, establish links with specified costs between these routers, and update the network topology in response to changes. Additionally, the class supports message routing, where messages are sent from a source router to a destination router.</p>
+<h2><a class="anchor" id="router"></a>
+Router</h2>
+<p>The Router class is crucial in the simulation of routing protocols within a network, serving as the base class for specific router implementations, such as DistanceVectorRouter and LinkStateRouter. This class encapsulates the fundamental attributes and functionalities required by a router in a networked environment, including maintaining a list of neighboring routers, managing a routing table, and facilitating the update and retrieval of routing information. More descriptions about the properties and functions of routers are available in <a class="el" href="_router_8py.html" title="Implementation of the Router Class, that is the parent of the DistanceVectorRouter and LinkStateRoute...">Router.py</a>. </p>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

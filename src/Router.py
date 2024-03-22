@@ -1,8 +1,16 @@
 from utilities import INFINITY
 
 ## @file
-## Implementation of  the Router Class, that is  the parent of the DistanceVectorRouter and LinkStateRouter classes.
-## @addtogroup Super
+## @brief Implementation of the Router Class, that is the parent of the DistanceVectorRouter and LinkStateRouter classes.
+# The Router class provides foundational attributes and methods for simulating routers in a network, 
+# supporting both Distance Vector and Link State routing protocols. It includes functionalities for 
+# neighbor management, routing table maintenance, and basic routing information updates. This class 
+# is intended to be extended by subclasses implementing specific routing logic, serving as a core 
+# component in the simulation of network routing dynamics.
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
+## @addtogroup Super 
 ## @{
 class Router:
     """

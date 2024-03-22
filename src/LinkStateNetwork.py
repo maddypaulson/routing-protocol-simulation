@@ -1,7 +1,19 @@
 from Network import Network
 from LinkStateRouter import LinkStateRouter 
 ## @file
-## Implementation of the LinkStateNetwork Class.
+## @brief Implementation of the LinkStateNetwork Class.
+# This module defines the LinkStateNetwork class, which extends the Network base class to simulate 
+# the operation of a network using the Link State routing protocol. It manages the creation and 
+# interaction of LinkStateRouter objects to represent individual routers within the network. Key 
+# functionalities include the initialization of the network topology from a given file, distribution 
+# of Link State Packets (LSPs) to build a complete network topology view at each router, application 
+# of Dijkstra's algorithm for routing table calculations, and handling of dynamic network changes and 
+# message forwarding. This class demonstrates the core principles of Link State routing, including 
+# global topology awareness and shortest-path routing, through the generation, distribution, and 
+# processing of LSPs.
+## @author Maddy Paulson (maddypaulson)
+## @author Leonardo Kamino Barros (LeonardoKamino)
+## @bug No known bugs.
 ## @addtogroup  LSR 
 ## @{
 class LinkStateNetwork(Network):

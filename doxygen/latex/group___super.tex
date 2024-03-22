@@ -12,4 +12,8 @@ class \mbox{\hyperlink{class_router_1_1_router}{Router.\+Router}}
 \doxysubsection{Detailed Description}
 
 
-This module does yada yada yada 
+\hypertarget{group___super_network}{}\doxysubsubsection{\texorpdfstring{Network}{Network}}\label{group___super_network}
+The Network class serves as the foundation for simulating routing protocols within a network of routers. It acts as a parent class for more specific network types, such as Distance\+Vector\+Network and Link\+State\+Network, which implement the Distance Vector and Link State routing protocols. This class is designed to manage a collection of router instances, each represented by the Router class, and facilitates the initialization and manipulation of the network topology based on input from a topology file.
+
+Key functionalities of the Network class include the ability to add and remove links between routers, update routing tables, and simulate the sending of messages across the network. It achieves this through methods that add routers to the network, establish links with specified costs between these routers, and update the network topology in response to changes. Additionally, the class supports message routing, where messages are sent from a source router to a destination router.\hypertarget{group___super_router}{}\doxysubsubsection{\texorpdfstring{Router}{Router}}\label{group___super_router}
+The Router class is crucial in the simulation of routing protocols within a network, serving as the base class for specific router implementations, such as Distance\+Vector\+Router and Link\+State\+Router. This class encapsulates the fundamental attributes and functionalities required by a router in a networked environment, including maintaining a list of neighboring routers, managing a routing table, and facilitating the update and retrieval of routing information. More descriptions about the properties and functions of routers are available in \doxylink{_router_8py}{Router.\+py}. 

@@ -2,7 +2,7 @@
 \hypertarget{_distance_vector_network_8py}{}\label{_distance_vector_network_8py}\index{src/DistanceVectorNetwork.py@{src/DistanceVectorNetwork.py}}
 
 
-Implementation of Distance\+Vector\+Network Class.  
+Implementation of the Distance Vector Network class for routing simulation.  
 
 
 \doxysubsubsection*{Classes}
@@ -13,6 +13,14 @@ class \mbox{\hyperlink{class_distance_vector_network_1_1_distance_vector_network
 
 
 \doxysubsection{Detailed Description}
-Implementation of Distance\+Vector\+Network Class. 
+Implementation of the Distance Vector Network class for routing simulation. 
 
-This is a class used for the implementation of the Distance Vector Algorithm. It inherits from the Network class. It contains the implementation of the Distance Vector Algorithm. 
+This module contains the definition and implementation of the Distance\+Vector\+Network class, which simulates a network using the Distance Vector routing protocol. It inherits from the Network base class and integrates the Distance\+Vector\+Router class to represent individual routers within the network. The Distance\+Vector\+Network class is responsible for initializing the network topology from a given topology file, applying topology changes, executing the Distance Vector algorithm to update routing tables across routers, and facilitating the transmission of messages based on the updated routing tables. Key operations include network initialization, routing table updates, and message handling according to the Distance Vector routing principles.
+
+\begin{DoxyAuthor}{Author}
+Maddy Paulson (maddypaulson) 
+
+Leonardo Kamino Barros (Leonardo\+Kamino) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs. \end{DoxyRefDesc}
