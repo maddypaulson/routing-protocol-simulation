@@ -32,6 +32,10 @@ class LinkStateNetwork(Network):
             output_file (str): The file path to write the output.
         """
         super().__init__(topology_file, output_file)
+        self.distribute_all_lsp()
+
+        for router in self.routers.values():
+            router.update_routing_table_dijkstra()
 
     def _add_router(self, router_id):
         """
@@ -58,10 +62,6 @@ class LinkStateNetwork(Network):
             changes_file (str): The file path of the changes file.
             message_file (str): The file path to write the messages.
         """
-        self.distribute_all_lsp()
-
-        for router in self.routers.values():
-            router.update_routing_table_dijkstra()
 
         self.topology_output()
         self.send_messages(message_file)
@@ -85,21 +85,15 @@ class LinkStateNetwork(Network):
 
     def process_change(self, router_id1, router_id2, cost):
         """
-        Processes a change in the network.
+        Processes a change in the network and distribute knowledge for all routers.
 
         Args:
             router_id1 (int): The ID of the first router.
             router_id2 (int): The ID of the second router.
             cost (int): The cost of the link between the routers.
         """
-        should_distribute_all_lsp = False
-
-        if (router_id1 not in self.routers or router_id2  not in self.routers) or cost < 0:
-            should_distribute_all_lsp = True
             
         super().process_change(router_id1, router_id2, cost)
-
-        if should_distribute_all_lsp:
-            self.distribute_all_lsp()
+        self.distribute_all_lsp()
 
 ## @}

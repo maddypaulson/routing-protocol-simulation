@@ -29,6 +29,8 @@ class DistanceVectorNetwork(Network):
 
     def __init__(self, topology_file, output_file):
         super().__init__(topology_file, output_file)
+        self._dv_algorithm()
+
 
     def _add_router(self, router_id):
         """
@@ -52,7 +54,6 @@ class DistanceVectorNetwork(Network):
         Returns:
             None
         """
-        self._dv_algorithm()
         self.topology_output()
         self.send_messages(message_file)
         with open(changes_file, 'r') as changes_file:

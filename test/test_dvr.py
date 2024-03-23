@@ -79,20 +79,19 @@ class TestDistanceVectorNetwork(unittest.TestCase):
         network._add_router(22)
         self.assertIn(22, network.routers)
 
-    ## @brief Test case for the _dv_algorithm method of the DistanceVectorNetwork class.
+    ## @brief Test case for the DistanceVectorNetwork object initializations.
     #
     # This test case verifies the functionality of the _dv_algorithm method.
-    # It creates a DistanceVectorNetwork object, runs the distance vector algorithm, and checks the routing tables.
+    # It creates a DistanceVectorNetwork object, and checks if the routing tables are initialized correctly.
     #
     # Test Steps:
     # 1. Create a DistanceVectorNetwork object.
-    # 2. Call the _dv_algorithm method to run the distance vector algorithm.
-    # 3. Check the routing tables of the routers.
+    # 2. Check the routing tables of the routers.
     #
     # Expected Results:
     # - The routing tables of the routers are updated correctly.
     # @test This test case verifies the functionality of the _dv_algorithm method.
-    def test_dv_algorithm(self):
+    def test_initialize_dv_network(self):
         
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_connected.txt"
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_test_dv_algorithm.txt"
@@ -106,7 +105,7 @@ class TestDistanceVectorNetwork(unittest.TestCase):
     ## @brief Test case for the tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class.
     #
     # This test case verifies the functionality of the tie breaking in the _dv_algorithm method.
-    # It creates a DistanceVectorNetwork object, runs the distance vector algorithm, and checks the routing tables.
+    # It creates a DistanceVectorNetwork object, and checks the routing tables looking for specifics results due to tie-break.
     #
     # The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
     # The testfile topology_tie_break.txt contains the following topology with all edges equal to 1:
@@ -117,8 +116,7 @@ class TestDistanceVectorNetwork(unittest.TestCase):
     #
     # Test Steps:
     # 1. Create a DistanceVectorNetwork object.
-    # 2. Call the _dv_algorithm method to run the distance vector algorithm.
-    # 3. Check the routing table of the router 3.
+    # 2. Check the routing table of the router 3.
     #
     # Expected Results:
     # - The routing table router 3 has next hop as 2, not 4.
@@ -129,13 +127,12 @@ class TestDistanceVectorNetwork(unittest.TestCase):
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_tie_break.txt"
         network = DistanceVectorNetwork(str(topology_path), str(output_path))
         
-        network._dv_algorithm()
         self.assertEqual(network.routers[3].routing_table[6], (2, 3))
 
     ##@brief Test case for changing topology and tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class.
     #
     # This test case verifies the functionality of the tie breaking in the _dv_algorithm method.
-    # It creates a DistanceVectorNetwork object, runs the distance vector algorithm, and checks the routing tables.
+    # It creates a DistanceVectorNetwork object, and checks the routing tables.
     #
     # The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
     # The testfile topology_tie_break.txt contains the following topology with all edges equal to 1:
@@ -146,8 +143,7 @@ class TestDistanceVectorNetwork(unittest.TestCase):
     #
     # Test Steps:
     # 1. Create a DistanceVectorNetwork object.
-    # 2. Call the _dv_algorithm method to run the distance vector algorithm.
-    # 3. Check the routing table of the router 3.
+    # 2. Check the routing table of the router 3.
     #
     # Expected Results:
     # - The routing table router 3 has next hop as 2, not 4.
@@ -157,7 +153,6 @@ class TestDistanceVectorNetwork(unittest.TestCase):
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_tie_break_2.txt"
         network = DistanceVectorNetwork(str(topology_path), str(output_path))
         
-        network._dv_algorithm()
         self.assertEqual(network.routers[4].routing_table[9], (12, 3))
 
         changes_path = Path(__file__).resolve().parent / "testfiles/changes_tie_break_2.txt"
@@ -166,6 +161,94 @@ class TestDistanceVectorNetwork(unittest.TestCase):
         network.apply_changes_and_output(str(changes_path), str(message_path))
 
         self.assertEqual(network.routers[4].routing_table[9], (5, 3))
+
+    ## @brief Test case for sending messages between disconnected nodes that are later connected.
+    #
+    # This test case verifies the functionality of sending messages between disconnected nodes that are later connected.
+    # It creates a DistanceVectorNetwork object, applies changes, and checks the messages.
+    #
+    # The testfile topology_disconnected_to_connected.txt contains the following topology:
+    #   1 - 2--4   5 - 6
+    #     \ | /
+    #       3
+    # The testfile changes_disconnected_to_connected.txt contains the following changes:
+    #   4 5 1
+    #
+    # The resultiing topology would be
+    #   1 - 2--4 - 5 - 6
+    #     \ | /
+    #       3    
+    # 
+    # Test Steps:
+    # 1. Create a DistanceVectorNetwork object.
+    # 2. Check message from 1 - 6 to show it is impossible to reach.
+    # 3. Apply the changes.
+    # 4. Check message from 1 - 6 to show it is possible to reach and has hops 1 - 3 - 4 - 5.
+    #
+    # Expected Results:
+    # - Before changes, the message from 1 to 6 shows it is impossible to reach.
+    # - After messages, the message from 1 to 6 shows it is possible to reach and has hops 1 3 4 5.  
+    # @test Testing creating messages string between nodes before and after they are connected.  
+    def test_disconnected_to_connected_messages(self):
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_disconnected_to_connected.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_disconnected_to_connected.txt"
+        network = DistanceVectorNetwork(str(topology_path), str(output_path))
+        
+        message_str = network._generate_message_string(1, 6, "hello")
+        self.assertEqual("from 1 to 6 cost infinite hops unreachable message hello", message_str)
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_disconnected_to_connected.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_disconnected_to_connected.txt"
+
+        network.apply_changes_and_output(str(changes_path), str(message_path))
+
+        message_str = network._generate_message_string(1, 6, "hello")
+        self.assertEqual("from 1 to 6 cost 4 hops 1 3 4 5 message hello", message_str)
+    
+    ## @brief Test case for sending messages between connected nodes that are later disconnected.
+    #
+    # This test case verifies the functionality of sending messages between connected nodes that are later disconnected.
+    # It creates a DistanceVectorNetwork object, update router routing table, applies changes, and checks the messages.
+    #
+    # The testfile topology_connected_to_disconnected.txt contains the following topology (the number of lines is the cost of the edge):
+    #   1 - 2--4 - 5
+    #     \ | /
+    #       3
+    # The testfile changes_connected_to_disconnected.txt contains the following changes:
+    #   3 4 -999
+    #   4 5 -999
+    #   
+    #   
+    # The resulting topology would be
+    #   1 - 2--4  5
+    #     \ |
+    #       3
+    #
+    # Test Steps:
+    # 1. Create a DistanceVectorNetwork object.
+    # 2. Check message from 1 - 5 to show it is possible to reach through hops 1 3 4.
+    # 3. Apply the changes.
+    # 4. Check message from 1 - 5 to show it is impossible to reach.
+    #
+    # Expected Results:
+    # - Before changes, the message from 1 to 6 shows it is possible to reach.
+    # - After messages, the message from 1 to 6 shows it is impossible to reach.
+    # @test Testing creating messages string between nodes before and after they are disconnected.
+    def test_connected_to_disconnected(self):
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_connected_to_disconnected.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_connected_to_disconnected.txt"
+        network = DistanceVectorNetwork(str(topology_path), str(output_path))
+        
+        message_str = network._generate_message_string(1, 5, "hello")
+        self.assertEqual("from 1 to 5 cost 3 hops 1 3 4 message hello", message_str)
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_connected_to_disconnected.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_connected_to_disconnected.txt"
+
+        network.apply_changes_and_output(str(changes_path), str(message_path))
+
+        message_str = network._generate_message_string(1, 5, "hello")
+        self.assertEqual("from 1 to 5 cost infinite hops unreachable message hello", message_str)
 
     def test_dv_algorithm_single_router(self):
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_single.txt"
