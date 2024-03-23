@@ -77,7 +77,16 @@ $(function() {
 <div class="textblock"><dl class="reflist">
 <dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#ac063b0552c86373776006054b428f2c0">test_dvr.TestDistanceVectorNetwork.test_add_router</a>  (self)</dt>
 <dd><a class="anchor" id="_test000003"></a>This test case verifies the functionality of the adding a router to network.  </dd>
-<dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#a9bc9c11716a1f59c7487e116ad134d07">test_dvr.TestDistanceVectorNetwork.test_dv_algorithm</a>  (self)</dt>
+<dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#a8c9e66bc6b0c9066cfa4942c89019db0">test_dvr.TestDistanceVectorNetwork.test_connected_to_disconnected</a>  (self)</dt>
+<dd><a class="anchor" id="_test000008"></a>Testing creating messages string between nodes before and after they are disconnected.  </dd>
+<dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#a01f7f76f88caa97537038082c535583c">test_dvr.TestDistanceVectorNetwork.test_disconnected_to_connected_messages</a>  (self)</dt>
+<dd><a class="anchor" id="_test000007"></a>Testing creating messages string between nodes before and after they are connected. <br  />
+  </dd>
+<dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#aff94ad2a0c8135d1d5d55f9ca445a22d">test_dvr.TestDistanceVectorNetwork.test_dv_algorithm_single_router</a>  (self)</dt>
+<dd><a class="anchor" id="_test000009"></a>Validates that DVR efficiently updates routing tables and manages message routing in light of topology changes.  </dd>
+<dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#abcaf4ef9e267f1a1802e9f91ec241ba1">test_dvr.TestDistanceVectorNetwork.test_dvr_circular</a>  (self)</dt>
+<dd><a class="anchor" id="_test000010"></a>Validates DVR's effectiveness and dynamic adjustment capability in a circular network subjected to specific topology alterations.  </dd>
+<dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#a3e2974e7d52c679892f36bbecb145198">test_dvr.TestDistanceVectorNetwork.test_initialize_dv_network</a>  (self)</dt>
 <dd><a class="anchor" id="_test000004"></a>This test case verifies the functionality of the _dv_algorithm method.  </dd>
 <dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_network.html#a52a2a293b1f425a7e33ac7174bfef9d9">test_dvr.TestDistanceVectorNetwork.test_tie_break</a>  (self)</dt>
 <dd><a class="anchor" id="_test000005"></a>This test case verifies the functionality of the tie breaking in DistanceVectorNetwork class if 2 routes has same cost.  </dd>
@@ -87,17 +96,24 @@ $(function() {
 <dd><a class="anchor" id="_test000002"></a>This test case verifies the decision of router in accepting or not a message it receives.  </dd>
 <dt>Member <a class="el" href="classtest__dvr_1_1_test_distance_vector_router.html#ad7af008506b99eedc9997308222921b8">test_dvr.TestDistanceVectorRouter.test_update_routing_table</a>  (self)</dt>
 <dd><a class="anchor" id="_test000001"></a>This test case verifies updating the routing table of a router.  </dd>
-<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#acc1029fbd255c96d65f96701131e5a2a">test_lsr.TestLinkState.test_distribute_all_lsp_connected_graph</a>  (self)</dt>
-<dd><a class="anchor" id="_test000007"></a>Verifies the functionality of routers in networking distributing knowledge in network in a connected graph.  </dd>
-<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#acf459bf23da7df09de8cf1b8f5608cd8">test_lsr.TestLinkState.test_distribute_all_lsp_disconnected_graph</a>  (self)</dt>
-<dd><a class="anchor" id="_test000008"></a>Verifies the functionality of routers in networking distributing knowledge in network in a disconnected graph.  </dd>
-<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#af093ce910b4be941ef7e10b96cd82e1b">test_lsr.TestLinkState.test_ls_algorithm_single_router</a>  (self)</dt>
-<dd><a class="anchor" id="_test000011"></a>Ensures LSR accurately updates routing tables and handles messages in response to topology changes. <br  />
+<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#a6d42d2727d56039c36804362eae924c6">test_lsr.TestLinkState.test_connected_to_disconnected</a>  (self)</dt>
+<dd><a class="anchor" id="_test000017"></a>Testing creating messages string between nodes before and after they are disconnected.  </dd>
+<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#ad9b460b569a91ba63645f821f709ca60">test_lsr.TestLinkState.test_disconnected_to_connected_messages</a>  (self)</dt>
+<dd><a class="anchor" id="_test000016"></a>Testing creating messages string between nodes before and after they are connected. <br  />
   </dd>
+<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#acc1029fbd255c96d65f96701131e5a2a">test_lsr.TestLinkState.test_distribute_all_lsp_connected_graph</a>  (self)</dt>
+<dd><a class="anchor" id="_test000011"></a>Verifies the functionality of routers in networking distributing knowledge in network in a connected graph.  </dd>
+<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#acf459bf23da7df09de8cf1b8f5608cd8">test_lsr.TestLinkState.test_distribute_all_lsp_disconnected_graph</a>  (self)</dt>
+<dd><a class="anchor" id="_test000012"></a>Verifies the functionality of routers in networking distributing knowledge in network in a disconnected graph.  </dd>
+<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#af093ce910b4be941ef7e10b96cd82e1b">test_lsr.TestLinkState.test_ls_algorithm_single_router</a>  (self)</dt>
+<dd><a class="anchor" id="_test000015"></a>Ensures LSR accurately updates routing tables and handles messages in response to topology changes. <br  />
+  </dd>
+<dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#a3eb6b64ae52ad140471941e20c087593">test_lsr.TestLinkState.test_lsr_circular</a>  (self)</dt>
+<dd><a class="anchor" id="_test000018"></a>Ensures LSR algorithm's precision and adaptability in a circular network with specific topology changes.  </dd>
 <dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#ad4c04c827411a720179df65f790399f5">test_lsr.TestLinkState.test_tie_break</a>  (self)</dt>
-<dd><a class="anchor" id="_test000009"></a>Verifies the functionality of the tie breaking in the Link State Routing when 2 paths has same cost.  </dd>
+<dd><a class="anchor" id="_test000013"></a>Verifies the functionality of the tie breaking in the Link State Routing when 2 paths has same cost.  </dd>
 <dt>Member <a class="el" href="classtest__lsr_1_1_test_link_state.html#a15bc630780ccb6445a53d1c58b4b6b9c">test_lsr.TestLinkState.test_tie_break_after_changes</a>  (self)</dt>
-<dd><a class="anchor" id="_test000010"></a>Verifies the functionality of updating topology and the tie breaking in the Link State Routing when new route has same cost as old path. </dd>
+<dd><a class="anchor" id="_test000014"></a>Verifies the functionality of updating topology and the tie breaking in the Link State Routing when new route has same cost as old path. </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

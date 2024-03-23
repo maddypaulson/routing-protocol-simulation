@@ -46,21 +46,6 @@ Inheritance diagram for Link\+State\+Network.\+Link\+State\+Network\+:\begin{fig
 \item 
 \mbox{\hyperlink{class_network_1_1_network_aaf06c376f4d7363a7fddae40dd5d145b}{\+\_\+\+\_\+del\+\_\+\+\_\+}} (self)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\Hypertarget{class_link_state_network_1_1_link_state_network_ae0cdd7a1e142a2f7f2c5e1e836b695dc}\label{class_link_state_network_1_1_link_state_network_ae0cdd7a1e142a2f7f2c5e1e836b695dc} 
-{\bfseries routers}
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
-\begin{DoxyCompactItemize}
-\item 
-{\bfseries routers}
-\item 
-{\bfseries output\+\_\+file}
-\item 
-{\bfseries output\+\_\+file\+\_\+iterator}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -70,6 +55,16 @@ Inheritance diagram for Link\+State\+Network.\+Link\+State\+Network\+:\begin{fig
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_network_1_1_network_afbf07fca9de587dc17b38a57a7257328}{\+\_\+generate\+\_\+message\+\_\+string}} (self, router\+\_\+id\+\_\+from, router\+\_\+id\+\_\+to, message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_network_1_1_network}{Network.\+Network}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries routers}
+\item 
+{\bfseries output\+\_\+file}
+\item 
+{\bfseries output\+\_\+file\+\_\+iterator}
 \end{DoxyCompactItemize}
 
 
@@ -141,7 +136,7 @@ Args:
 \doxysubsubsection{\texorpdfstring{process\_change()}{process\_change()}}
 {\footnotesize\ttfamily Link\+State\+Network.\+Link\+State\+Network.\+process\+\_\+change (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{router\+\_\+id1,  }\item[{}]{router\+\_\+id2,  }\item[{}]{cost }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Processes a change in the network.
+\begin{DoxyVerb}Processes a change in the network and distribute knowledge for all routers.
 
 Args:
     router_id1 (int): The ID of the first router.
