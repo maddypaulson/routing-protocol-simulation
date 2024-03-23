@@ -1,0 +1,68 @@
+\doxysection{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+Test\+LSRCustom\+Dijkstra Class Reference}
+\hypertarget{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra}{}\label{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra}\index{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a41e867c312b0207c7ce82e681a088e74}\label{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a41e867c312b0207c7ce82e681a088e74} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\hyperlink{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a94d32f4e82eb003ffc3528cfbd6ca8a0}{read\+\_\+topology\+\_\+from\+\_\+file}} (self, filename)
+\item 
+\mbox{\hyperlink{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_abb211eedf54b1f5a26abc9d523b55dbd}{print\+\_\+messages\+\_\+from\+\_\+file}} (self, filename, graph, output\+\_\+iterator)
+\item 
+\mbox{\hyperlink{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a6173ffa117b369f955ced35153a03d77}{apply\+\_\+changes\+\_\+from\+\_\+file}} (self, graph, changes\+\_\+filename, message\+\_\+filename, output\+\_\+iterator)
+\item 
+\Hypertarget{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a41ae4dad90dec308a348c161e9856a66}\label{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a41ae4dad90dec308a348c161e9856a66} 
+{\bfseries custom\+\_\+dijkstra} (self, graph, source)
+\item 
+\mbox{\hyperlink{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a8a5367bff44ebb3281090d05eb9883e2}{print\+\_\+routing\+\_\+tables}} (self, graph, output\+\_\+iterator)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This class represents a script for a bigger test for the Link State Routing algorithm.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a6173ffa117b369f955ced35153a03d77}\label{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a6173ffa117b369f955ced35153a03d77} 
+\index{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}!apply\_changes\_from\_file@{apply\_changes\_from\_file}}
+\index{apply\_changes\_from\_file@{apply\_changes\_from\_file}!custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}}
+\doxysubsubsection{\texorpdfstring{apply\_changes\_from\_file()}{apply\_changes\_from\_file()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+Test\+LSRCustom\+Dijkstra.\+apply\+\_\+changes\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{changes\+\_\+filename,  }\item[{}]{message\+\_\+filename,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply changes to the graph based on a file.
+Each line of the file should be "node1 node2 cost",
+where a cost of -999 indicates the removal of a link.
+\end{DoxyVerb}
+ \Hypertarget{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_abb211eedf54b1f5a26abc9d523b55dbd}\label{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_abb211eedf54b1f5a26abc9d523b55dbd} 
+\index{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}!print\_messages\_from\_file@{print\_messages\_from\_file}}
+\index{print\_messages\_from\_file@{print\_messages\_from\_file}!custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}}
+\doxysubsubsection{\texorpdfstring{print\_messages\_from\_file()}{print\_messages\_from\_file()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+Test\+LSRCustom\+Dijkstra.\+print\+\_\+messages\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{}]{graph,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read and parse messages from a file.
+Each line of the file should be "from to message".
+\end{DoxyVerb}
+ \Hypertarget{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a8a5367bff44ebb3281090d05eb9883e2}\label{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a8a5367bff44ebb3281090d05eb9883e2} 
+\index{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}!print\_routing\_tables@{print\_routing\_tables}}
+\index{print\_routing\_tables@{print\_routing\_tables}!custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}}
+\doxysubsubsection{\texorpdfstring{print\_routing\_tables()}{print\_routing\_tables()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+Test\+LSRCustom\+Dijkstra.\+print\+\_\+routing\+\_\+tables (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute and print the routing table for each router.
+\end{DoxyVerb}
+ \Hypertarget{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a94d32f4e82eb003ffc3528cfbd6ca8a0}\label{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra_a94d32f4e82eb003ffc3528cfbd6ca8a0} 
+\index{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}!read\_topology\_from\_file@{read\_topology\_from\_file}}
+\index{read\_topology\_from\_file@{read\_topology\_from\_file}!custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra@{custom\_dijkstra\_lsr\_test.TestLSRCustomDijkstra}}
+\doxysubsubsection{\texorpdfstring{read\_topology\_from\_file()}{read\_topology\_from\_file()}}
+{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+Test\+LSRCustom\+Dijkstra.\+read\+\_\+topology\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Read and parse a topology from a file.
+Each line of the file should be "node1 node2 cost".
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+test/\mbox{\hyperlink{custom__dijkstra__lsr__test_8py}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+py}}\end{DoxyCompactItemize}

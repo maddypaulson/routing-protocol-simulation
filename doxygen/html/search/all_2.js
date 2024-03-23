@@ -5,8 +5,9 @@ var searchData=
   ['_5fadd_5frouter_2',['_add_router',['../class_distance_vector_network_1_1_distance_vector_network.html#ac4c480f8dab2d6df22418d834ff912ed',1,'DistanceVectorNetwork.DistanceVectorNetwork._add_router()'],['../class_link_state_network_1_1_link_state_network.html#a79742674b73e30634b15e25f100f6f1a',1,'LinkStateNetwork.LinkStateNetwork._add_router()'],['../class_network_1_1_network.html#ac3e466ec277567240d10727d2fd6ed36',1,'Network.Network._add_router()']]],
   ['_5fdistribute_5flsp_3',['_distribute_lsp',['../class_link_state_router_1_1_link_state_router.html#a7b60c00d701297a3a38ef7bc85895a53',1,'LinkStateRouter::LinkStateRouter']]],
   ['_5fdv_5falgorithm_4',['_dv_algorithm',['../class_distance_vector_network_1_1_distance_vector_network.html#a30e36e4f8b311742f32f327921a7c0f4',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
-  ['_5finvalidate_5fexpired_5froutes_5',['_invalidate_expired_routes',['../class_distance_vector_network_1_1_distance_vector_network.html#adab4c4b4f0fb064b3f40d77641e8ded6',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
-  ['_5fls_5falgorithm_6',['_ls_algorithm',['../class_link_state_router_1_1_link_state_router.html#aae1c1b1e5efba4a46e1e4a55b5c2c60a',1,'LinkStateRouter::LinkStateRouter']]],
-  ['_5fnotify_5fneighbors_7',['_notify_neighbors',['../class_distance_vector_network_1_1_distance_vector_network.html#a3131c72ddc6f26d8f9909ab020b78f69',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
-  ['_5fprocess_5flsp_8',['_process_lsp',['../class_link_state_router_1_1_link_state_router.html#a761e419afcbaf41db5957a1eae06f1af',1,'LinkStateRouter::LinkStateRouter']]]
+  ['_5fgenerate_5fmessage_5fstring_5',['_generate_message_string',['../class_network_1_1_network.html#afbf07fca9de587dc17b38a57a7257328',1,'Network::Network']]],
+  ['_5finvalidate_5fexpired_5froutes_6',['_invalidate_expired_routes',['../class_distance_vector_network_1_1_distance_vector_network.html#adab4c4b4f0fb064b3f40d77641e8ded6',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
+  ['_5fls_5falgorithm_7',['_ls_algorithm',['../class_link_state_router_1_1_link_state_router.html#aae1c1b1e5efba4a46e1e4a55b5c2c60a',1,'LinkStateRouter::LinkStateRouter']]],
+  ['_5fnotify_5fneighbors_8',['_notify_neighbors',['../class_distance_vector_network_1_1_distance_vector_network.html#a3131c72ddc6f26d8f9909ab020b78f69',1,'DistanceVectorNetwork::DistanceVectorNetwork']]],
+  ['_5fprocess_5flsp_9',['_process_lsp',['../class_link_state_router_1_1_link_state_router.html#a761e419afcbaf41db5957a1eae06f1af',1,'LinkStateRouter::LinkStateRouter']]]
 ];

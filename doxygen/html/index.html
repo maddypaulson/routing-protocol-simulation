@@ -94,13 +94,17 @@ Details of Project</h1>
 </ul>
 <h1><a class="anchor" id="use"></a>
 Usage</h1>
-<p>We have created bash scripts which allows for testing our submission with the following commands </p><div class="fragment"><div class="line">./dvr.sh &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
+<h2><a class="anchor" id="bash_scripts"></a>
+Bash Scripts - dvr.sh and lsr.sh</h2>
+<p>We have created a bash script which allows running our project with the following commands </p><div class="fragment"><div class="line">./dvr.sh &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">./lsr.sh &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
 </div><!-- fragment --><h2><a class="anchor" id="make_bash"></a>
-make.sh</h2>
+Executable Files - make.sh</h2>
 <p>We also created bash scripts to compile the code into executable binaries</p>
 <p>The script is used as follows: </p><div class="fragment"><div class="line">./make.sh</div>
-</div><!-- fragment --><p>The output will be present in the dist folder. The executable binaries are named dvr and lsr. The script consists of checking the presence of python in the system, installing pyinstaller and using it to generate the executables.</p>
+</div><!-- fragment --><p>The executable files will be present in the dist folder. The executable binaries are named dvr and lsr and are executed from the project source folder using: </p><div class="fragment"><div class="line">./dist/dvr &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
+<div class="line">./dist/lsr &lt;topologyFile&gt; &lt;messageFile&gt; &lt;changesFile&gt; [outputFile]</div>
+</div><!-- fragment --><p>The script consists of checking the presence of python in the system, installing pyinstaller and using it to generate the executables.</p>
 <h1><a class="anchor" id="ai_disclaimer"></a>
 Disclaimer - Usage of Generative AI Tools</h1>
 <ul>

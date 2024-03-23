@@ -143,6 +143,8 @@ Public Attributes</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac3e466ec277567240d10727d2fd6ed36" id="r_ac3e466ec277567240d10727d2fd6ed36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3e466ec277567240d10727d2fd6ed36">_add_router</a> (self, router_id)</td></tr>
 <tr class="separator:ac3e466ec277567240d10727d2fd6ed36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf07fca9de587dc17b38a57a7257328" id="r_afbf07fca9de587dc17b38a57a7257328"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbf07fca9de587dc17b38a57a7257328">_generate_message_string</a> (self, router_id_from, router_id_to, message)</td></tr>
+<tr class="separator:afbf07fca9de587dc17b38a57a7257328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Represents a network of routers.
@@ -237,6 +239,54 @@ Args:
 </pre> 
 <p>Reimplemented in <a class="el" href="class_distance_vector_network_1_1_distance_vector_network.html#ac4c480f8dab2d6df22418d834ff912ed">DistanceVectorNetwork.DistanceVectorNetwork</a>, and <a class="el" href="class_link_state_network_1_1_link_state_network.html#a79742674b73e30634b15e25f100f6f1a">LinkStateNetwork.LinkStateNetwork</a>.</p>
 
+</div>
+</div>
+<a id="afbf07fca9de587dc17b38a57a7257328" name="afbf07fca9de587dc17b38a57a7257328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf07fca9de587dc17b38a57a7257328">&#9670;&#160;</a></span>_generate_message_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Network.Network._generate_message_string </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>router_id_from</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>router_id_to</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Generates a message string formatted to be written to the output file.
+
+Args:
+    router_id_from (int): The ID of the source router.
+    router_id_to (int): The ID of the destination router.
+    message (str): The message to send.
+
+Returns:
+    str: The formatted message.
+</pre> 
 </div>
 </div>
 <a id="a1df8521ff14477f4dfe18d761a5074de" name="a1df8521ff14477f4dfe18d761a5074de"></a>
@@ -551,8 +601,7 @@ Writes the message to the output file.
 Args:
     router_id_from (int): The ID of the source router.
     router_id_to (int): The ID of the destination router.
-    message (str): The message to send.
-</pre> 
+    message (str): The message to send.</pre> 
 </div>
 </div>
 <a id="a0b43a563348499988cde6b418d5d3243" name="a0b43a563348499988cde6b418d5d3243"></a>

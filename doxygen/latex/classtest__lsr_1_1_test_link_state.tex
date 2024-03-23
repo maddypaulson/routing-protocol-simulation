@@ -10,13 +10,15 @@ Inheritance diagram for test\+\_\+lsr.\+Test\+Link\+State\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classtest__lsr_1_1_test_link_state_acc1029fbd255c96d65f96701131e5a2a}{test\+\_\+distribute\+\_\+all\+\_\+lsp\+\_\+connected\+\_\+graph}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Test case to verify the functionality of the distribute\+\_\+all\+\_\+lsp method. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtest__lsr_1_1_test_link_state_acf459bf23da7df09de8cf1b8f5608cd8}{test\+\_\+distribute\+\_\+all\+\_\+lsp\+\_\+disconnected\+\_\+graph}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Test case to verify the functionality of the distribute\+\_\+all\+\_\+lsp method in a disconnected graphs. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtest__lsr_1_1_test_link_state_ad4c04c827411a720179df65f790399f5}{test\+\_\+tie\+\_\+break}} (self)
-\item 
-\mbox{\hyperlink{classtest__lsr_1_1_test_link_state_a74b91014282be9d1d81b4d64a5d17f54}{test\+\_\+tie\+\_\+break\+\_\+2}} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Test case for the tie breaking in the Link State Routing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtest__lsr_1_1_test_link_state_a15bc630780ccb6445a53d1c58b4b6b9c}{test\+\_\+tie\+\_\+break\+\_\+after\+\_\+changes}} (self)
+\begin{DoxyCompactList}\small\item\em Test case for the tie breaking in the Link State Routing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtest__lsr_1_1_test_link_state_af093ce910b4be941ef7e10b96cd82e1b}{test\+\_\+ls\+\_\+algorithm\+\_\+single\+\_\+router}} (self)
+\begin{DoxyCompactList}\small\item\em Test case for verifying routing and messaging in Link State Routing after topology changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -26,101 +28,150 @@ Inheritance diagram for test\+\_\+lsr.\+Test\+Link\+State\+:\begin{figure}[H]
 \doxysubsubsection{\texorpdfstring{test\_distribute\_all\_lsp\_connected\_graph()}{test\_distribute\_all\_lsp\_connected\_graph()}}
 {\footnotesize\ttfamily test\+\_\+lsr.\+Test\+Link\+State.\+test\+\_\+distribute\+\_\+all\+\_\+lsp\+\_\+connected\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}\test
-Test case to verify the functionality of the distribute_all_lsp method.
 
-This test case creates a LinkStateNetwork object, representing a fully connected network and calls the distribute_all_lsp method.
-It then checks that all nodes have knowledge about all other nodes in the network.
 
-Test Steps:
-1. Create a LinkStateNetwork object with the given topology and output file paths.
-2. Call the distribute_all_lsp method to cdistribute knowledge in network.
-3. Check the nodes have correct knowledge of network.
+Test case to verify the functionality of the distribute\+\_\+all\+\_\+lsp method. 
 
-Expected Results:
-- All network topologies are equal.
-\end{DoxyVerb}
- \Hypertarget{classtest__lsr_1_1_test_link_state_acf459bf23da7df09de8cf1b8f5608cd8}\label{classtest__lsr_1_1_test_link_state_acf459bf23da7df09de8cf1b8f5608cd8} 
+This test case creates a Link\+State\+Network object, representing a fully connected network and calls the distribute\+\_\+all\+\_\+lsp method. It then checks that all nodes have knowledge about all other nodes in the network.
+
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Link\+State\+Network object with the given topology and output file paths.
+\item Call the distribute\+\_\+all\+\_\+lsp method to cdistribute knowledge in network.
+\item Check the nodes have correct knowledge of network.
+\end{DoxyEnumerate}
+
+Expected Results\+:
+\begin{DoxyItemize}
+\item All network topologies are equal. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000007}{Test}}]Verifies the functionality of routers in networking distributing knowledge in network in a connected graph. \end{DoxyRefDesc}
+
+\end{DoxyItemize}\Hypertarget{classtest__lsr_1_1_test_link_state_acf459bf23da7df09de8cf1b8f5608cd8}\label{classtest__lsr_1_1_test_link_state_acf459bf23da7df09de8cf1b8f5608cd8} 
 \index{test\_lsr.TestLinkState@{test\_lsr.TestLinkState}!test\_distribute\_all\_lsp\_disconnected\_graph@{test\_distribute\_all\_lsp\_disconnected\_graph}}
 \index{test\_distribute\_all\_lsp\_disconnected\_graph@{test\_distribute\_all\_lsp\_disconnected\_graph}!test\_lsr.TestLinkState@{test\_lsr.TestLinkState}}
 \doxysubsubsection{\texorpdfstring{test\_distribute\_all\_lsp\_disconnected\_graph()}{test\_distribute\_all\_lsp\_disconnected\_graph()}}
 {\footnotesize\ttfamily test\+\_\+lsr.\+Test\+Link\+State.\+test\+\_\+distribute\+\_\+all\+\_\+lsp\+\_\+disconnected\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Test case to verify the functionality of the distribute_all_lsp method.
 
-This test case creates a LinkStateNetwork object, representing a disconnected network and calls the distribute_all_lsp method.
-It then checks that  nodes have knowledge about all other nodes in their own network.
 
-Test Steps:
-1. Create a LinkStateNetwork object with the given topology and output file paths.
-2. Call the distribute_all_lsp method to cdistribute knowledge in network.
-3. Check the nodes have correct knowledge of network.
+Test case to verify the functionality of the distribute\+\_\+all\+\_\+lsp method in a disconnected graphs. 
 
-Expected Results:
-- Nodes in same network have the same network topology.
-- Nodes in different networks have different network topologies.
-\end{DoxyVerb}
- \Hypertarget{classtest__lsr_1_1_test_link_state_ad4c04c827411a720179df65f790399f5}\label{classtest__lsr_1_1_test_link_state_ad4c04c827411a720179df65f790399f5} 
+This test case creates a Link\+State\+Network object, representing a disconnected network and calls the distribute\+\_\+all\+\_\+lsp method. It then checks that nodes have knowledge about all other nodes in their own network.
+
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Link\+State\+Network object with the given topology and output file paths.
+\item Call the distribute\+\_\+all\+\_\+lsp method to cdistribute knowledge in network.
+\item Check the nodes have correct knowledge of network.
+\end{DoxyEnumerate}
+
+Expected Results\+:
+\begin{DoxyItemize}
+\item Nodes in same network have the same network topology.
+\item Nodes in different networks have different network topologies. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000008}{Test}}]Verifies the functionality of routers in networking distributing knowledge in network in a disconnected graph. \end{DoxyRefDesc}
+
+\end{DoxyItemize}\Hypertarget{classtest__lsr_1_1_test_link_state_af093ce910b4be941ef7e10b96cd82e1b}\label{classtest__lsr_1_1_test_link_state_af093ce910b4be941ef7e10b96cd82e1b} 
+\index{test\_lsr.TestLinkState@{test\_lsr.TestLinkState}!test\_ls\_algorithm\_single\_router@{test\_ls\_algorithm\_single\_router}}
+\index{test\_ls\_algorithm\_single\_router@{test\_ls\_algorithm\_single\_router}!test\_lsr.TestLinkState@{test\_lsr.TestLinkState}}
+\doxysubsubsection{\texorpdfstring{test\_ls\_algorithm\_single\_router()}{test\_ls\_algorithm\_single\_router()}}
+{\footnotesize\ttfamily test\+\_\+lsr.\+Test\+Link\+State.\+test\+\_\+ls\+\_\+algorithm\+\_\+single\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Test case for verifying routing and messaging in Link State Routing after topology changes. 
+
+This test case assesses the Link State Routing (LSR) algorithm\textquotesingle{}s response to topology changes, specifically focusing on the accuracy of routing table updates and message handling when a link becomes unreachable.
+
+Initially, a simple network topology is set up where router 1 is directly connected to router 2. The test verifies that messages are correctly routed based on the initial topology. Then, a change is applied to simulate the removal of the link between routers 1 and 2, and the test checks that subsequent routing tables and messages reflect this disconnection appropriately.
+
+The initial setup\+:
+\begin{DoxyItemize}
+\item A direct link between routers 1 and 2 with a cost of 6.
+\end{DoxyItemize}
+
+The change applied\+:
+\begin{DoxyItemize}
+\item The link between routers 1 and 2 is removed, denoted by a special cost value of {\ttfamily -\/999} in {\ttfamily changes\+\_\+single.\+txt}.
+\end{DoxyItemize}
+
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a {\ttfamily Link\+State\+Network} object with the initial topology.
+\item Distribute Link State Packets (LSPs) across the network.
+\item Update the routing table for router 1 using Dijkstra\textquotesingle{}s algorithm and verify the initial routing table entry.
+\item Verify that a message sent from router 2 to router 1 correctly indicates the cost and hops based on the initial topology.
+\item Apply the topology change to remove the link between routers 1 and 2.
+\item Verify that the routing table for router 1 reflects the disconnection by marking router 2 as unreachable.
+\item Verify that a message attempted after the link removal correctly indicates that router 1 is unreachable from router 2.
+\end{DoxyEnumerate}
+
+Expected Results\+:
+\begin{DoxyItemize}
+\item Before applying the change, messages between routers 1 and 2 indicate the correct cost and hop based on the initial topology.
+\item After the change, the routing table entry for router 2 in router 1\textquotesingle{}s routing table is marked with an infinite cost, indicating it\textquotesingle{}s unreachable.
+\item Messages attempted after the link removal correctly report the destination as unreachable, with an "{}infinite cost"{} and "{}unreachable"{} hops. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000011}{Test}}]Ensures LSR accurately updates routing tables and handles messages in response to topology changes. ~\newline
+ \end{DoxyRefDesc}
+
+\end{DoxyItemize}\Hypertarget{classtest__lsr_1_1_test_link_state_ad4c04c827411a720179df65f790399f5}\label{classtest__lsr_1_1_test_link_state_ad4c04c827411a720179df65f790399f5} 
 \index{test\_lsr.TestLinkState@{test\_lsr.TestLinkState}!test\_tie\_break@{test\_tie\_break}}
 \index{test\_tie\_break@{test\_tie\_break}!test\_lsr.TestLinkState@{test\_lsr.TestLinkState}}
 \doxysubsubsection{\texorpdfstring{test\_tie\_break()}{test\_tie\_break()}}
 {\footnotesize\ttfamily test\+\_\+lsr.\+Test\+Link\+State.\+test\+\_\+tie\+\_\+break (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Test case for the tie breaking in the Link State Routing.
 
-This test case verifies the functionality of the tie breaking in the Link State Routing.
-It creates a LinkStateNetwork object, runs the distribute_all_lsp() method, and checks the routing tables.
 
-The test checks that the path with the lowest lexigraphuc is chosen in case of a time.
-The testfile topology_tie_break.txt contains the following topology with all edges equal to 1:
-    3 - 4 - 5 - 6
-      \    /
-        2 
-Therefore routing table from 3 to 6 should have 2 as next hop. Since the path 3-4-5-6 and 3-2-5-6 have the same cost, the path 3-2-5-6 should be chosen as 2 < 4.
+Test case for the tie breaking in the Link State Routing. 
 
-Test Steps:
-1. Create a LinkStateNetwork object.
-2. Call the distribute_all_lsp method to spread info between router.
-3. Call the update_routing_table_dijkstra method to update the routing table of router 3.
-4. Check the routing table of the router 3.
+This test case verifies the functionality of the tie breaking in the Link State Routing. It creates a Link\+State\+Network object, runs the distribute\+\_\+all\+\_\+lsp() method, and checks the routing tables.
 
-Expected Results:
-- The routing table router 3 has next hop as 2, not 4.
-\end{DoxyVerb}
- \Hypertarget{classtest__lsr_1_1_test_link_state_a74b91014282be9d1d81b4d64a5d17f54}\label{classtest__lsr_1_1_test_link_state_a74b91014282be9d1d81b4d64a5d17f54} 
-\index{test\_lsr.TestLinkState@{test\_lsr.TestLinkState}!test\_tie\_break\_2@{test\_tie\_break\_2}}
-\index{test\_tie\_break\_2@{test\_tie\_break\_2}!test\_lsr.TestLinkState@{test\_lsr.TestLinkState}}
-\doxysubsubsection{\texorpdfstring{test\_tie\_break\_2()}{test\_tie\_break\_2()}}
-{\footnotesize\ttfamily test\+\_\+lsr.\+Test\+Link\+State.\+test\+\_\+tie\+\_\+break\+\_\+2 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+The test checks that the path with the lowest lexigraphuc is chosen in case of a time. The testfile topology\+\_\+tie\+\_\+break.\+txt contains the following topology with all edges equal to 1\+: 3 -\/ 4 -\/ 5 -\/ 6 \textbackslash{} / 2 Therefore routing table from 3 to 6 should have 2 as next hop. Since the path 3-\/4-\/5-\/6 and 3-\/2-\/5-\/6 have the same cost, the path 3-\/2-\/5-\/6 should be chosen as 2 \texorpdfstring{$<$}{<} 4.
 
-\begin{DoxyVerb}Test case for the tie breaking in the Link State Routing.
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Link\+State\+Network object.
+\item Call the distribute\+\_\+all\+\_\+lsp method to spread info between router.
+\item Call the update\+\_\+routing\+\_\+table\+\_\+dijkstra method to update the routing table of router 3.
+\item Check the routing table of the router 3.
+\end{DoxyEnumerate}
 
-This test case verifies the functionality of the tie breaking in the Link State Routing after changes.
-It creates a LinkStateNetwork object, runs the distribute_all_lsp() method,apply changes, and checks the routing tables.
+Expected Results\+:
+\begin{DoxyItemize}
+\item The routing table router 3 has next hop as 2, not 4. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000009}{Test}}]Verifies the functionality of the tie breaking in the Link State Routing when 2 paths has same cost. \end{DoxyRefDesc}
 
-The test checks that the lowest lexigraphic path is selected.
-The testfile topology_tie_break_2.txt contains the following topology (the number of lines is the cost of the edge):
-    1 - 4 - 12 -- 9
-        \        /
-          5     11 
-And the changes_tie_break_2.txt contains the following changes:
-    5 11 1
-
-Therefore routing table from 4 to 9 should have 5 as next hop. Since the path 4-5-11-9 and 4-12-9 have the same cost, the path 4-5-11-9 should be chosen as 11 < 12.
-
-Test Steps:
-1. Create a LinkStateNetwork object.
-2. Call the distribute_all_lsp method to spread info between router.
-3. Call the update_routing_table_dijkstra method to update the routing table of router 4.
-4. Check the routing table of the router 4.
-5. Apply the changes.
+\end{DoxyItemize}\Hypertarget{classtest__lsr_1_1_test_link_state_a15bc630780ccb6445a53d1c58b4b6b9c}\label{classtest__lsr_1_1_test_link_state_a15bc630780ccb6445a53d1c58b4b6b9c} 
+\index{test\_lsr.TestLinkState@{test\_lsr.TestLinkState}!test\_tie\_break\_after\_changes@{test\_tie\_break\_after\_changes}}
+\index{test\_tie\_break\_after\_changes@{test\_tie\_break\_after\_changes}!test\_lsr.TestLinkState@{test\_lsr.TestLinkState}}
+\doxysubsubsection{\texorpdfstring{test\_tie\_break\_after\_changes()}{test\_tie\_break\_after\_changes()}}
+{\footnotesize\ttfamily test\+\_\+lsr.\+Test\+Link\+State.\+test\+\_\+tie\+\_\+break\+\_\+after\+\_\+changes (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
 
-Expected Results:
-- The routing table router 3 has next hop as 2, not 4.
-\end{DoxyVerb}
- 
+Test case for the tie breaking in the Link State Routing. 
+
+This test case verifies the functionality of the tie breaking in the Link State Routing after changes. It creates a Link\+State\+Network object, runs the distribute\+\_\+all\+\_\+lsp() method,apply changes, and checks the routing tables.
+
+The test checks that the lowest lexigraphic path is selected. The testfile topology\+\_\+tie\+\_\+break\+\_\+2.\+txt contains the following topology (the number of lines is the cost of the edge)\+: 1 -\/ 4 -\/ 12 -- 9 \textbackslash{} / 5 11 And the changes\+\_\+tie\+\_\+break\+\_\+2.\+txt contains the following changes\+: 5 11 1
+
+Therefore routing table from 4 to 9 should have 5 as next hop. Since the path 4-\/5-\/11-\/9 and 4-\/12-\/9 have the same cost, the path 4-\/5-\/11-\/9 should be chosen as 11 \texorpdfstring{$<$}{<} 12.
+
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Link\+State\+Network object.
+\item Call the distribute\+\_\+all\+\_\+lsp method to spread info between router.
+\item Call the update\+\_\+routing\+\_\+table\+\_\+dijkstra method to update the routing table of router 4.
+\item Check the routing table of the router 4.
+\item Apply the changes.
+\end{DoxyEnumerate}
+
+Expected Results\+:
+\begin{DoxyItemize}
+\item The routing table router 3 has next hop as 2, not 4. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000010}{Test}}]Verifies the functionality of updating topology and the tie breaking in the Link State Routing when new route has same cost as old path. \end{DoxyRefDesc}
+
+\end{DoxyItemize}
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

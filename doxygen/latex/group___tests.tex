@@ -3,86 +3,47 @@
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classcustom__dijkstra__lsr__test_1_1_test_l_s_r_custom_dijkstra}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+Test\+LSRCustom\+Dijkstra}}
+\item 
 class \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_router}{test\+\_\+dvr.\+Test\+Distance\+Vector\+Router}}
 \item 
 class \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network}{test\+\_\+dvr.\+Test\+Distance\+Vector\+Network}}
 \item 
 class \mbox{\hyperlink{classtest__lsr_1_1_test_link_state}{test\+\_\+lsr.\+Test\+Link\+State}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{group___tests_gaf86f718d5ef91ab00f5a6d88e3767bc3}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+parse\+Args}} ()
-\item 
-\mbox{\hyperlink{group___tests_ga648a74014f708f177d2eff652a510e29}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+read\+\_\+topology\+\_\+from\+\_\+file}} (filename)
-\item 
-\mbox{\hyperlink{group___tests_ga2823d506cde8daf43f0a1b60b6b115cc}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+messages\+\_\+from\+\_\+file}} (filename, graph, output\+\_\+iterator)
-\item 
-\mbox{\hyperlink{group___tests_gab0eb2352fdee6d526f0a8fc4952e6d34}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+apply\+\_\+changes\+\_\+from\+\_\+file}} (graph, changes\+\_\+filename, message\+\_\+filename, output\+\_\+iterator)
-\item 
-\Hypertarget{group___tests_gab53cabcfedc4bbb86fb396bab734629a}\label{group___tests_gab53cabcfedc4bbb86fb396bab734629a} 
-{\bfseries custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+custom\+\_\+dijkstra} (graph, source)
-\item 
-\mbox{\hyperlink{group___tests_ga8c6c49479141c5d89754b7fb64df4d09}{custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+routing\+\_\+tables}} (graph, output\+\_\+iterator)
-\item 
-\Hypertarget{group___tests_ga5cecccdfacda86e2e7524db5bd3579a9}\label{group___tests_ga5cecccdfacda86e2e7524db5bd3579a9} 
-{\bfseries custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+main} ()
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-The test suite was designed were designed to ensure the accuracy and reliability of the implementations for both the Distance Vector (DVR) and Link State (LSR) routing protocols. The test utilizes an adapted version of Dijkstra\textquotesingle{}s algorithm to compare the output with the results from running {\ttfamily \doxylink{lsr_8py}{lsr.\+py}} and {\ttfamily \doxylink{dvr_8py}{dvr.\+py}}.
+The test suite was designed were designed to ensure the accuracy and reliability of the implementations for both the Distance Vector (DVR) and Link State (LSR) routing protocols. \hypertarget{group___tests_unit_test}{}\doxysubsection{\texorpdfstring{Unit Tests}{Unit Tests}}\label{group___tests_unit_test}
+The suite includes unit tests for individual functions and integration tests that simulate real-\/world networking conditions. Tests includes tie breaking situations, adding routers and applying changes on network. For the Distance Vector Routing include verifying the update of routing tables upon receiving new distance information and ensuring that routers correctly decide whether to accept or ignore incoming messages based on their current knowledge of the network topology. Similarly, tests for the Link State Routing protocol assess the distribution of Link State Packets (LSPs) throughout the network, confirming that all routers attain a global view of the network topology and correctly compute shortest paths using Dijkstra\textquotesingle{}s algorithm. \hypertarget{group___tests_unit_test_usages}{}\doxysubsubsection{\texorpdfstring{Usage}{Usage}}\label{group___tests_unit_test_usages}
+To run the test suite, execute the following command from the root directory of the project\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python3\ test/test\_dvr.py}
+\DoxyCodeLine{python3\ test/test\_lsr.py}
 
-The suite includes unit tests for individual functions and integration tests that simulate real-\/world networking conditions. Tests for the Distance Vector Routing include verifying the update of routing tables upon receiving new distance information and ensuring that routers correctly decide whether to accept or ignore incoming messages based on their current knowledge of the network topology. Similarly, tests for the Link State Routing protocol assess the distribution of Link State Packets (LSPs) throughout the network, confirming that all routers attain a global view of the network topology and correctly compute shortest paths using Dijkstra\textquotesingle{}s algorithm. 
+\end{DoxyCode}
+ \hypertarget{group___tests_script_test_lsr}{}\doxysubsection{\texorpdfstring{LSR Script Tests -\/ AI Generated}{LSR Script Tests -\/ AI Generated}}\label{group___tests_script_test_lsr}
+The test suite includes a python class Test\+LSRCustom\+Dijkstra that simulates in a simpler way the LSR protocol (With no need to share information between routers).
 
-\doxysubsection{Function Documentation}
-\Hypertarget{group___tests_gab0eb2352fdee6d526f0a8fc4952e6d34}\label{group___tests_gab0eb2352fdee6d526f0a8fc4952e6d34} 
-\index{Tests@{Tests}!apply\_changes\_from\_file@{apply\_changes\_from\_file}}
-\index{apply\_changes\_from\_file@{apply\_changes\_from\_file}!Tests@{Tests}}
-\doxysubsubsection{\texorpdfstring{apply\_changes\_from\_file()}{apply\_changes\_from\_file()}}
-{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+apply\+\_\+changes\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{graph,  }\item[{}]{changes\+\_\+filename,  }\item[{}]{message\+\_\+filename,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+We aslo include a bash script that runs both our implementation and the custom implementation and compares the results.
 
-\begin{DoxyVerb}Apply changes to the graph based on a file.
-Each line of the file should be "node1 node2 cost",
-where a cost of -999 indicates the removal of a link.
-\end{DoxyVerb}
- \Hypertarget{group___tests_gaf86f718d5ef91ab00f5a6d88e3767bc3}\label{group___tests_gaf86f718d5ef91ab00f5a6d88e3767bc3} 
-\index{Tests@{Tests}!parseArgs@{parseArgs}}
-\index{parseArgs@{parseArgs}!Tests@{Tests}}
-\doxysubsubsection{\texorpdfstring{parseArgs()}{parseArgs()}}
-{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+parse\+Args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+The script is located in the test folder and can be run with the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bash\ test/test\_lsr.sh}
 
-\begin{DoxyVerb}Parses the command line arguments and returns them as a list.
+\end{DoxyCode}
 
-Returns:
-    list: A list containing the command line arguments.
-\end{DoxyVerb}
- \Hypertarget{group___tests_ga2823d506cde8daf43f0a1b60b6b115cc}\label{group___tests_ga2823d506cde8daf43f0a1b60b6b115cc} 
-\index{Tests@{Tests}!print\_messages\_from\_file@{print\_messages\_from\_file}}
-\index{print\_messages\_from\_file@{print\_messages\_from\_file}!Tests@{Tests}}
-\doxysubsubsection{\texorpdfstring{print\_messages\_from\_file()}{print\_messages\_from\_file()}}
-{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+messages\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{graph,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Read and parse messages from a file.
-Each line of the file should be "from to message".
-\end{DoxyVerb}
- \Hypertarget{group___tests_ga8c6c49479141c5d89754b7fb64df4d09}\label{group___tests_ga8c6c49479141c5d89754b7fb64df4d09} 
-\index{Tests@{Tests}!print\_routing\_tables@{print\_routing\_tables}}
-\index{print\_routing\_tables@{print\_routing\_tables}!Tests@{Tests}}
-\doxysubsubsection{\texorpdfstring{print\_routing\_tables()}{print\_routing\_tables()}}
-{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+print\+\_\+routing\+\_\+tables (\begin{DoxyParamCaption}\item[{}]{graph,  }\item[{}]{output\+\_\+iterator }\end{DoxyParamCaption})}
+The script will output if both scripts generated are equal.
 
-\begin{DoxyVerb}Compute and print the routing table for each router.
-\end{DoxyVerb}
- \Hypertarget{group___tests_ga648a74014f708f177d2eff652a510e29}\label{group___tests_ga648a74014f708f177d2eff652a510e29} 
-\index{Tests@{Tests}!read\_topology\_from\_file@{read\_topology\_from\_file}}
-\index{read\_topology\_from\_file@{read\_topology\_from\_file}!Tests@{Tests}}
-\doxysubsubsection{\texorpdfstring{read\_topology\_from\_file()}{read\_topology\_from\_file()}}
-{\footnotesize\ttfamily custom\+\_\+dijkstra\+\_\+lsr\+\_\+test.\+read\+\_\+topology\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
+{\bfseries{Disclaimer\+:}} The custom implementation was generated by an AI and in tie breaking situations it does not perform following the requirement of the project. Due to time constraint we decided not to further improve this test suite.
 
-\begin{DoxyVerb}Read and parse a topology from a file.
-Each line of the file should be "node1 node2 cost".
-\end{DoxyVerb}
- 
+\begin{DoxyAuthor}{Author}
+Maddy Paulson (maddypaulson) 
+
+Leonardo Kamino Barros (Leonardo\+Kamino) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000009}{Bug}}]Tie breaking on AI generated script for testing LSR.   \end{DoxyRefDesc}

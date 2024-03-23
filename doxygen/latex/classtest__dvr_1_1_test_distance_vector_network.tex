@@ -10,13 +10,13 @@ Inheritance diagram for test\+\_\+dvr.\+Test\+Distance\+Vector\+Network\+:\begin
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_ac063b0552c86373776006054b428f2c0}{test\+\_\+add\+\_\+router}} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Test case for the \+\_\+add\+\_\+router method of the Distance\+Vector\+Network class. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a9bc9c11716a1f59c7487e116ad134d07}{test\+\_\+dv\+\_\+algorithm}} (self)
-\item 
-\mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a3b0172068756b5c36367de003710d66e}{test\+\_\+tie\+\_\+brak}} (self)
-\item 
-\mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a4d15bd224b267629fcef9a006acb9caf}{test\+\_\+tie\+\_\+break\+\_\+2}} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Test case for the \+\_\+dv\+\_\+algorithm method of the Distance\+Vector\+Network class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a52a2a293b1f425a7e33ac7174bfef9d9}{test\+\_\+tie\+\_\+break}} (self)
+\begin{DoxyCompactList}\small\item\em Test case for the tie breaking in the \+\_\+dv\+\_\+algorithm method of the Distance\+Vector\+Network class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtest__dvr_1_1_test_distance_vector_network_a90fe4d64c95d2944792f0965d77ea02b}{test\+\_\+tie\+\_\+break\+\_\+after\+\_\+change}} (self)
+\begin{DoxyCompactList}\small\item\em Test case for changing topology and tie breaking in the \+\_\+dv\+\_\+algorithm method of the Distance\+Vector\+Network class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -26,97 +26,101 @@ Inheritance diagram for test\+\_\+dvr.\+Test\+Distance\+Vector\+Network\+:\begin
 \doxysubsubsection{\texorpdfstring{test\_add\_router()}{test\_add\_router()}}
 {\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+add\+\_\+router (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Test case for the _add_router method of the DistanceVectorNetwork class.
 
-This test case verifies the functionality of the _add_router method.
-It creates a DistanceVectorNetwork object, adds a router, and checks that the router is added correctly.
 
-Test Steps:
-1. Create a DistanceVectorNetwork object.
-2. Call the _add_router method to add a non existing router.
-3. Check that the router is added to the network.
+Test case for the \+\_\+add\+\_\+router method of the Distance\+Vector\+Network class. 
 
-Expected Results:
-- The router is added to the network.
-\end{DoxyVerb}
- \Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a9bc9c11716a1f59c7487e116ad134d07}\label{classtest__dvr_1_1_test_distance_vector_network_a9bc9c11716a1f59c7487e116ad134d07} 
+This test case verifies the functionality of the \+\_\+add\+\_\+router method. It creates a Distance\+Vector\+Network object, adds a router, and checks that the router is added correctly.
+
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Distance\+Vector\+Network object.
+\item Call the \+\_\+add\+\_\+router method to add a non existing router.
+\item Check that the router is added to the network.
+\end{DoxyEnumerate}
+
+Expected Results\+:
+\begin{DoxyItemize}
+\item The router is added to the network. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000003}{Test}}]This test case verifies the functionality of the adding a router to network. \end{DoxyRefDesc}
+
+\end{DoxyItemize}\Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a9bc9c11716a1f59c7487e116ad134d07}\label{classtest__dvr_1_1_test_distance_vector_network_a9bc9c11716a1f59c7487e116ad134d07} 
 \index{test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}!test\_dv\_algorithm@{test\_dv\_algorithm}}
 \index{test\_dv\_algorithm@{test\_dv\_algorithm}!test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}}
 \doxysubsubsection{\texorpdfstring{test\_dv\_algorithm()}{test\_dv\_algorithm()}}
 {\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+dv\+\_\+algorithm (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Test case for the _dv_algorithm method of the DistanceVectorNetwork class.
 
-This test case verifies the functionality of the _dv_algorithm method.
-It creates a DistanceVectorNetwork object, runs the distance vector algorithm, and checks the routing tables.
 
-Test Steps:
-1. Create a DistanceVectorNetwork object.
-2. Call the _dv_algorithm method to run the distance vector algorithm.
-3. Check the routing tables of the routers.
+Test case for the \+\_\+dv\+\_\+algorithm method of the Distance\+Vector\+Network class. 
 
-Expected Results:
-- The routing tables of the routers are updated correctly.
-\end{DoxyVerb}
- \Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a3b0172068756b5c36367de003710d66e}\label{classtest__dvr_1_1_test_distance_vector_network_a3b0172068756b5c36367de003710d66e} 
-\index{test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}!test\_tie\_brak@{test\_tie\_brak}}
-\index{test\_tie\_brak@{test\_tie\_brak}!test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}}
-\doxysubsubsection{\texorpdfstring{test\_tie\_brak()}{test\_tie\_brak()}}
-{\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+tie\+\_\+brak (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+This test case verifies the functionality of the \+\_\+dv\+\_\+algorithm method. It creates a Distance\+Vector\+Network object, runs the distance vector algorithm, and checks the routing tables.
 
-\begin{DoxyVerb}Test case for the tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class.
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Distance\+Vector\+Network object.
+\item Call the \+\_\+dv\+\_\+algorithm method to run the distance vector algorithm.
+\item Check the routing tables of the routers.
+\end{DoxyEnumerate}
 
-This test case verifies the functionality of the tie breaking in the _dv_algorithm method.
-It creates a DistanceVectorNetwork object, runs the distance vector algorithm, and checks the routing tables.
+Expected Results\+:
+\begin{DoxyItemize}
+\item The routing tables of the routers are updated correctly. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000004}{Test}}]This test case verifies the functionality of the \+\_\+dv\+\_\+algorithm method. \end{DoxyRefDesc}
 
-The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
-The testfile topology_tie_break.txt contains the following topology with all edges equal to 1:
-    3 - 4 - 5 - 6
-      \    /
-        2 
-Therefore routing table from 3 to 6 should have 2 as next hop.
+\end{DoxyItemize}\Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a52a2a293b1f425a7e33ac7174bfef9d9}\label{classtest__dvr_1_1_test_distance_vector_network_a52a2a293b1f425a7e33ac7174bfef9d9} 
+\index{test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}!test\_tie\_break@{test\_tie\_break}}
+\index{test\_tie\_break@{test\_tie\_break}!test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{test\_tie\_break()}{test\_tie\_break()}}
+{\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+tie\+\_\+break (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-Test Steps:
-1. Create a DistanceVectorNetwork object.
-2. Call the _dv_algorithm method to run the distance vector algorithm.
-3. Check the routing table of the router 3.
 
-Expected Results:
-- The routing table router 3 has next hop as 2, not 4.
-\end{DoxyVerb}
- \Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a4d15bd224b267629fcef9a006acb9caf}\label{classtest__dvr_1_1_test_distance_vector_network_a4d15bd224b267629fcef9a006acb9caf} 
-\index{test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}!test\_tie\_break\_2@{test\_tie\_break\_2}}
-\index{test\_tie\_break\_2@{test\_tie\_break\_2}!test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}}
-\doxysubsubsection{\texorpdfstring{test\_tie\_break\_2()}{test\_tie\_break\_2()}}
-{\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+tie\+\_\+break\+\_\+2 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Test case for the tie breaking in the _dv_algorithm method of the DistanceVectorNetwork class, after applying changes to topology.
+Test case for the tie breaking in the \+\_\+dv\+\_\+algorithm method of the Distance\+Vector\+Network class. 
 
-This test case verifies the functionality of the tie breaking in the _dv_algorithm method, after applying changes to the topology.
-It creates a DistanceVectorNetwork object, runs the distance vector algorithm, apply changes, and checks the routing tables.
+This test case verifies the functionality of the tie breaking in the \+\_\+dv\+\_\+algorithm method. It creates a Distance\+Vector\+Network object, runs the distance vector algorithm, and checks the routing tables.
 
-The test checks that the router with the lowest ID is chosen as the next hop in case of a tie.
-The testfile topology_tie_break_2.txt contains the following topology (the number of lines is the cost of the edge):
-    1 - 4 - 12 -- 9
-        \        /
-          5     11 
-And the changes_tie_break_2.txt contains the following changes:
-    5 11 1
+The test checks that the router with the lowest ID is chosen as the next hop in case of a tie. The testfile topology\+\_\+tie\+\_\+break.\+txt contains the following topology with all edges equal to 1\+: 3 -\/ 4 -\/ 5 -\/ 6 \textbackslash{} / 2 Therefore routing table from 3 to 6 should have 2 as next hop.
 
-Initially, the routing table from 4 to 9 should have 12 as next hop. After the change, the routing table from 4 to 9 should have 5 as next hop.
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Distance\+Vector\+Network object.
+\item Call the \+\_\+dv\+\_\+algorithm method to run the distance vector algorithm.
+\item Check the routing table of the router 3.
+\end{DoxyEnumerate}
 
-Test Steps:
-1. Create a DistanceVectorNetwork object.
-2. Call the _dv_algorithm method to run the distance vector algorithm.
-3. Check the routing table of the router 4.
-4. Apply the changes.
-5. Check the routing table of the router 4.
+Expected Results\+:
+\begin{DoxyItemize}
+\item The routing table router 3 has next hop as 2, not 4. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000005}{Test}}]This test case verifies the functionality of the tie breaking in Distance\+Vector\+Network class if 2 routes has same cost. \end{DoxyRefDesc}
 
-Expected Results:
-- Initially, the routing table router 4 has next hop to 9 as 12, not 5.
-- After changes, the routing table router 4 has next hop to 9 as 5, not 12.
-\end{DoxyVerb}
- 
+\end{DoxyItemize}\Hypertarget{classtest__dvr_1_1_test_distance_vector_network_a90fe4d64c95d2944792f0965d77ea02b}\label{classtest__dvr_1_1_test_distance_vector_network_a90fe4d64c95d2944792f0965d77ea02b} 
+\index{test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}!test\_tie\_break\_after\_change@{test\_tie\_break\_after\_change}}
+\index{test\_tie\_break\_after\_change@{test\_tie\_break\_after\_change}!test\_dvr.TestDistanceVectorNetwork@{test\_dvr.TestDistanceVectorNetwork}}
+\doxysubsubsection{\texorpdfstring{test\_tie\_break\_after\_change()}{test\_tie\_break\_after\_change()}}
+{\footnotesize\ttfamily test\+\_\+dvr.\+Test\+Distance\+Vector\+Network.\+test\+\_\+tie\+\_\+break\+\_\+after\+\_\+change (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Test case for changing topology and tie breaking in the \+\_\+dv\+\_\+algorithm method of the Distance\+Vector\+Network class. 
+
+This test case verifies the functionality of the tie breaking in the \+\_\+dv\+\_\+algorithm method. It creates a Distance\+Vector\+Network object, runs the distance vector algorithm, and checks the routing tables.
+
+The test checks that the router with the lowest ID is chosen as the next hop in case of a tie. The testfile topology\+\_\+tie\+\_\+break.\+txt contains the following topology with all edges equal to 1\+: 3 -\/ 4 -\/ 5 -\/ 6 \textbackslash{} / 2 Therefore routing table from 3 to 6 should have 2 as next hop.
+
+Test Steps\+:
+\begin{DoxyEnumerate}
+\item Create a Distance\+Vector\+Network object.
+\item Call the \+\_\+dv\+\_\+algorithm method to run the distance vector algorithm.
+\item Check the routing table of the router 3.
+\end{DoxyEnumerate}
+
+Expected Results\+:
+\begin{DoxyItemize}
+\item The routing table router 3 has next hop as 2, not 4. \begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000006}{Test}}]This test case verifies the functionality of updating topology and the tie breaking of the Distance\+Vector\+Network class when a new path has same cost as the previous selected path. \end{DoxyRefDesc}
+
+\end{DoxyItemize}
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
