@@ -202,8 +202,54 @@ class TestLinkState(unittest.TestCase):
         expectedAfter = "from 2 to 1 cost infinite hops unreachable message How are you?"
         resultAfter = network._generate_message_string(2, 1, "How are you?")
         self.assertEqual(expectedAfter, resultAfter)
+
+    ## @brief Test case for sending messages between disconnected nodes that are later connected.
+    #
+    # This test case verifies the functionality of sending messages between disconnected nodes that are later connected.
+    # It creates a LinkStateNetwork object, runs the distribute_all_lsp method, update router routing table, applies changes, and checks the messages.
+    #
+    # The testfile topology_disconnected_to_connected.txt contains the following topology:
+    #   1 - 2--4   5 - 6
+    #     \ | /
+    #       3
+    # The testfile changes_disconnected_to_connected.txt contains the following changes:
+    #   4 5 1
+    #
+    # The resultiing topology would be
+    #   1 - 2--4 - 5 - 6
+    #     \ | /
+    #       3    
+    # 
+    # Test Steps:
+    # 1. Create a LinkStateNetwork object.
+    # 2. Call the distribute_all_lsp method to spread info between routers.
+    # 3. Update the routing table of router 1.
+    # 4. Check message from 1 - 6 to show it is impossible to reach.
+    # 5. Apply the changes.
+    # 6. Check message from 1 - 6 to show it is possible to reach and has hops 1 - 3 - 4 - 5.
+    #
+    # Expected Results:
+    # - Before changes, the message from 1 to 6 shows it is impossible to reach.
+    # - After messages, the message from 1 to 6 shows it is possible to reach and has hops 1 3 4 5.  
+    # @test Testing creating messages string between nodes before and after they are connected.  
+    def test_disconnected_to_connected_messages(self):
+        print("test_disconnected_to_connected_messages")
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_disconnected_to_connected.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_disconnected_to_connected.txt"
+        network = LinkStateNetwork(str(topology_path), str(output_path))
         
-        
+        network.distribute_all_lsp()
+        network.routers[1].update_routing_table_dijkstra()
+        message_str = network._generate_message_string(1, 6, "hello")
+        self.assertEqual("from 1 to 6 cost infinite hops unreachable message hello", message_str)
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_disconnected_to_connected.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_disconnected_to_connected.txt"
+
+        network.apply_changes_and_output(str(changes_path), str(message_path))
+
+        message_str = network._generate_message_string(1, 6, "hello")
+        self.assertEqual("from 1 to 6 cost 4 hops 1 3 4 5 message hello", message_str)
 ## @}
 
 if __name__ == "__main__":

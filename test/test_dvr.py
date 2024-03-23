@@ -166,6 +166,51 @@ class TestDistanceVectorNetwork(unittest.TestCase):
 
         self.assertEqual(network.routers[4].routing_table[9], (5, 3))
 
+    ## @brief Test case for sending messages between disconnected nodes that are later connected.
+    #
+    # This test case verifies the functionality of sending messages between disconnected nodes that are later connected.
+    # It creates a DistanceVectorNetwork object, runs the distance vector algorithm, applies changes, and checks the messages.
+    #
+    # The testfile topology_disconnected_to_connected.txt contains the following topology:
+    #   1 - 2--4   5 - 6
+    #     \ | /
+    #       3
+    # The testfile changes_disconnected_to_connected.txt contains the following changes:
+    #   4 5 1
+    #
+    # The resultiing topology would be
+    #   1 - 2--4 - 5 - 6
+    #     \ | /
+    #       3    
+    # 
+    # Test Steps:
+    # 1. Create a DistanceVectorNetwork object.
+    # 2. Call the _dv_algorithm method to run the distance vector algorithm.
+    # 3. Check message from 1 - 6 to show it is impossible to reach.
+    # 4. Apply the changes.
+    # 5. Check message from 1 - 6 to show it is possible to reach and has hops 1 - 3 - 4 - 5.
+    #
+    # Expected Results:
+    # - Before changes, the message from 1 to 6 shows it is impossible to reach.
+    # - After messages, the message from 1 to 6 shows it is possible to reach and has hops 1 3 4 5.  
+    # @test Testing creating messages string between nodes before and after they are connected.  
+    def test_disconnected_to_connected_messages(self):
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_disconnected_to_connected.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_disconnected_to_connected.txt"
+        network = DistanceVectorNetwork(str(topology_path), str(output_path))
+        
+        network._dv_algorithm()
+        message_str = network._generate_message_string(1, 6, "hello")
+        self.assertEqual("from 1 to 6 cost infinite hops unreachable message hello", message_str)
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_disconnected_to_connected.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_disconnected_to_connected.txt"
+
+        network.apply_changes_and_output(str(changes_path), str(message_path))
+
+        message_str = network._generate_message_string(1, 6, "hello")
+        self.assertEqual("from 1 to 6 cost 4 hops 1 3 4 5 message hello", message_str)
+
         
 ## @}
 
