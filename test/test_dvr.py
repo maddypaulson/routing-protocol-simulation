@@ -249,7 +249,31 @@ class TestDistanceVectorNetwork(unittest.TestCase):
 
         message_str = network._generate_message_string(1, 5, "hello")
         self.assertEqual("from 1 to 5 cost infinite hops unreachable message hello", message_str)
-
+    ## @brief Test case for verifying routing and messaging in Distance Vector Routing after topology changes.
+    #
+    # This test case examines the Distance Vector Routing (DVR) algorithm's adaptability to changes in the network topology, especially focusing on how routing tables and message delivery are affected when a link becomes unreachable.
+    #
+    # The initial network setup involves a straightforward connection between two routers. This setup tests the basic routing capabilities and message delivery based on the initial topology. Subsequently, a change simulates the disconnection of a link between these routers, and the test evaluates how well the subsequent routing tables and message deliveries reflect this topology alteration.
+    #
+    # Initial Setup:
+    # - A direct link connects routers 1 and 2 with a cost of 6.
+    #
+    # Applied Change:
+    # - The direct link between routers 1 and 2 is removed, represented by a cost value of `-999` in `changes_single.txt`, effectively making the destination unreachable through the previous direct path.
+    #
+    # Test Steps:
+    # 1. Instantiate a `DistanceVectorNetwork` object with the predefined topology.
+    # 2. Confirm the initial routing table for router 1 accurately reflects the direct connection to router 2.
+    # 3. Verify that a message from router 2 to router 1 correctly shows the cost and path based on the initial topology setup.
+    # 4. Implement the network change to sever the link between routers 1 and 2.
+    # 5. Check that router 1's routing table updates to mark router 2 as unreachable following the disconnection.
+    # 6. Attempt to send a message post-change and validate that it accurately indicates the unreachability of router 1 from router 2.
+    #
+    # Expected Results:
+    # - Prior to applying the topology change, messages sent between routers 1 and 2 should correctly reflect the initial cost and direct path.
+    # - Following the change, the routing table entry for router 2 in router 1's table should be updated to show an infinite cost, signifying it's unreachable.
+    # - Subsequent message attempts should correctly identify the destination as unreachable, highlighted by an "infinite cost" and "unreachable" status for the path.
+    #@test Validates that DVR efficiently updates routing tables and manages message routing in light of topology changes.
     def test_dv_algorithm_single_router(self):
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_single.txt"
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_single.txt"
@@ -275,7 +299,23 @@ class TestDistanceVectorNetwork(unittest.TestCase):
         expectedAfter = "from 2 to 1 cost infinite hops unreachable message How are you?"
         resultAfter = network._generate_message_string(2, 1, "How are you?")
         self.assertEqual(expectedAfter, resultAfter)
-    
+    ## @brief Test case for DVR in a circular network topology with specific topology changes.
+    #
+    # This test scrutinizes the DVR algorithm within a 5-node circular topology, focusing on accurate shortest path determination and routing table/message path updates following specific topology changes. The setup and changes provide a nuanced view of DVR's response to complex network dynamics.
+    #
+    # Initial Setup:
+    # - A 5-node network forms a circular topology, with links established between adjacent nodes and specified costs: 1-2 (cost 4), 2-3 (cost 6), 3-4 (cost 8), 4-5 (cost 2), and 5-1 (cost 10).
+    #
+    # Test Objectives:
+    # 1. Confirm initial shortest path computations match expectations: 1 to 4 should route via 5 with a total cost of 12, underscoring DVR's initial path optimization.
+    # 2. Check initial message routing accuracy, such as a message from 1 to 5 should ideally follow the direct path with a cost of 10.
+    # 3. Apply predefined topology changes, potentially including both link removals and additions, to challenge the network's existing routing decisions.
+    # 4. Assess how DVR algorithm updates the routing tables and message routing in light of the network alterations, ensuring changes yield correct new shortest paths and costs.
+    #
+    # Expected Outcomes:
+    # - Before applying changes, routing tables and message delivery paths should align with DVR's optimization for the circular setup.
+    # - Subsequent to the changes, expect DVR to recalibrate routing tables and message paths to reflect the most efficient routes given the new topology, such as adjusting the path and cost from 1 to 5 since there is now a direct path for a cost of 3.
+    #@test Validates DVR's effectiveness and dynamic adjustment capability in a circular network subjected to specific topology alterations.
     def test_dvr_circular(self):
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_circular.txt"
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_circular.txt"

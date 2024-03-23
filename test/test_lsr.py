@@ -275,7 +275,24 @@ class TestLinkState(unittest.TestCase):
 
         message_str = network._generate_message_string(1, 5, "hello")
         self.assertEqual("from 1 to 5 cost infinite hops unreachable message hello", message_str)
-    
+    ## @brief Test case for LSR in a circular network topology with specific topology changes.
+    #
+    # Evaluates the LSR algorithm within a 5-node circular topology, specifically targeting its precision in computing shortest paths and its adaptability in updating routing tables and message paths after defined topology changes. This scenario provides a practical assessment of LSR's capabilities in a controlled yet complex network environment.
+    #
+    # Initial Setup:
+    # - Nodes are connected in a circular manner with specified costs, allowing multiple paths between nodes.
+    # - Initial connections: 1-2 (cost 4), 2-3 (cost 6), 3-4 (cost 8), 4-5 (cost 2), and 5-1 (cost 10).
+    #
+    # Test Objectives:
+    # 1. Verify the LSR algorithm's initial shortest path calculations: from 1 to 4 via 5 with a total cost of 12, and from 4 to 3 directly with a cost of 8.
+    # 2. Validate initial message routing from 1 to 5 with a cost of 10.
+    # 3. Apply topology changes that simulate link removals and additions, altering the network structure.
+    # 4. Post-change, confirm that routing tables reflect the new shortest paths, such as from 1 to 5 with a new cost, illustrating LSR's response to topology adjustments.
+    #
+    # Expected Outcomes:
+    # - Initially, the correct shortest paths are identified (e.g., 1 to 4 via 5 with cost 12).
+    # - After changes, routing tables and message paths should update to reflect new shortest paths based on the altered topology, e.g., 1 to 5 might has a new shortest path directly between for a cost of 3.
+    #@test Ensures LSR algorithm's precision and adaptability in a circular network with specific topology changes.
     def test_lsr_circular(self):
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_circular.txt"
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_circular.txt"
