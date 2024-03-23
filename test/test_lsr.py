@@ -19,15 +19,14 @@ from utilities import INFINITY
 ## @{
 
 class TestLinkState(unittest.TestCase):
-    ## @brief Test case to verify the functionality of the distribute_all_lsp method.
+    ## @brief Test case to verify the verify the initialization of LinkStateNetwork.
     #
-    # This test case creates a LinkStateNetwork object, representing a fully connected network and calls the distribute_all_lsp method.
+    # This test case creates a LinkStateNetwork object, representing a fully connected network.
     # It then checks that all nodes have knowledge about all other nodes in the network.
     #
     # Test Steps:
     # 1. Create a LinkStateNetwork object with the given topology and output file paths.
-    # 2. Call the distribute_all_lsp method to cdistribute knowledge in network.
-    # 3. Check the nodes have correct knowledge of network.
+    # 2. Check the nodes have correct knowledge of network.
     #
     # Expected Results:
     # - All network topologies are equal.
@@ -46,15 +45,14 @@ class TestLinkState(unittest.TestCase):
         self.assertDictEqual(network.routers[2].network_topology, network.routers[3].network_topology)
         self.assertDictEqual(network.routers[3].network_topology, network.routers[4].network_topology)
      
-    ## @brief Test case to verify the functionality of the distribute_all_lsp method in  a disconnected graphs.
+    ## @brief Test case to verify the initialization of LinkStateNetwork in a disconnected graphs.
     #
-    # This test case creates a LinkStateNetwork object, representing a disconnected network and calls the distribute_all_lsp method.
+    # This test case creates a LinkStateNetwork object, representing a disconnected network.
     # It then checks that  nodes have knowledge about all other nodes in their own network.
     #
     # Test Steps:
     # 1. Create a LinkStateNetwork object with the given topology and output file paths.
-    # 2. Call the distribute_all_lsp method to cdistribute knowledge in network.
-    # 3. Check the nodes have correct knowledge of network.
+    # 2. Check the nodes have correct knowledge of network.
     #
     # Expected Results:
     # - Nodes in same network have the same network topology.
@@ -67,8 +65,6 @@ class TestLinkState(unittest.TestCase):
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_distribute_all_lsp_disconnected.txt"
 
         network = LinkStateNetwork(str(topology_path), str(output_path))
-
-        network.distribute_all_lsp()
         
         # Check the network topology of the routers
         self.assertDictEqual(network.routers[1].network_topology, network.routers[2].network_topology)
@@ -79,7 +75,7 @@ class TestLinkState(unittest.TestCase):
     ## @brief Test case for the tie breaking in the Link State Routing.
     #
     # This test case verifies the functionality of the tie breaking in the Link State Routing.
-    # It creates a LinkStateNetwork object, runs the distribute_all_lsp() method, and checks the routing tables.
+    # It creates a LinkStateNetwork object, and checks the routing tables making sure correct tie break happened.
     #
     # The test checks that the path with the lowest lexigraphuc is chosen in case of a time.
     # The testfile topology_tie_break.txt contains the following topology with all edges equal to 1:
@@ -90,9 +86,7 @@ class TestLinkState(unittest.TestCase):
     #
     # Test Steps:
     # 1. Create a LinkStateNetwork object.
-    # 2. Call the distribute_all_lsp method to spread info between router.
-    # 3. Call the update_routing_table_dijkstra method to update the routing table of router 3.
-    # 4. Check the routing table of the router 3.
+    # 2. Check the routing table of the router 3.
     #
     # Expected Results:
     # - The routing table router 3 has next hop as 2, not 4.
@@ -102,15 +96,13 @@ class TestLinkState(unittest.TestCase):
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_tie_break.txt"
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_tie_break.txt"
         network = LinkStateNetwork(str(topology_path), str(output_path))
-        
-        network.distribute_all_lsp()
-        network.routers[3].update_routing_table_dijkstra()
+
         self.assertEqual(network.routers[3].routing_table[6], (2, 3))
 
     ## @brief Test case for the tie breaking in the Link State Routing.
     #
     # This test case verifies the functionality of the tie breaking in the Link State Routing after changes.
-    # It creates a LinkStateNetwork object, runs the distribute_all_lsp() method,apply changes, and checks the routing tables.
+    # It creates a LinkStateNetwork object, apply changes, and checks the routing tables.
     #
     # The test checks that the lowest lexigraphic path is selected.
     # The testfile topology_tie_break_2.txt contains the following topology (the number of lines is the cost of the edge):
@@ -124,10 +116,8 @@ class TestLinkState(unittest.TestCase):
     #
     # Test Steps:
     # 1. Create a LinkStateNetwork object.
-    # 2. Call the distribute_all_lsp method to spread info between router.
-    # 3. Call the update_routing_table_dijkstra method to update the routing table of router 4.
-    # 4. Check the routing table of the router 4.
-    # 5. Apply the changes.
+    # 2. Check the routing table of the router 4.
+    # 3. Apply the changes.
     #
     # Expected Results:
     # - The routing table router 3 has next hop as 2, not 4.
@@ -137,8 +127,6 @@ class TestLinkState(unittest.TestCase):
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_tie_break_2.txt"
         network = LinkStateNetwork(str(topology_path), str(output_path))
         
-        network.distribute_all_lsp()
-        network.routers[4].update_routing_table_dijkstra()
         self.assertEqual(network.routers[4].routing_table[9], (12, 3))
 
         changes_path = Path(__file__).resolve().parent / "testfiles/changes_tie_break_2.txt"
@@ -164,12 +152,11 @@ class TestLinkState(unittest.TestCase):
     #
     # Test Steps:
     # 1. Create a `LinkStateNetwork` object with the initial topology.
-    # 2. Distribute Link State Packets (LSPs) across the network.
-    # 3. Update the routing table for router 1 using Dijkstra's algorithm and verify the initial routing table entry.
-    # 4. Verify that a message sent from router 2 to router 1 correctly indicates the cost and hops based on the initial topology.
-    # 5. Apply the topology change to remove the link between routers 1 and 2.
-    # 6. Verify that the routing table for router 1 reflects the disconnection by marking router 2 as unreachable.
-    # 7. Verify that a message attempted after the link removal correctly indicates that router 1 is unreachable from router 2.
+    # 2. Verify the initial routing table for router 1 entry.
+    # 3. Verify that a message sent from router 2 to router 1 correctly indicates the cost and hops based on the initial topology.
+    # 4. Apply the topology change to remove the link between routers 1 and 2.
+    # 5. Verify that the routing table for router 1 reflects the disconnection by marking router 2 as unreachable.
+    # 6. Verify that a message attempted after the link removal correctly indicates that router 1 is unreachable from router 2.
     #
     # Expected Results:
     # - Before applying the change, messages between routers 1 and 2 indicate the correct cost and hop based on the initial topology.
@@ -181,8 +168,6 @@ class TestLinkState(unittest.TestCase):
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_single.txt"
         network = LinkStateNetwork(str(topology_path), str(output_path))
         
-        network.distribute_all_lsp()
-        network.routers[1].update_routing_table_dijkstra()
         self.assertEqual(network.routers[1].routing_table[2], (2,6))
         
         # Verify that the message is correct before changes
@@ -206,9 +191,9 @@ class TestLinkState(unittest.TestCase):
     ## @brief Test case for sending messages between disconnected nodes that are later connected.
     #
     # This test case verifies the functionality of sending messages between disconnected nodes that are later connected.
-    # It creates a LinkStateNetwork object, runs the distribute_all_lsp method, update router routing table, applies changes, and checks the messages.
+    # It creates a LinkStateNetwork object, applies changes, and checks the messages.
     #
-    # The testfile topology_disconnected_to_connected.txt contains the following topology:
+    # The testfile topology_disconnected_to_connected.txt contains the following topology (the number of lines is the cost of the edge):
     #   1 - 2--4   5 - 6
     #     \ | /
     #       3
@@ -222,24 +207,19 @@ class TestLinkState(unittest.TestCase):
     # 
     # Test Steps:
     # 1. Create a LinkStateNetwork object.
-    # 2. Call the distribute_all_lsp method to spread info between routers.
-    # 3. Update the routing table of router 1.
-    # 4. Check message from 1 - 6 to show it is impossible to reach.
-    # 5. Apply the changes.
-    # 6. Check message from 1 - 6 to show it is possible to reach and has hops 1 - 3 - 4 - 5.
+    # 2. Check message from 1 - 6 to show it is impossible to reach.
+    # 3. Apply the changes.
+    # 4. Check message from 1 - 6 to show it is possible to reach and has hops 1 - 3 - 4 - 5.
     #
     # Expected Results:
     # - Before changes, the message from 1 to 6 shows it is impossible to reach.
     # - After messages, the message from 1 to 6 shows it is possible to reach and has hops 1 3 4 5.  
     # @test Testing creating messages string between nodes before and after they are connected.  
     def test_disconnected_to_connected_messages(self):
-        print("test_disconnected_to_connected_messages")
         topology_path = Path(__file__).resolve().parent / "testfiles/topology_disconnected_to_connected.txt"
         output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_disconnected_to_connected.txt"
         network = LinkStateNetwork(str(topology_path), str(output_path))
-        
-        network.distribute_all_lsp()
-        network.routers[1].update_routing_table_dijkstra()
+
         message_str = network._generate_message_string(1, 6, "hello")
         self.assertEqual("from 1 to 6 cost infinite hops unreachable message hello", message_str)
 
@@ -250,6 +230,51 @@ class TestLinkState(unittest.TestCase):
 
         message_str = network._generate_message_string(1, 6, "hello")
         self.assertEqual("from 1 to 6 cost 4 hops 1 3 4 5 message hello", message_str)
+    
+    ## @brief Test case for sending messages between connected nodes that are later disconnected.
+    #
+    # This test case verifies the functionality of sending messages between connected nodes that are later disconnected.
+    # It creates a LinkStateNetwork object, update router routing table, applies changes, and checks the messages.
+    #
+    # The testfile topology_connected_to_disconnected.txt contains the following topology (the number of lines is the cost of the edge):
+    #   1 - 2--4 - 5
+    #     \ | /
+    #       3
+    # The testfile changes_connected_to_disconnected.txt contains the following changes:
+    #   3 4 -999
+    #   4 5 -999
+    #   
+    #   
+    # The resulting topology would be
+    #   1 - 2--4  5
+    #     \ |
+    #       3
+    #
+    # Test Steps:
+    # 1. Create a LinkStateNetwork object.
+    # 2. Check message from 1 - 5 to show it is possible to reach through hops 1 3 4.
+    # 3. Apply the changes.
+    # 4. Check message from 1 - 5 to show it is impossible to reach.
+    #
+    # Expected Results:
+    # - Before changes, the message from 1 to 6 shows it is possible to reach.
+    # - After messages, the message from 1 to 6 shows it is impossible to reach.
+    # @test Testing creating messages string between nodes before and after they are disconnected.
+    def test_connected_to_disconnected(self):
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_connected_to_disconnected.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_connected_to_disconnected.txt"
+        network = LinkStateNetwork(str(topology_path), str(output_path))
+        
+        message_str = network._generate_message_string(1, 5, "hello")
+        self.assertEqual("from 1 to 5 cost 3 hops 1 3 4 message hello", message_str)
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_connected_to_disconnected.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_connected_to_disconnected.txt"
+
+        network.apply_changes_and_output(str(changes_path), str(message_path))
+
+        message_str = network._generate_message_string(1, 5, "hello")
+        self.assertEqual("from 1 to 5 cost infinite hops unreachable message hello", message_str)
 ## @}
 
 if __name__ == "__main__":

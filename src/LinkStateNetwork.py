@@ -32,6 +32,10 @@ class LinkStateNetwork(Network):
             output_file (str): The file path to write the output.
         """
         super().__init__(topology_file, output_file)
+        self.distribute_all_lsp()
+
+        for router in self.routers.values():
+            router.update_routing_table_dijkstra()
 
     def _add_router(self, router_id):
         """
@@ -58,10 +62,6 @@ class LinkStateNetwork(Network):
             changes_file (str): The file path of the changes file.
             message_file (str): The file path to write the messages.
         """
-        self.distribute_all_lsp()
-
-        for router in self.routers.values():
-            router.update_routing_table_dijkstra()
 
         self.topology_output()
         self.send_messages(message_file)
