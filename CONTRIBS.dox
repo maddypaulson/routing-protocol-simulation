@@ -16,10 +16,12 @@ The following list details the efforts shared by the team:
 - Implemented the Distance Vector Routing Algorithm
 - Developed the mechanism for tie-breaking in the Link State Routing Algorithm
 - Set up unit tests
-- Creation of bash scripts for runnig project and creating executables
+- Creation of bash scripts for running project and creating executables
 
 \subsection maddy Maddy Paulson
 - Implemented the Link State Routing Algorithm
 - Creation of lsr.sh script
+- Creation of unit tests "single router" and "circular" for both link state and distance vector
+- Initial Docker setup for the project
 
 */
