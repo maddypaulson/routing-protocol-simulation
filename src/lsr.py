@@ -24,9 +24,6 @@ def main():
 
     network = LinkStateNetwork(topology_file, output_file)
     network.apply_changes_and_output(changes_file, message_file)
-    
-    # network.distribute_all_lsp()
-    # network.apply_ls_all_routers()
 
 if __name__ == "__main__":
     main()

@@ -4,6 +4,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent / "src"))
 from DistanceVectorNetwork import DistanceVectorNetwork
 from DistanceVectorRouter import DistanceVectorRouter
+from utilities import INFINITY
 ## @file
 ## @brief Test file for Distance Vector Routing.
 # Contains tests for the DistanceVectorRouting simulation, focusing on routing table updates, 
@@ -166,6 +167,62 @@ class TestDistanceVectorNetwork(unittest.TestCase):
 
         self.assertEqual(network.routers[4].routing_table[9], (5, 3))
 
+    def test_dv_algorithm_single_router(self):
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_single.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/dvr/output_single.txt"
+        network = DistanceVectorNetwork(str(topology_path), str(output_path))
+        
+        network._dv_algorithm()
+        self.assertEqual(network.routers[1].routing_table[2], (2,6))
+        
+        # Verify that the message is correct before changes
+        expectedAfter = "from 2 to 1 cost 6 hops 2 message How are you?"
+        resultAfter = network._generate_message_string(2, 1, "How are you?")
+        self.assertEqual(expectedAfter, resultAfter)
+        
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_single.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_single.txt"
+
+        network.apply_changes_and_output(str(changes_path), str(message_path))
+        
+        # Verify that the link is no longer there, stored as infinity in our routing table
+        self.assertTrue(network.routers[1].routing_table.get(2, (None, INFINITY))[1] == INFINITY)
+        
+        # Verify that the message is correct after the link is removed
+        expectedAfter = "from 2 to 1 cost infinite hops unreachable message How are you?"
+        resultAfter = network._generate_message_string(2, 1, "How are you?")
+        self.assertEqual(expectedAfter, resultAfter)
+    
+    def test_dvr_circular(self):
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_circular.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_circular.txt"
+        network = DistanceVectorNetwork(str(topology_path), str(output_path))
+
+        network._dv_algorithm()
+        
+        # First check that the correct shortest paths were found
+        self.assertEqual(network.routers[1].routing_table[4], (5,12))
+        self.assertEqual(network.routers[4].routing_table[3], (3,8))
+        self.assertEqual(network.routers[2].routing_table[2], (2,0))
+        
+        # Verify message before change
+        expectedBefore = "from 1 to 5 cost 10 hops 1 message Testing"
+        resultBefore = network._generate_message_string(1, 5, "Testing")
+        self.assertEqual(expectedBefore, resultBefore)
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_circular.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_circular.txt"
+        network.apply_changes_and_output(changes_path, message_path)
+        
+        # Check routing tables after changes
+        self.assertEqual(network.routers[1].routing_table[5], (2,7))
+        self.assertEqual(network.routers[3].routing_table[4], (2,11))
+        self.assertEqual(network.routers[2].routing_table[5], (5,3))
+        
+        # Verify message and correct path 
+        expectedAfter = "from 1 to 5 cost 7 hops 1 2 message Testing"
+        resultAfter = network._generate_message_string(1, 5, "Testing")
+        self.assertEqual(expectedAfter, resultAfter)
         
 ## @}
 

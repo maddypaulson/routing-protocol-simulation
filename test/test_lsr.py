@@ -202,7 +202,39 @@ class TestLinkState(unittest.TestCase):
         expectedAfter = "from 2 to 1 cost infinite hops unreachable message How are you?"
         resultAfter = network._generate_message_string(2, 1, "How are you?")
         self.assertEqual(expectedAfter, resultAfter)
+    
+    def test_lsr_circular(self):
+        topology_path = Path(__file__).resolve().parent / "testfiles/topology_circular.txt"
+        output_path = Path(__file__).resolve().parent / "testfiles/outputs/lsr/output_circular.txt"
+        network = LinkStateNetwork(str(topology_path), str(output_path))
+
+        network.distribute_all_lsp()
+        network.routers[1].update_routing_table_dijkstra()
         
+        # First check that the correct shortest paths were found
+        self.assertEqual(network.routers[1].routing_table[4], (5,12))
+        self.assertEqual(network.routers[4].routing_table[3], (3,8))
+        self.assertEqual(network.routers[2].routing_table[2], (2,0))
+        
+        # Verify message before change
+        expectedBefore = "from 1 to 5 cost 10 hops 1 message Testing"
+        resultBefore = network._generate_message_string(1, 5, "Testing")
+        self.assertEqual(expectedBefore, resultBefore)
+
+        changes_path = Path(__file__).resolve().parent / "testfiles/changes_circular.txt"
+        message_path = Path(__file__).resolve().parent / "testfiles/message_circular.txt"
+        network.apply_changes_and_output(changes_path, message_path)
+        
+        # Check routing tables after changes
+        self.assertEqual(network.routers[1].routing_table[5], (2,7))
+        self.assertEqual(network.routers[3].routing_table[4], (2,11))
+        self.assertEqual(network.routers[2].routing_table[5], (5,3))
+        
+        # Verify message and correct path 
+        expectedAfter = "from 1 to 5 cost 7 hops 1 2 message Testing"
+        resultAfter = network._generate_message_string(1, 5, "Testing")
+        self.assertEqual(expectedAfter, resultAfter)
+
         
 ## @}
 

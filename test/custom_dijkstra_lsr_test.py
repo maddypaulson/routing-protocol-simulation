@@ -60,7 +60,7 @@ class TestLSRCustomDijkstra:
         with open(filename,'r') as file:
             for line in file:
                 from_node, to_node, message = line.split(" ", 2)
-                lengths, paths = custom_dijkstra(graph, from_node)
+                lengths, paths = self.custom_dijkstra(graph, from_node)
                 if paths[to_node]:
                     path = paths[to_node]
                     path_cost = lengths[to_node]
