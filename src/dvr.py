@@ -16,7 +16,10 @@ def main():
     Main function to run the Distance Vector Routing Algorithm.
 
     Args:
-        None
+        topology_file (str): The file containing the network topology.
+        message_file (str): The file containing the messages to be sent.
+        changes_file (str): The file containing the changes to be applied to the network.
+        [output_file] (str): The file to output the results to.
 
     Returns:
         None
